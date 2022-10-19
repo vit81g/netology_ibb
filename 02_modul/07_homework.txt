@@ -1,0 +1,27 @@
+Задача №1 - HashCat
+Анализ хэша был проведен с помощью hashid и онлайн сервисов в интернете. 
+Hashid показал: 
+[+] Snefru-256 
+[+] SHA-256 
+[+] RIPEMD-256 
+[+] Haval-256 
+[+] GOST R 34.11-94 
+Онлайн сервис показал:
+SHA-256 [HC: 1400] [JtR: raw-sha256]
+GOST R 34.11-94 [HC: 6900] [JtR: gost]
+SHA3-256 [HC: 17400] [JtR: dynamic_380]
+Keccak-256 [HC: 17800] [JtR: raw-keccak-256]
+Snefru-256 [JtR: snefru-256]
+RIPEMD-256 [JtR: dynamic_140]
+В итоге выбраны были  SHA-256 [HC: 1400] и GOST R 34.11-94 [HC: 6900] (они были упомянуты в лекции)
+
+1) алгоритм:
+Hash.Mode........: 6900 (GOST R 34.11-94)
+2) пароль:
+MARINA
+
+Задача №2 - VeraCrypt
+1) Контейнер:
+contain.txt
+2) Пароль к заданию VeraCrypt: Aa123456@
+
