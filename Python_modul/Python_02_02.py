@@ -1,3 +1,10 @@
+# Ссылки на задание 
+# https://www.hackerrank.com/spellhvit
+# https://replit.com/@vit81g/0202python#main.py
+# https://replit.com/@vit81g/0203python#main.py
+
+
+
 height = 182
 age = 25
 child_have = 1
