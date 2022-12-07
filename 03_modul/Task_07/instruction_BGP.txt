@@ -1,0 +1,120 @@
+Задача
+
+Настройте сетевую схему, используя следующие параметры:
+
+    Host1:
+        IP: 10.1.1.10/24
+        Default route : 10.1.1.254
+    R1
+        IP gi0/0/0: 10.1.1.254/24
+        IP gi0/0/1: 192.168.1.1/30
+        BGP AS 65001
+    R2
+        IP gi0/0/0: 10.2.2.254/24
+        IP gi0/0/1: 192.168.1.2/30
+        BGP AS 65002
+    Host2
+        IP 10.2.2.10/24
+        Default route: 10.2.2.254
+
+Запустите ping между Host1 и Host2 (он должен быть успешен).
+
+https://www.youtube.com/watch?v=BtfbTsl8k6Q
+
+R1 после подключения проводов и установки IP дресов
+R1(config-if)#exit
+R1(config)#rou
+R1(config)#router bg
+R1(config)#router bgp 65001
+R1(config-router)#nei
+R1(config-router)#neighbor 192.168.1.2 remo
+R1(config-router)#neighbor 192.168.1.2 remote-as 65002
+R1(config-router)#net
+R1(config-router)#network 192.168.1.0 255.255.255.252
+                                      ^
+% Invalid input detected at '^' marker.
+	
+R1(config-router)#
+R1(config-router)#255.255.255.252
+                  ^
+% Invalid input detected at '^' marker.
+	
+R1(config-router)#net
+R1(config-router)#network 192.168.1.0 mas
+R1(config-router)#network 192.168.1.0 mask 255.255.255.252
+R1(config-router)#net
+R1(config-router)#network 10.1.1.0 mas
+R1(config-router)#network 10.1.1.0 mask 255.255.255.0
+R1(config-router)#do wr
+R1(config-router)#do wr
+Building configuration...
+[OK]
+R1(config-router)#%BGP-5-ADJCHANGE: neighbor 192.168.1.2 Up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0/0, changed state to up
+
+R2 после подключения проводов и установки IP дресов
+
+R2(config)#router bgp 65002
+R2(config-router)#nei
+R2(config-router)#neighbor 192.168.1.1 re
+R2(config-router)#neighbor 192.168.1.1 remote-as 65001
+R2(config-router)#%BGP-5-ADJCHANGE: neighbor 192.168.1.1 Up
+
+R2(config-router)#do sh ip ro
+R2(config-router)#do sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.1.0/30 is directly connected, GigabitEthernet0/0/1
+L       192.168.1.2/32 is directly connected, GigabitEthernet0/0/1
+
+R2(config-router)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0/0, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0/0, changed state to up
+do sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+B       10.1.1.0/24 [20/0] via 192.168.1.1, 00:00:00
+C       10.2.2.0/24 is directly connected, GigabitEthernet0/0/0
+L       10.2.2.254/32 is directly connected, GigabitEthernet0/0/0
+     192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.1.0/30 is directly connected, GigabitEthernet0/0/1
+L       192.168.1.2/32 is directly connected, GigabitEthernet0/0/1
+
+R2(config-router)#net
+R2(config-router)#network 192.168.1.0 ma
+R2(config-router)#network 192.168.1.0 mask 255.255.255.252
+R2(config-router)#net
+R2(config-router)#network 10.2.2.0 ma
+R2(config-router)#network 10.2.2.0 mask 255.255.255.0
+R2(config-router)#wo wr
+                  ^
+% Invalid input detected at '^' marker.
+	
+R2(config-router)#do wr
+Building configuration...
+[OK]
+R2(config-router)#
+R2#
+%SYS-5-CONFIG_I: Configured from console by console

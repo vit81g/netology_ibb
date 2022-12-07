@@ -1,0 +1,3 @@
+cbi-technologies.com.	3318	IN	TXT	"ZOOM_verify_Nw6Pu8oPoHONRfiJNHCyYh"
+cbi-technologies.com.	3318	IN	TXT	"v=spf1 include:spf.protection.outlook.com -all"
+cbi-technologies.com.	3318	IN	TXT	"google-site-verification=wKHWbgMwtwMtTdaauNLbJy7gt0IR48I_VvOwr8O0XX8"

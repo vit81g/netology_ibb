@@ -1,0 +1,3 @@
+cicom.es.		300	IN	TXT	"ZOOM_verify_u5J7c9L1uuRhouqfT7ZEfM"
+cicom.es.		300	IN	TXT	"v=spf1 include:zoho.com ~all"
+cicom.es.		300	IN	TXT	"zoho-verification=zb14353035.zmverify.zoho.com"

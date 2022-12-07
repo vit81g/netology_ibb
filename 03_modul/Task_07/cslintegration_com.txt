@@ -1,0 +1,4 @@
+cslintegration.com.	21600	IN	TXT	"v=spf1 include:spf.protection.outlook.com include:spf.myconnectwise.net-all"
+cslintegration.com.	21600	IN	TXT	"apple-domain-verification=5FQfQeVlrD0W77lv"
+cslintegration.com.	21600	IN	TXT	"cisco-ci-domain-verification=fef09c632b0d8d8abe6ec658f87151baba34ca08610522bfeb647e4ac9318ae"
+cslintegration.com.	3600	IN	TXT	"ZOOM_verify_4Q5uvpvAT3S4gdpFwrRNkA"
