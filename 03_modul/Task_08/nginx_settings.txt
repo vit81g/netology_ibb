@@ -1,0 +1,2 @@
+настройка http2 в nginx
+https://www.tecmint.com/enable-http-2-in-nginx/
