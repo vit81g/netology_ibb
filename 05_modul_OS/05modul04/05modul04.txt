@@ -1,0 +1,28 @@
+1. Скриншот, либо содержимое файла app.service
+[Unit]
+Description=Start-server.bin
+After=network.target auditd.service
+Restart=on-failure
+
+[Service]
+WorkingDirectory=/opt/app
+ExecStart=/opt/app/server.bin
+
+[Install]
+WantedBy=default.target 
+
+2. Ответы на впоросы:
+2.1 На каком IP и порту запускается сервис
+0.0.0.0:9999
+2.2 Кто (IP и порт) шлёт запросы на этот сервис и на какой путь
+127.0.0.1:48698
+IP - 127.0.0.1
+PORT - меняется
+
+2.3 Какие ответы (формат) получает клиент из п.ii получает в ответ на свои запросы
+{"ID":"2f16921baec9cc719282","status":"ok"}
+вид словаря. Значение ID и статус OK
+
+2.4 Какой ответ (HTTP статус код) получите вы, если пошлёте из браузера запрос на этот же адрес (сертификат самоподписанный, поэтому вам необходимо принять его)
+400 Bad Request
+

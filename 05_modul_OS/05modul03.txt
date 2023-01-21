@@ -1,0 +1,35 @@
+hashcat -m 1800 -a 0 '$6$iMDxXB6C.bGVPgP/$dzNU7.0TSuoY8LUBKInul8kkDbjNsTEJWC6ake4pBi9Mf8icvzTm7aydpgs7ciJsRurui/SVBHsKWP0Ji4f7U1' 10-million-password-list-top-100000.txt
+
+Исполнение:
+
+Host memory required for this attack: 246 MB
+
+Dictionary cache hit:
+* Filename..: 10-million-password-list-top-100000.txt
+* Passwords.: 100000
+* Bytes.....: 781896
+* Keyspace..: 100000
+
+$6$iMDxXB6C.bGVPgP/$dzNU7.0TSuoY8LUBKInul8kkDbjNsTEJWC6ake4pBi9Mf8icvzTm7aydpgs7ciJsRurui/SVBHsKWP0Ji4f7U1:fear
+                                                          
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$iMDxXB6C.bGVPgP/$dzNU7.0TSuoY8LUBKInul8kkDbjNsTE...i4f7U1
+Time.Started.....: Tue Jan 17 20:54:42 2023 (1 sec)
+Time.Estimated...: Tue Jan 17 20:54:43 2023 (0 secs)
+
+Решение:
+
+Рассшифровка хэша в файле /etc/shadow 
+fear
+
+
+Параметры:
+
+-m  --номер алгоритма
+1800  --sha512crypt $6$, SHA512 (Unix) сам алгоритм поиск берем из задания $6$ - SHA-512
+-a  --вид атаки
+0  -- атака по словарю
+далее в кавычках указываем хэш
+далее указываем путь к словарю, в нашем случае словарь находиться в папке исполнения (словарь брал на github https://github.com/vit81g/SecLists/tree/master/Passwords/Common-Credentials )

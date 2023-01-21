@@ -1,0 +1,12 @@
+[Unit]
+Description=Start-server.bin
+After=network.target auditd.service
+Restart=on-failure
+
+[Service]
+WorkingDirectory=/opt/app
+ExecStart=/opt/app/server.bin
+
+
+[Install]
+WantedBy=default.target
