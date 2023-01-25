@@ -1,24 +1,19 @@
 ﻿
 $str = $args[1]
 
-#if ($args[0] -eq "decrypt")
-#{
-#    $decode = [Text.Encoding]::Utf8.GetString([Convert]::FromBase64String($result))
-#    echo($decode)
-#}
-
-
-
+# условие проверки первого параметра
 if ($args[0] -eq "crypt")
 {
+    # кодировка в Base64
     $result = [System.Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($str))
     echo($result)
 }
 
-else
+else # условие False
 {
-    if ($args[0] -eq "decrypt")
+    if ($args[0] -eq "decrypt") # условие проверки первого параметра
     {
+        # расшифровка из Base64
         $decode = [Text.Encoding]::Utf8.GetString([Convert]::FromBase64String($str))
         echo($decode)
     }
