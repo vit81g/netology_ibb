@@ -54,25 +54,24 @@ def funcMoveNumber():
     """
     doc_number = input('Введите номер документа: ')
     new_directories = input('Введите новую полку, куда переместить документ: ')
-    for i in documents:
-        if i['number'] == doc_number:
-            # print(i['number'])
-            # print(i)
-            # if new_directories in directories.keys():
-            new_list = []
-            # удаление элемента
-            # добавление элемента
-            new_list.append(doc_number)
-            print('перебор k')
-            for k in directories:
-                print(k)
-                for i in k:
-                    if doc_number in k[i]:
-                        print(i)
+    if new_directories in directories.keys():
+        for i in documents:
+            if i['number'] == doc_number:
+                new_list = []
 
-            directories[new_directories] = new_list
-        # else:
-        #     print("no good")
+            # добавление элемента во временную переменную
+                new_list.append(doc_number)
+                print('перебор k')
+                for k in directories:
+                    # удаление элемента
+                    if doc_number in directories[k]:
+                        directories[k].remove(doc_number)
+                # новый элемент в словаре
+                directories[new_directories] = new_list
+    else:
+        print("такой полки не существует")
+
+
     return f'{directories}'
 
 def funcAddDirectories():
