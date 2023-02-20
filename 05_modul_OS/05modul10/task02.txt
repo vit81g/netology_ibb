@@ -1,0 +1,34 @@
+1. Можно ли реализовать переполнение?
+Нет
+char host[16] - задает буфер равный 16 символам
+fgets отработает только 16 символов, не больше
+
+2. Можно ли выполнить произвольную команду (если да, то как)?
+Пример №1:
+└─$ ./main2 ;ls -a
+
+Пример №2
+└─$ ./main2 ;sh 
+
+
+3. Если ответ на п.2 - да, то можно ли получить shell (т.е. запустить sh и bash и продолжить работу с интерпретатором команд в интерактивном режиме)?
+
+└─$ ./main2 ;sh 
+please enter host for ping
+asdafag
+command: ping 
+host: asdafag
+
+full command: ping asdafag
+
+ping: asdafag: Name or service not known
+$ ls
+a.out  main  main2  main2.c  main.c  task01.txt
+$ ./main
+please enter host for ping
+1.1.1
+command: ping 
+host: 1.1.1
+full command: ping 1.1.1
+PING 1.1.1 (1.1.0.1) 56(84) bytes of data.
+^C

@@ -1,0 +1,26 @@
+1. Какое предупреждение (Warning) было выведено при компиляции? По желанию: проведите доп.исследование на предмет сути предупреждения (с чем оно связано, какие риски от использования одной из функций в программе и что это за функция).
+а) Предупреждение: функция `gets' опасна и не должна использоваться.
+б) `gets' может приводить к созданию ошибок и открывает простор для нарушений компьютерной безопасности при помощи переполнения буфера.
+
+2. Ввод, приводящий к падению приложения
+Пример:
+└─$ ./main
+please enter host for ping
+command[1] = {'ggg'}   
+command: gg'}
+host: command[1] = {'ggg'}
+full command: gg'}command[1] = {'ggg'}
+sh: 1: Syntax error: Unterminated quoted string
+
+3. Ввод, приводящий к выполнению другой команды (не ping)
+└─$ ./main ;sh        
+please enter host for ping
+asgga
+command: ping 
+host: asgga
+full command: ping asgga
+ping: asgga: Name or service not known
+$ ls
+a.out  main  main.c
+$ exit
+          
