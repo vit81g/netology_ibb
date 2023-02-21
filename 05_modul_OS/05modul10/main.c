@@ -7,6 +7,9 @@ int main() {
     char command[256] = {'p', 'i', 'n', 'g', ' ', '\0'};
     /* буфер для хранения хоста, который нужно пропинговать */
     char host[16];
+    int* p = NULL
+    *p = 1
+    cout << *p
 
     printf("please enter host for ping\n");
     /* получаем от пользователя имя хоста - нужно ввести в консоли, например, ya.ru и нажать Enter */
