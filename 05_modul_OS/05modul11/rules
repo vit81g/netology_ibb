@@ -1,0 +1,16 @@
+rule cmd
+{
+
+strings:
+$hex = {05 23 c8 03 00 66 44 89 33 44 39 25 18 c8 03 00}
+$text_string = "!This program cannot be run in DOS mode."
+$signature = {4D 5A}
+
+
+
+condition:
+
+$hex and $text_string and $signature
+	
+}
+
