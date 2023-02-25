@@ -1,0 +1,12 @@
+rule cmd
+{
+
+strings:
+        $xor_string = "This program cannot" xor wide ascii
+        
+        $hex = {2e74 6578 7424 6c70 3031 636d 642e 6578}
+    condition:
+    	// исполеннеие всех условий strings
+        all of them
+	
+}
