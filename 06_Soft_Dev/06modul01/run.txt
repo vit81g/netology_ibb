@@ -1,0 +1,10 @@
+──(root㉿kali)-
+└─# docker image ls   
+REPOSITORY     TAG       IMAGE ID       CREATED          SIZE
+ibdevapp       latest    26a9ab149978   12 minutes ago   2.2MB
+my_container   latest    b1324a68c12d   15 minutes ago   2.2MB
+ubuntu         latest    08d22c0ceb15   2 weeks ago      77.8MB
+                                                                                                  
+┌──(root㉿kali)-
+└─# docker container run ibdevapp
+2023/03/23 11:06:15 it looks like you not in container

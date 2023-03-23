@@ -1,0 +1,38 @@
+1. готовим файл Dockerfile
+Содержание Dockerfile
+
+# качаем образ scratch
+FROM scratch
+
+# копируем в образ файл app.bin
+COPY app.bin /
+
+# при запуске контейнера выполниться команда /app.bin
+CMD ["/app.bin"]
+
+2. подготовим app.bin
+chmod +x app.bin
+
+3. Собером образ 
+docker build -t <имя образа>
+Примерный результат :
+
+Sending build context to Docker daemon  2.193MB
+Step 1/3 : FROM scratch
+ ---> 
+Step 2/3 : COPY app.bin /
+ ---> 66535cd5be8d
+Step 3/3 : CMD /app.bin
+ ---> Running in 1ed1c71ff674
+Removing intermediate container 1ed1c71ff674
+ ---> b2c25c8fe693
+Successfully built b2c25c8fe693
+
+4. покажет наши образы 
+docker image ls
+
+5. запустит наш образ по имени образа
+docker container run <имя_образа>
+
+
+
