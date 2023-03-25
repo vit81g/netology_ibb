@@ -1,3 +1,4 @@
+Задание 01
 ──(root㉿kali)-
 └─# docker image ls   
 REPOSITORY     TAG       IMAGE ID       CREATED          SIZE
@@ -8,3 +9,49 @@ ubuntu         latest    08d22c0ceb15   2 weeks ago      77.8MB
 ┌──(root㉿kali)-
 └─# docker container run ibdevapp
 2023/03/23 11:06:15 it looks like you not in container
+
+
+Задание 02
+
+sudo docker image ls
+REPOSITORY    TAG           IMAGE ID       CREATED          SIZE
+ibdevserver   latest        7b9c8a8008a6   8 minutes ago    13.4MB
+<none>        <none>        b2b89f995982   9 minutes ago    324MB
+<none>        <none>        2fb9336ca898   29 minutes ago   2.2MB
+ibdevapp      latest        b27b1591e480   31 minutes ago   2.2MB
+alpine        latest        b2aa39c304c2   6 weeks ago      7.05MB
+golang        1.15-alpine   1403af3b6d4a   19 months ago    300MB
+
+
+# docker-compose up --build
+Building server
+Sending build context to Docker daemon  2.207MB
+Step 1/9 : FROM golang:1.15-alpine AS build
+ ---> 1403af3b6d4a
+Step 2/9 : COPY main.go /app/
+ ---> Using cache
+ ---> 67fe837c3a22
+Step 3/9 : ENV CGO_ENABLED=0
+ ---> Using cache
+ ---> 2c50f906778e
+Step 4/9 : WORKDIR /app
+ ---> Using cache
+ ---> 0d71e8ca571f
+Step 5/9 : RUN go build -o server.bin main.go
+ ---> Using cache
+ ---> 29803831abff
+Step 6/9 : RUN chmod +x server.bin
+ ---> Using cache
+ ---> b2b89f995982
+Step 7/9 : FROM alpine
+ ---> b2aa39c304c2
+Step 8/9 : COPY --from=build /app/server.bin /app/
+ ---> Using cache
+ ---> 8fc1f0c876b7
+Step 9/9 : CMD ["/app/server.bin"]
+ ---> Using cache
+ ---> 7b9c8a8008a6
+Successfully built 7b9c8a8008a6
+Successfully tagged ibdevserver:latest
+Starting 02_server_1 ... done
+Attaching to 02_server_1

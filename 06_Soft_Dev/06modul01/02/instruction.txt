@@ -1,0 +1,102 @@
+0. подготовим app.bin
+chmod +x app.bin
+
+1. готовим файл docker-compose.yml
+Содержание docker-compose.yml 
+
+version: '3.7'
+services:
+  server:
+    build: .
+    image: ibdevserver
+    ports:
+      - 9999:9999
+
+2. готовим файл Dockerfile
+Содержание Dockerfile
+
+# качаем образ golang:1.15-alpine и даем ему название ?? (не понял какое golang или build)
+FROM golang:1.15-alpine AS build
+
+# копируем в образ файл main.go в дерикторию /app/ (в образе) 
+COPY main.go /app/
+
+# ENV — устанавливаете значение переменной окружения
+ENV CGO_ENABLED=0
+
+# WORKDIR — устанавливаете рабочий каталог для следующих команд
+WORKDIR /app
+
+# RUN — запускаете сборку
+RUN go build -o server.bin main.go
+RUN chmod +x server.bin
+
+# качаем образ alpine
+FROM alpine
+
+# COPY --from=build — копируете файл из образа, созданного на одной из предыдущих стадий
+COPY --from=build /app/server.bin /app/
+
+# при запуске контейнера выполниться команда /server.bin
+CMD ["/app/server.bin"]
+
+3. Собером образ 
+docker build -t ibdevserver .
+Примерный результат :
+
+# docker build -t ibdevserver .
+Sending build context to Docker daemon  2.207MB
+Step 1/9 : FROM golang:1.15-alpine AS build
+1.15-alpine: Pulling from library/golang
+29291e31a76a: Pull complete 
+e4bc8fc554c3: Pull complete 
+803daa35ea47: Pull complete 
+38284154e396: Pull complete 
+a66f7597198a: Pull complete 
+Digest: sha256:b58c367d52e46cdedc25ec9cd74cadb14ad65e8db75b25e5ec117cdb227aa264
+Status: Downloaded newer image for golang:1.15-alpine
+ ---> 1403af3b6d4a
+Step 2/9 : COPY main.go /app/
+ ---> 67fe837c3a22
+Step 3/9 : ENV CGO_ENABLED=0
+ ---> Running in 5fbda14643f5
+Removing intermediate container 5fbda14643f5
+ ---> 2c50f906778e
+Step 4/9 : WORKDIR /app
+ ---> Running in 1c9fb4ac19a4
+Removing intermediate container 1c9fb4ac19a4
+ ---> 0d71e8ca571f
+Step 5/9 : RUN go build -o server.bin main.go
+ ---> Running in 23d16b4d1dbd
+Removing intermediate container 23d16b4d1dbd
+ ---> 29803831abff
+Step 6/9 : RUN chmod +x server.bin
+ ---> Running in f3caa83ab2cd
+Removing intermediate container f3caa83ab2cd
+ ---> b2b89f995982
+Step 7/9 : FROM alpine
+latest: Pulling from library/alpine
+63b65145d645: Pull complete 
+Digest: sha256:ff6bdca1701f3a8a67e328815ff2346b0e4067d32ec36b7992c1fdc001dc8517
+Status: Downloaded newer image for alpine:latest
+ ---> b2aa39c304c2
+Step 8/9 : COPY --from=build /app/server.bin /app/
+ ---> 8fc1f0c876b7
+Step 9/9 : CMD ["/app/server.bin"]
+ ---> Running in 897f9477fc39
+Removing intermediate container 897f9477fc39
+ ---> 7b9c8a8008a6
+Successfully built 7b9c8a8008a6
+Successfully tagged ibdevserver:latest
+
+
+4. покажет наши образы 
+docker image ls
+
+5. запустит наш образ по имени образа
+docker container run <имя_образа>
+docker container run -p 9999:9999 ibdevserver
+После этого можете открыть в браузере localhost на порту 9999
+
+
+
