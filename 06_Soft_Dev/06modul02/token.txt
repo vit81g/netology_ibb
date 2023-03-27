@@ -1,0 +1,7 @@
+867e8eff4b0c81bae4ee7d9749bddc073d77c8d2
+
+
+docker-compose run maven mvn -f /app sonar:sonar \
+  -Dsonar.projectKey=ibb24 \
+  -Dsonar.host.url=http://sonarqube:9000 \
+  -Dsonar.login=867e8eff4b0c81bae4ee7d9749bddc073d77c8d2
