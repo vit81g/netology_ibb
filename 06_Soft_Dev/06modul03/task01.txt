@@ -1,0 +1,48 @@
+Использование truffleHog выявило:
+1. service/keys/private.key
+Информация о приватном ключе (можно расшифровать сообщения)
+-----BEGIN RSA PRIVATE KEY-----
+-MIIEpAIBAAKCAQEAxFv8lbJ+njQ1thnz25qZAsEQB0yRhz+Ri3X9r9+6M97dus80
+-BRdkRaQPHxJxNaAKQc1HylYqBITS3mMSGjwsJ6WtlIAoR8PBUY8fnidjVagTkLFO
+-dzZ+rEEOJtRB0zLUmeDxxDg2qMan2ijn2nksAshRhJQ8eNc84cdZ0pPdKz3ay774
+-Ccj3gHcYHmadICs6nIjcVuJ9S1z16sT7LBiOWR6hlVeV/lJ+1TYrhiTPW+j7CZaX
+-w/BbQZ+mKi/6QpY39tQntz73WIlqGO6uhLxpgUtFI+aZrcLXTHSWiSJLs9KAx++Q
+-5KMF86NOPu8poA+f1twa3jN1NM/lQQBwKhmXbQIDAQABAoIBAQCKbC5LeWE5NaUH
+-kpQOI5XqEx+xhZCxv2Zi4fLMoPMqzdmRb7BERpExZs4iIWYdX4zbhlMtmEBWnyvo
+-Cf8g73pRGMKdBRtgO+d0D2lCnJGyOKJSRiwCbjAuTk4joU4mDJdDQwgsQ1SE9kYt
+-zNhlczZLX9vXkohux4zrvRTdFc+8QsoojlKwRTpRUFoJW7V5yfU9BqrujTqhWdDm
+-m8VlcvWgPsX5djyDamgZuGr7aKjAMI4bXGahBIQdkWnpRnGu5e1gM1tCOqt/0WiR
+-iTRkew0P6tyLqaCzlTheOEOGil74d8IANfOBO3ePqObuGBuBtsFzr9OgJ7MreXH0
+-03CAsfUhAoGBAOpLN7hMNpw2wQp3DLXt9sn5MTyffEYVjK9IWeDErZNIDCKFXgwD
+-mwstTBSIXA0ORPs5YGJJ+ZbvRUnWsViMvT9tyKu365hrFTpDl28boXdSVSQ7D3ig
+-NmTF6HG5Yg+0v3cQD/dDcoi3YlJY7Bnw9KNMv6xemwzuq5A4Xv5RTndjAoGBANaN
+-Eh0gmmj+YaHhY+2MjO0TQFn1PMLxbwFvPJ/IfxbMg+ZZAXDV7fT8LlSWY4hnp44W
+-dZadlkdNZt1Dqs+xuiN0yE6HeLVa9rB1tpxhneKm3y+L2SThc+laQl7jnzkZaa//
+-HEQURfCmmLgJTZ0gtUc4Z9bN/rNC1gRdUD+wFfbvAoGBANqyN2KqkVcjrPGNyqmP
+-ZIuHNbR20lPBDb8X8/1g2PzfhaQ7hVwFiZXXRGruFa6CIVW3awaUMov28GBKLOSR
+-Cp3IZkYTubBeVEQ8j4BA9GkiyyK0lm5sbhmGusBc4PH0L7x9m8mcha6kLvza0Bgu
+-2MwNeeT1shlSN4a5d8JANtQtAoGAH09fAVksr33QCau2xYfpWP+iOH6Na3WIWZE+
+-K6M6yLz30rnSeAEAROw4Zqe7xsA5t4aXim9c6vLkvA2P89df7qSwRqWGfBDWR1Im
+-YBPu0pC/qVSjT7qHC9rcLLTTG6YVwlVcbqL2wfPN/a194hxP2CDnJnXRYZ+zU9e6
+-SlEMI4kCgYBa11Nlkt2YwHdpu0MAvTeA76983aQ20Tczx4qX17aOLdDdnVVQzoqr
+-tZWXbWOrRJohpU/kSJYxrcK3fFdPJ2ctwe7jqVTylEo3yfpdgLLd+5ZQRt/+4kt6
+-BTS1gNCQSJt8M2QznbIlNyWXi3jpjjKp7uyHJT/3r++5dfLmf5JE1g==
+------END RSA PRIVATE KEY-----
+
+2. service/keys/public.key
+Информация об открытом ключе (можно зашифровать сообщения)
+------BEGIN PUBLIC KEY-----
+-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxFv8lbJ+njQ1thnz25qZ
+-AsEQB0yRhz+Ri3X9r9+6M97dus80BRdkRaQPHxJxNaAKQc1HylYqBITS3mMSGjws
+-J6WtlIAoR8PBUY8fnidjVagTkLFOdzZ+rEEOJtRB0zLUmeDxxDg2qMan2ijn2nks
+-AshRhJQ8eNc84cdZ0pPdKz3ay774Ccj3gHcYHmadICs6nIjcVuJ9S1z16sT7LBiO
+-WR6hlVeV/lJ+1TYrhiTPW+j7CZaXw/BbQZ+mKi/6QpY39tQntz73WIlqGO6uhLxp
+-gUtFI+aZrcLXTHSWiSJLs9KAx++Q5KMF86NOPu8poA+f1twa3jN1NM/lQQBwKhmX
+-bQIDAQAB
+------END PUBLIC KEY-----
+
+3. Данные по логину, паролю (предполагаю, что и хэш пароля) и роли 
+-INSERT INTO users(login, password, roles)
+-VALUES
+-       ('admin', '$2a$10$ctPFhgJh.YIE21AA0OGl5er3p9f3XsAwkmTXnP2I7BxCpQbr1QAg2', '{"ADMIN", "USER"}'), -- у этого пользователя две роли (т.е. он и админ, и обычный юзер)
+-       ('user', '$2a$10$ctPFhgJh.YIE21AA0OGl5er3p9f3XsAwkmTXnP2I7BxCpQbr1QAg2', '{"USER"}');
