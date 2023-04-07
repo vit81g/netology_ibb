@@ -45,3 +45,30 @@ OK
 (error) NOPERM this user has no permissions to run the 'acl' command or its subcommand
 
 
+
+Задание «Redis ACL LOGS»*
+попытка входа с неверным паролем:
+)  1) "count"
+    2) (integer) 1
+    3) "reason"
+    4) "auth"
+    5) "context"
+    6) "toplevel"
+    7) "object"
+    8) "AUTH"
+    9) "username"
+   10) "serg"  
+
+попытка доступа к неразрешённой команде:
+1)  1) "count"
+    2) (integer) 2
+    3) "reason"
+    4) "command"
+    5) "context"
+    6) "toplevel"
+    7) "object"
+    8) "acl"
+    9) "username"
+   10) "app"
+
+
