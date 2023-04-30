@@ -1,0 +1,29 @@
+{
+  "transactions":[
+    {
+      "id":1,
+      "userId":2,
+      "category":"auto",
+      "amount":1000000,
+      "created":1682877370
+    },
+    {
+      "id":2,
+      "userId":2,
+      "category":"auto",
+      "amount":100000,
+      "created":1682877370
+    },
+    {
+      "id":3,
+      "userId":2,
+      "category":"food",
+      "amount":100000,
+      "created":1682877370}
+    ],
+      
+      "categoryStats":
+        {
+          "auto":1100000,
+          "food":100000}
+        }
