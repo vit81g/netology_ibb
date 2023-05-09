@@ -40,7 +40,7 @@ Accept-Encoding: gzip
 [Full request URI: http://localhost:9003/api/transactions]
 
 
-5. client(35574) -> server3(9004)
+5. client(35574) -> server3(9003)
 
 GET /api/transactions HTTP/1.1
 Host: localhost:9004
@@ -49,7 +49,7 @@ X-Userid: 2
 Accept-Encoding: gzip
 [Full request URI: http://localhost:9004/api/transactions]
 
-6. server3(9004) -> client(35574)    
+6. server3(9003) -> client(35574)    
 
 HTTP/1.1 200 OK\r\n
         
@@ -118,7 +118,7 @@ JavaScript Object Notation: application/json
         }
 
   
-8. server3(9002) -> client(56236) 
+8. server3(9003) -> client(56236) 
 
 HTTP/1.1 200 OK
 Content-Type: application/json\r\n
