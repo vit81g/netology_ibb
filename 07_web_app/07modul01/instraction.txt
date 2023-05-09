@@ -1,0 +1,7 @@
+sudo chmod +x client-x64.bin
+sudo chmod +x server1-x64.bin 
+sudo chmod +x server2-x64.bin 
+sudo chmod +x server3-x64.bin 
+sudo chmod +x server4-x64.bin
+
+разрешаем запуск файлов в системе

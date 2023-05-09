@@ -1,0 +1,152 @@
+
+client (37816) -> server1 (9001)
+
+PUT /users HTTP/1.1\r\n
+Host: localhost:9001
+User-Agent: Go-http-client/1.1
+Content-Type: application/x-www-form-urlencoded
+http.accept_encoding: gzip
+
+{
+  "login": "user",
+  "password": "111111"
+}
+
+
+server1 (9001) -> client (37816)
+
+HTTP/1.1 200 OK\r\n
+http.content_type: application/json
+json: JavaScript Object Notation: application/json
+
+Member: token
+    [Path with value [truncated]: /token:eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImxvZ2luIjoidXNlciIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNjgzNjU2NjM5LCJleHAiOjE2ODM2NjAyMzl9.ofghhxnmncb7eQ6c_OnbJeO31rcHdzeXxt6sscdYn90ogTiNfdsRkESnEUCq]
+    [Member with value [truncated]: token:eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImxvZ2luIjoidXNlciIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNjgzNjU2NjM5LCJleHAiOjE2ODM2NjAyMzl9.ofghhxnmncb7eQ6c_OnbJeO31rcHdzeXxt6sscdYn90ogTiNfdsRkESnEUC]
+    String value [truncated]: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImxvZ2luIjoidXNlciIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNjgzNjU2NjM5LCJleHAiOjE2ODM2NjAyMzl9.ofghhxnmncb7eQ6c_OnbJeO31rcHdzeXxt6sscdYn90ogTiNfdsRkESnEUCq706u042tRc
+    Key: token
+    [Path: /token]
+
+client (33632) -> server2 (9002)
+
+Hypertext Transfer Protocol
+    GET /api/transactions HTTP/1.1\r\n
+    Host: localhost:9002\r\n
+    User-Agent: Go-http-client/1.1\r\n
+     [truncated]Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImxvZ2luIjoidXNlciIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNjgzNjU2NjM5LCJleHAiOjE2ODM2NjAyMzl9.ofghhxnmncb7eQ6c_OnbJeO31rcHdzeXxt6sscdYn90ogTiNfdsRkESnEUCq706u042tR
+    Accept-Encoding: gzip\r\n
+    \r\n
+    [Full request URI: http://localhost:9002/api/transactions]
+    [HTTP request 1/1]
+    [Response in frame: 27]
+
+server2 -> server4 (9003)
+    
+Hypertext Transfer Protocol
+    GET /api/transactions HTTP/1.1\r\n
+    Host: localhost:9003\r\n
+    User-Agent: Go-http-client/1.1\r\n
+    X-Userid: 2\r\n
+    Accept-Encoding: gzip\r\n
+    \r\n
+    [Full request URI: http://localhost:9003/api/transactions]
+    [HTTP request 1/1]
+    [Response in frame: 25]
+
+server4 -> server3 (9004)
+
+Hypertext Transfer Protocol
+    GET /api/transactions HTTP/1.1\r\n
+    Host: localhost:9004\r\n
+    User-Agent: Go-http-client/1.1\r\n
+    X-Userid: 2\r\n
+    Accept-Encoding: gzip\r\n
+    \r\n
+    [Full request URI: http://localhost:9004/api/transactions]
+    [HTTP request 1/1]
+    [Response in frame: 23]
+    
+server3 (9004) -> server4
+
+JavaScript Object Notation: application/json
+[
+{
+"id":1,
+"userId":2,
+"category":"auto",
+"amount":1000000,
+"created":1683656539
+},
+{
+"id":2,
+"userId":2,
+"category":"auto",
+"amount":100000,
+"created":1683656539
+},
+{
+"id":3,
+"userId":2,
+"category":"food",
+"amount":100000,
+"created":1683656539
+}
+]
+
+server4 (9003) -> server2
+[
+{
+"id":1,
+"userId":2,
+"category":"auto",
+"amount":1000000,
+"created":1683656539
+},
+{
+"id":2,
+"userId":2,
+"category":"auto",
+"amount":100000,
+"created":1683656539
+},
+{
+"id":3,
+"userId":2,
+"category":"food",
+"amount":100000,
+"created":1683656539
+}
+],
+"categoryStats":{
+		 "auto":1100000,
+		 "food":100000}
+		 }
+
+server2 (9002) -> client (33632)
+
+[
+{
+"id":1,
+"userId":2,
+"category":"auto",
+"amount":1000000,
+"created":1683656539
+},
+{
+"id":2,
+"userId":2,
+"category":"auto",
+"amount":100000,
+"created":1683656539
+},
+{
+"id":3,
+"userId":2,
+"category":"food",
+"amount":100000,
+"created":1683656539
+}
+],
+"categoryStats":{
+		 "auto":1100000,
+		 "food":100000}
+		 }
