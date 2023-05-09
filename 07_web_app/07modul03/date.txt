@@ -1,0 +1,34 @@
+1. openssl genrsa -aes256 -out ca.key 4096
+ca.key
+password - user
+
+2. openssl req -new -x509 -sha256 -days 4096 -key ca.key -out ca.crt \
+-subj "/C=RU/ST=Moscow/L=Moscow/O=Netology/OU=Security/CN=netology.local"
+ca.crt
+password пункт 1
+
+6. openssl x509 -req -sha256 -days 4096 -in server.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out server.crt -extfile <(printf "subjectAltName=DNS:netology.local")
+server.csr
+password пункт 1
+
+7. openssl genrsa -aes256 -out client.key 4096
+client.key
+password - client
+
+8. openssl req -new -key client.key -out client.csr \
+-subj "/C=RU/ST=Moscow/L=Moscow/O=Netology/OU=Security/CN=student/emailAddress=student@netology.local"
+client.csr
+password пункт 7 
+
+9. openssl x509 -req -sha256 -days 1 -in client.csr -CA ca.crt -CAkey ca.key -set_serial 02 -out client.crt
+client.crt
+password пункт 1  (подписываем основным CA)
+
+11. openssl pkcs12 -export -out client.pfx -inkey client.key -in client.crt -certfile ca.crt
+client.pfx
+password пункт 7
+password - server (свой пароль для файла)
+
+
+
+
