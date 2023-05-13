@@ -1,2 +1,0 @@
-https://github.com/netology-code/ibnet-homeworks/tree/v2/03_tcpudp
-установка сервера nginx

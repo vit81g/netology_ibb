@@ -1,0 +1,16 @@
+Задание 1
+https://github.com/netology-code/ibnet-homeworks/tree/v2/03_tcpudp
+установка сервера nginx
+
+https://github.com/netology-code/ibnet-homeworks/tree/v2/07_internet
+настройка сертификатов сервера nginx
+
+# пути к сертификату и ключу
+        ssl_certificate /etc/nginx/certs/server.crt;
+        ssl_certificate_key /etc/nginx/certs/server.key;
+сюда кидаем наши созданные сертификаты
+
+
+Задание 2
+sudo apt install docker.io
+установка докер

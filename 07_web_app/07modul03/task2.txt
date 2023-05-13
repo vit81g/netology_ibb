@@ -1,0 +1,26 @@
+
+1 В каком хранилище и какие данные хранятся после аутентификации, хранится ли что-то ещё помимо токена аутентификации.
+Storage\Session Storage
+http://localhost:9999/
+Тут хранятся данные login и token
+
+2 В какой части запроса и в каком виде отправляется токен доступа.
+
+2.1
+После ввода проверочного кода
+http://localhost:9999/api/auth/verification
+
+2.2 Request (с учетом данных логина и пароля) 
+{
+    "login": "vasya",
+    "code": "12345"
+}
+
+2.3 
+отправка token на сервер
+
+2.4 
+Response (ответ сервера)
+{
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpbiI6InZhc3lhIn0.JmhHh8NXwfqktXSFbzkPohUb90gnc3yZ9tiXa0uUpRY"
+}
