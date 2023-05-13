@@ -1,0 +1,22 @@
+1.
+sudo apt install docker
+sudo apt install docker-compose
+
+2.
+в папке с файлом docker-compose.yml
+Содеражание docker-compose.yml:
+
+version: '3.7'
+services:
+  shop:
+    image: bkimminich/juice-shop
+    ports:
+      - 3000:3000
+
+3.
+запуск команды для старта контейнера:
+sudo docker-compose up
+
+4. Burp CE
+Инструкция по использованию Burp
+https://www.youtube.com/watch?v=fnuz-3QM8ac&list=PL8j1j35M7wtKXpTBE6V1RlN_pBZ4StKZw&index=15

