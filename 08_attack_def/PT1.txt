@@ -1,0 +1,115 @@
+https://github.com/netology-code/ibdef-homeworks/blob/master/06_pentest/README.md
+Homework
+
+Данил Карандин
+есть в дискорде
+
+Этапы:
+Подготовка
+Тестирование
+Заключение
+
+Докусенты:
+NDA, Permissions, Insurance, Liability, Laws, etc
+RoE, Scope
+1) NDA - договор о не раглашении - обязательно
+Разрешение на проведение тестирования (в свободной форме, руководящим лицом) - обязательно
+Страховки (на сумму которую говорит заказчик), освобождение от ответственности
+Laws - знание законов той юриздикции где проводим пентест
+RoS - правила участия: контактные данные всех доверенных лиц (руководитель, сисадмин и прочее + их роли, время брифингов о ПТ, как передается отчет), дата начала и дата окончания(неточно) ПТ, временные окна проведения ПТ, анонсирован(лучше) или неанонсирован ПТ,  что разрешено. Мы не просматриваем конфиденциальные данные, если до них добрались (это обязательно оговорить)!!!
+Scope - Маштабы и границы (организация озвучивает самые важные данные, активы), что именно мы тестируем зона пентеста (все должно быть задокументированно), прописываем домены, хосты и т.д. - все что можно тестировать и что нельзя тестировать! Указать всех третих лиц кто както участвует (провайдеры, хостеры и пр.), нелья тестировать то что напрямую не принадлежить заказчику. Какие техники и тесты разрешены.
+
+Whitebox - лучше, экономически выгоден компании которую тестируем
+BlackBox - надо много времени потратить на сбор информации (Рекогносцировка)
+
+
+Ссылки по первой лекции (некоторые обсудим завтра на лекции):
+
+Требования к Vulnerability Scan в стандарте PCI DSS https://www.pcisecuritystandards.org/documents/ASV_Program_Guide_v3.0.pdf
+Требования к Penetration Testing в стандарте PCI DSS https://www.pcisecuritystandards.org/pdfs/infosupp_11_3_penetration_testing.pdf
+
+Методологии:
+https://www.isecom.org/OSSTMM.3.pdf
+http://www.pentest-standard.org/index.php/Main_Page
+https://csrc.nist.gov/publications/detail/sp/800-115/final
+http://www.vulnerabilityassessment.co.uk/Penetration%20Test.html
+https://owasp.org/www-project-web-security-testing-guide/latest/3-The_OWASP_Testing_Framework/1-Penetration_Testing_Methodologies
+
+Некоторые из инструментов
+https://osintframework.com/
+https://www.kali.org/tools/theharvester/
+https://www.exploit-db.com/google-hacking-database
+https://www.shodan.io/
+https://censys.io/
+https://www.kali.org/tools/recon-ng/
+
+Домашняя Работа: https://github.com/netology-code/ibdef-homeworks/tree/master/06_pentest
+
+http://www.pentest-standard.org/index.php/Main_Page
+https://csrc.nist.gov/publications/detail/sp/800-115/final
+
+
+
+**************************Вторая лекция***********************************
+Контакты для связи:
+Discord:  DS#7442
+Telegram: @Infosecexpert
+Почта: info@info-sec.expert
+LinkedIn: https://www.linkedin.com/in/danilkarandin/
+Ссылки из 2ой лекции:
+
+Nmap NSE
+https://nmap.org/nsedoc/categories/vuln.html
+
+MS08-067
+https://www.rapid7.com/blog/post/2014/02/03/new-ms08-067/
+
+MS17-010
+https://nmap.org/nsedoc/scripts/smb-vuln-ms17-010.html
+https://www.rapid7.com/db/modules/exploit/windows/smb/ms17_010_eternalblue/
+https://www.exploit-db.com/exploits/42315
+
+Outlook
+https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-23397
+https://www.trendmicro.com/en_us/research/23/c/patch-cve-2023-23397-immediately-what-you-need-to-know-and-do.html
+
+DirtyCow (Race Condition)
+https://access.redhat.com/security/cve/CVE-2016-5195
+https://dirtycow.ninja/
+https://www.exploit-db.com/exploits/40616
+https://github.com/dirtycow/dirtycow.github.io/wiki/PoCs
+
+Log4j
+https://logging.apache.org/log4j/2.x/
+https://www.cisa.gov/uscert/apache-log4j-vulnerability-guidance
+
+Spring4Shell
+https://www.trendmicro.com/en_us/research/22/d/cve-2022-22965-analyzing-the-exploitation-of-spring4shell-vulner.html
+https://www.upguard.com/blog/what-is-spring4shell
+
+F5 CVE-2022-1388
+https://support.f5.com/csp/article/K23605346
+https://www.rapid7.com/blog/post/2022/05/09/active-exploitation-of-f5-big-ip-icontrol-rest-cve-2022-1388/
+
+https://nmap.org/nsedoc/categories/vuln.html
+https://www.rapid7.com/blog/post/2014/02/03/new-ms08-067/
+https://nmap.org/nsedoc/scripts/smb-vuln-ms17-010.html
+https://www.rapid7.com/db/modules/exploit/windows/smb/ms17_010_eternalblue/
+
+https://www.volexity.com/blog/2022/06/02/zero-day-exploitation-of-atlassian-confluence/
+https://www.datadoghq.com/blog/confluence-vulnerability-overview-and-remediation/#:~:text=June%202%2C%202022%3A%20The%20initial,before%20releasing%20comprehensive%20fixed%20versions.
+
+Searchsploit
+https://www.exploit-db.com/searchsploit
+
+Полезные Нагрузки в контексте Metasploit
+https://www.offensive-security.com/metasploit-unleashed/payloads/
+
+Meterpreter
+https://www.offensive-security.com/metasploit-unleashed/about-meterpreter/
+
+MITRE ATT&CK framework
+https://attack.mitre.org/
+
+https://www.volexity.com/blog/2022/06/02/zero-day-exploitation-of-atlassian-confluence/
+https://www.datadoghq.com/blog/confluence-vulnerability-overview-and-remediation/
