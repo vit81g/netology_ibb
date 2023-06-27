@@ -70,5 +70,10 @@ https://vk.com/codefest - участвовал
     как можно эксплуатировать эти уязвимости приложений.
     
 https://google-gruyere.appspot.com/part1
+486136005198488529367880544129101272754
+
+
+1. XSS. Cross Site Scripting (Reflected)  - найдена при автоматическом сканировании сайта
+
 
 
