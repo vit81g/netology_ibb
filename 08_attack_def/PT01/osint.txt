@@ -74,6 +74,6 @@ https://google-gruyere.appspot.com/part1
 
 
 1. XSS. Cross Site Scripting (Reflected)  - найдена при автоматическом сканировании сайта
-
+2. Path Tracersal - wget https://google-gruyere.appspot.com/486136005198488529367880544129101272754/secret.txt
 
 
