@@ -1,0 +1,8 @@
+Задание 1
+1.Cross Site Scripting (Persistent) и Cross Site Scripting (Reflected)
+2.Content Security Policy (CSP) Header Not Set
+3.Sub Resource Integrity Attribute Missin
+4.Vulnerable JS Library 
+
+Задание 2
+https://github.com/vit81g/netology_ibb/blob/main/08_attack_def/PT02/Audit_vulners.docx
