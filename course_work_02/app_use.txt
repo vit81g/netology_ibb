@@ -1,0 +1,3 @@
+https://semgrep.dev/p/ci  для проверки CI
+https://snyk.io           для проверки кода
+gitlub                    runners для кода, CI/CD (не получилось)
