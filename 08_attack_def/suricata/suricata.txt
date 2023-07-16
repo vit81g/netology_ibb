@@ -1,0 +1,22 @@
+Все настройки правил находятся в /var/lib/suricata/rules/suricata.rules
+
+Задание 1
+Напишите правило для детектирования Xmas-сканирования.
+Дайте ответ в свободной форме.
+alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"X_SCAN"; flow:stateless; flags: FPU; classtype:attempted-recon;)
+В лекции был пример с flags: F, у Xmas сканирования флаги FIN/URG/PSH
+Проверял в работе
+
+Задание 2
+Напишите правило для детектирования стороннего трафика, передающегося службой DNS.
+Дайте ответ в свободной форме.
+
+alert dns $EXTERNAL_NET any -> $HOME_NET any (msg:"DNS LOOKUP"; dns.query; content:"ubuntu1"; nocase; sid:1000001;)
+
+Задание 3*
+Напишите правило для детектирования файлов или документов в сетевом трафике.
+Дайте ответ в свободной форме.
+alert http any any -> any any (msg:"FILEEXT JPG file claimed"; fileext:any; sid:1; rev:1;)
+fileext:any - параметр any реагирует на любой файл
+Не проверял
+
