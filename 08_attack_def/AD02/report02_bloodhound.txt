@@ -1,0 +1,29 @@
+Задание 3*
+
+Установите утилиту BloodHound и проведите аудит DC.
+
+Использовал ВМ с Kali Linux
+Инструкция по установке и настройке
+
+sudo apt update && sudo apt install -y bloodhound
+sudo neo4j console
+
+отдельно собирал данные о домене с помощью коллектора
+https://github.com/BloodHoundAD/BloodHound/tree/master/Collectors
+
+На виртуальной машине windows (в домене) 
+runas /netonly /user:домен\логин cmd.exe
+sharpdound.exe -d имя_домена
+
+Подгрузил архив в bloodhound
+
+BloodHound дает удобное представление связей в виде графов
+Можно отследить кто входит в группу администраторов, либо в какуюто еще группу
+
+Интересный анализ:
+Find Shortest Paths to Domain Admins (Поиск кратчайших путей к администраторам домена)
+Shortest Paths to Unconstrained Delegation Systems (Кратчайшие пути к системам неограниченного делегирования)
+
+
+
+
