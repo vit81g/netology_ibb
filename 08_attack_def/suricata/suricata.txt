@@ -18,5 +18,8 @@ alert dns $EXTERNAL_NET any -> $HOME_NET any (msg:"DNS LOOKUP"; dns.query; conte
 Дайте ответ в свободной форме.
 alert http any any -> any any (msg:"FILEEXT JPG file claimed"; fileext:any; sid:1; rev:1;)
 fileext:any - параметр any реагирует на любой файл
+
+alert http any any -> any any (msg:"FILE store all"; filestore; noalert; sid:15; rev:1;)
+параметр any реагирует на любой файл и сохраняет его, но надо включить Enable the output "file-store" /etc/suricata/suricata.yaml
 Не проверял
 
