@@ -1,0 +1,11 @@
+https://russianblogs.com/article/49012727733/
+https://dzen.ru/a/X0zuVCXAskjTXpeu
+https://docs.metasploit.com/docs/pentesting/metasploit-guide-postgresql.html
+
+https://www.infosecmatter.com/metasploit-module-library/?mm=exploit/linux/postgres/postgres_payload
+
+https://pentesthacker.wordpress.com/2020/12/30/exploiting-postgresql-with-metasploit/
+
+https://codesecure.ru/den-1-razbiraemsya-kak-izuchat-kali-linux-metasploit/
+
+https://itsecforu.ru/2019/03/04/%D1%88%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0-%D0%BF%D0%BE-metasploit/

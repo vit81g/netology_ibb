@@ -1,0 +1,48 @@
+Запуск suricata мониторинг устройства enp0s8
+sudo suricata -c /etc/suricata/suricata.yaml -i enp0s8
+
+Рестарт suricata
+sudo systemctl restart suricata
+
+Путь где можно редактировать, добовлять правила для suricata, mousepad - текстовый редактор
+sudo mousepad /var/lib/suricata/rules/suricata.rules
+
+Файл конфигурации suricata (включить, отключить модули)
+sudo mousepad /etc/suricata/suricata.yaml
+
+Вывод последних 10 сообщений журнала suricata
+Путь к журналу /var/log/suricata/fast.log
+sudo tail -f /var/log/suricata/fast.log
+
+Обновление наборов правил Suricata в Linux
+sudo suricata-update -o /etc/suricata/rules
+
+Добавление наборов правил Suricata в Linux
+sudo suricata-update list-sources
+
+Чтобы добавить набор правил, например набор правил tgreen/hunting, выполните следующую команду.
+sudo suricata-update enable-source tgreen/hunting
+
+После добавления набора правил снова запустите команду suricata-update с флагом -o /etc/suricata/rules.
+sudo suricata-update -o /etc/suricata/rules
+
+Тестирование правил Suricata в Linux
+sudo suricata -T -c /etc/suricata/suricata.yaml -v
+
+Убедитесь, что сообщения об ошибках отсутствуют. Если вы используете RHEL, CentOS Stream, Fedora и Rocky Linux, запустите и включите Suricata.
+sudo systemctl start suricata 
+sudo systemctl enable suricata 
+
+
+curl http://testmynids.org/uid/index.html
+Вы должны получить следующий вывод.
+uid=0(root) gid=0(root) groups=0(root)
+
+Теперь давайте просмотрим журналы Suricata в поисках соответствующего предупреждения. Suricata поставляется с двумя файлами журналов, которые включены по умолчанию.
+/var/log/suricata/fast.log
+/var/log/suricata/eve.log
+
+grep <идентификатор правила> /var/log/suricata/fast.log  (идентификатор правила 2100498 из документации Quickstart)
+
+
+

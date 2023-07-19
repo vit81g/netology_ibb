@@ -21,5 +21,5 @@ fileext:any - параметр any реагирует на любой файл
 
 alert http any any -> any any (msg:"FILE store all"; filestore; noalert; sid:15; rev:1;)
 параметр any реагирует на любой файл и сохраняет его, но надо включить Enable the output "file-store" /etc/suricata/suricata.yaml
-Не проверял
+Запускается без ошибок, но не проверял
 

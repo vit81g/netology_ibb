@@ -1,0 +1,13 @@
+Если не обновляется, работает не корректно
+
+in my case I executed
+
+sudo apt-get remove nginx* --purge after that I installed nginx-common
+
+sudo apt-get install nginx-common
+
+then I installed nginx
+
+sudo apt-get install nginx
+
+after this I typed ip in browser and it worked
