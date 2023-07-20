@@ -1,3 +1,10 @@
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:oisf/suricata-stable
+sudo apt update
+sudo apt install suricata
+sudo suricata-update
+
+
 Запуск suricata мониторинг устройства enp0s8
 sudo suricata -c /etc/suricata/suricata.yaml -i enp0s8
 
