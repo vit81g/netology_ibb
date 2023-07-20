@@ -11,7 +11,7 @@ alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"X_SCAN"; flow:stateless; flag
 Напишите правило для детектирования стороннего трафика, передающегося службой DNS.
 Дайте ответ в свободной форме.
 
-alert dns $EXTERNAL_NET any -> $HOME_NET any (msg:"DNS LOOKUP"; dns.query; content:"ubuntu1"; nocase; sid:1000001;)
+alert udp any any -> any 53 (msg:"External DNS traffic detected"; dns.query; content:"ubuntu1"; nocase; sid:1000001;)
 
 Задание 3*
 Напишите правило для детектирования файлов или документов в сетевом трафике.
@@ -21,5 +21,5 @@ fileext:any - параметр any реагирует на любой файл
 
 alert http any any -> any any (msg:"FILE store all"; filestore; noalert; sid:15; rev:1;)
 параметр any реагирует на любой файл и сохраняет его, но надо включить Enable the output "file-store" /etc/suricata/suricata.yaml
-Запускается без ошибок, но не проверял
+Запускается без ошибок, но не проверял на файлы
 
