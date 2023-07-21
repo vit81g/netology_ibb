@@ -1,0 +1,47 @@
+nmap -sV -A -O -T4 -p0-65535 -oN base-TCP-249.txt 192.168.0.11
+
+# Nmap 7.94 scan initiated Fri Jul 14 08:55:34 2023 as: nmap -sV -A -O -T4 -p0-65535 -oN base-TCP-249.txt 192.168.0.11
+Nmap scan report for 192.168.0.11
+Host is up (0.00047s latency).
+Not shown: 65534 closed tcp ports (reset)
+PORT     STATE SERVICE    VERSION
+5432/tcp open  postgresql PostgreSQL DB 9.6.4 - 9.6.6 or 9.6.13 - 9.6.19
+8080/tcp open  http       aiohttp 3.5.3 (Python 3.7)
+| http-open-proxy: Potentially OPEN proxy.
+|_Methods supported:CONNECTION
+|_http-server-header: Python/3.7 aiohttp/3.5.3
+|_http-title: SQLI
+MAC Address: 08:00:27:26:1E:C6 (Oracle VirtualBox virtual NIC)
+Device type: general purpose
+Running: Linux 4.X|5.X
+OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5
+OS details: Linux 4.15 - 5.8
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.47 ms 192.168.0.11
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Jul 14 08:55:51 2023 -- 1 IP address (1 host up) scanned in 16.96 seconds
+
+
+Scan redis
+в””в”Ђ$ sudo nmap -sV -A -p T:6379 192.168.0.11          
+Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-14 08:58 EDT
+Nmap scan report for 192.168.0.11
+Host is up (0.00053s latency).
+
+PORT     STATE  SERVICE VERSION
+6379/tcp closed redis
+MAC Address: 08:00:27:26:1E:C6 (Oracle VirtualBox virtual NIC)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.53 ms 192.168.0.11
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 2.04 seconds
+                                                              
