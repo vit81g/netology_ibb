@@ -1,4 +1,4 @@
-nmap -sV -A -O -T4 -p0-65535 -oN TCP-port.txt 192.168.0.11
+nmap -sV -A -O -T4 -p0-65535 -oN base-TCP-249.txt 192.168.0.11
 
 # Nmap 7.94 scan initiated Fri Jul 14 08:55:34 2023 as: nmap -sV -A -O -T4 -p0-65535 -oN base-TCP-249.txt 192.168.0.11
 Nmap scan report for 192.168.0.11
