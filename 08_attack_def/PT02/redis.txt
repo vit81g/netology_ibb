@@ -1,0 +1,232 @@
+localhost:6379> INFO keyspace
+# Keyspace
+db0:keys=11,expires=0,avg_ttl=0
+localhost:6379> SELECT 0
+OK
+localhost:6379> KEYS *
+ 1) "AIOHTTP_SESSION_72a5d31ff11c4c9487a7db1e15b8b555"
+ 2) "AIOHTTP_SESSION_bd6bcd4a4e824b03b93cad70157ac482"
+ 3) "AIOHTTP_SESSION_8576aa1c803d4240a2ca5f565244fa9b"
+ 4) "AIOHTTP_SESSION_cf9d299ca28c4064bde35b6fef93b2ef"
+ 5) "name"
+ 6) "AIOHTTP_SESSION_088e79949d5c4294912a8e14343fa638"
+ 7) "AIOHTTP_SESSION_03c771db5b65454a94fe26e2c7679807"
+ 8) "AIOHTTP_SESSION_c39ce844229041b7ac50248653c64ef6"
+ 9) "AIOHTTP_SESSION_032b212fe3e24ab1b7d7079dea1f6a36"
+10) "AIOHTTP_SESSION_bc5dce664b404f25a4846fdcb0882799"
+11) "AIOHTTP_SESSION_125df8d505274334a48e98f9a6a01f29"
+localhost:6379> info
+# Server
+redis_version:7.0.12
+redis_git_sha1:00000000
+redis_git_dirty:0
+redis_build_id:8547ca08f5196808
+redis_mode:standalone
+os:Linux 6.3.0-kali1-amd64 x86_64
+arch_bits:64
+monotonic_clock:POSIX clock_gettime
+multiplexing_api:epoll
+atomicvar_api:c11-builtin
+gcc_version:12.2.1
+process_id:1
+process_supervised:no
+run_id:cbb366e3190521e435723994bc9ff7fc9643b235
+tcp_port:6379
+server_time_usec:1691484217927201
+uptime_in_seconds:2785
+uptime_in_days:0
+hz:10
+configured_hz:10
+lru_clock:13762617
+executable:/data/redis-server
+config_file:
+io_threads_active:0
+
+# Clients
+connected_clients:4
+cluster_connections:0
+maxclients:10000
+client_recent_max_input_buffer:8
+client_recent_max_output_buffer:0
+blocked_clients:0
+tracking_clients:0
+clients_in_timeout_table:0
+
+# Memory
+used_memory:1168808
+used_memory_human:1.11M
+used_memory_rss:12349440
+used_memory_rss_human:11.78M
+used_memory_peak:1321784
+used_memory_peak_human:1.26M
+used_memory_peak_perc:88.43%
+used_memory_overhead:870456
+used_memory_startup:862176
+used_memory_dataset:298352
+used_memory_dataset_perc:97.30%
+allocator_allocated:1616104
+allocator_active:1937408
+allocator_resident:4796416
+total_system_memory:8202563584
+total_system_memory_human:7.64G
+used_memory_lua:36864
+used_memory_vm_eval:36864
+used_memory_lua_human:36.00K
+used_memory_scripts_eval:328
+number_of_cached_scripts:2
+number_of_functions:0
+number_of_libraries:0
+used_memory_vm_functions:32768
+used_memory_vm_total:69632
+used_memory_vm_total_human:68.00K
+used_memory_functions:184
+used_memory_scripts:512
+used_memory_scripts_human:512B
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+allocator_frag_ratio:1.20
+allocator_frag_bytes:321304
+allocator_rss_ratio:2.48
+allocator_rss_bytes:2859008
+rss_overhead_ratio:2.57
+rss_overhead_bytes:7553024
+mem_fragmentation_ratio:10.77
+mem_fragmentation_bytes:11202928
+mem_not_counted_for_evict:0
+mem_replication_backlog:0
+mem_total_replication_buffers:0
+mem_clients_slaves:0
+mem_clients_normal:7200
+mem_cluster_links:0
+mem_aof_buffer:0
+mem_allocator:jemalloc-5.2.1
+active_defrag_running:0
+lazyfree_pending_objects:0
+lazyfreed_objects:0
+
+# Persistence
+loading:0
+async_loading:0
+current_cow_peak:0
+current_cow_size:0
+current_cow_size_age:0
+current_fork_perc:0.00
+current_save_keys_processed:0
+current_save_keys_total:0
+rdb_changes_since_last_save:11
+rdb_bgsave_in_progress:0
+rdb_last_save_time:1691481432
+rdb_last_bgsave_status:ok
+rdb_last_bgsave_time_sec:-1
+rdb_current_bgsave_time_sec:-1
+rdb_saves:0
+rdb_last_cow_size:0
+rdb_last_load_keys_expired:0
+rdb_last_load_keys_loaded:0
+aof_enabled:0
+aof_rewrite_in_progress:0
+aof_rewrite_scheduled:0
+aof_last_rewrite_time_sec:-1
+aof_current_rewrite_time_sec:-1
+aof_last_bgrewrite_status:ok
+aof_rewrites:0
+aof_rewrites_consecutive_failures:0
+aof_last_write_status:ok
+aof_last_cow_size:0
+module_fork_in_progress:0
+module_fork_last_cow_size:0
+
+# Stats
+total_connections_received:7
+total_commands_processed:47
+instantaneous_ops_per_sec:0
+total_net_input_bytes:3583
+total_net_output_bytes:521826
+total_net_repl_input_bytes:0
+total_net_repl_output_bytes:0
+instantaneous_input_kbps:0.00
+instantaneous_output_kbps:0.00
+instantaneous_input_repl_kbps:0.00
+instantaneous_output_repl_kbps:0.00
+rejected_connections:0
+sync_full:0
+sync_partial_ok:0
+sync_partial_err:0
+expired_keys:0
+expired_stale_perc:0.00
+expired_time_cap_reached_count:0
+expire_cycle_cpu_milliseconds:80
+evicted_keys:0
+evicted_clients:0
+total_eviction_exceeded_time:0
+current_eviction_exceeded_time:0
+keyspace_hits:1
+keyspace_misses:9
+pubsub_channels:0
+pubsub_patterns:0
+pubsubshard_channels:0
+latest_fork_usec:0
+total_forks:0
+migrate_cached_sockets:0
+slave_expires_tracked_keys:0
+active_defrag_hits:0
+active_defrag_misses:0
+active_defrag_key_hits:0
+active_defrag_key_misses:0
+total_active_defrag_time:0
+current_active_defrag_time:0
+tracking_total_keys:0
+tracking_total_items:0
+tracking_total_prefixes:0
+unexpected_error_replies:0
+total_error_replies:15
+dump_payload_sanitizations:0
+total_reads_processed:57
+total_writes_processed:59
+io_threaded_reads_processed:0
+io_threaded_writes_processed:0
+reply_buffer_shrinks:7
+reply_buffer_expands:0
+
+# Replication
+role:master
+connected_slaves:0
+master_failover_state:no-failover
+master_replid:0c2912d6997e931b95469ffe35ebaae9736049c8
+master_replid2:0000000000000000000000000000000000000000
+master_repl_offset:0
+second_repl_offset:-1
+repl_backlog_active:0
+repl_backlog_size:1048576
+repl_backlog_first_byte_offset:0
+repl_backlog_histlen:0
+
+# CPU
+used_cpu_sys:5.855367
+used_cpu_user:4.090759
+used_cpu_sys_children:0.000000
+used_cpu_user_children:0.002618
+used_cpu_sys_main_thread:5.850977
+used_cpu_user_main_thread:4.092410
+
+# Modules
+
+# Errorstats
+errorstat_ERR:count=15
+
+# Cluster
+cluster_enabled:0
+
+# Keyspace
+db0:keys=11,expires=0,avg_ttl=0
+localhost:6379>
+
+
+localhost:6379> CLIENT LIST
+id=3 addr=172.18.0.4:59096 laddr=172.18.0.3:6379 fd=8 name= age=3277 idle=3117 flags=N db=0 sub=0 psub=0 ssub=0 multi=-1 qbuf=0 qbuf-free=0 argv-mem=0 multi-mem=0 rbs=1024 rbp=0 obl=0 oll=0 omem=0 tot-mem=1800 events=r cmd=set user=default redir=-1 resp=2
+id=5 addr=172.18.0.4:45926 laddr=172.18.0.3:6379 fd=9 name= age=3117 idle=3117 flags=N db=0 sub=0 psub=0 ssub=0 multi=-1 qbuf=0 qbuf-free=0 argv-mem=0 multi-mem=0 rbs=1024 rbp=0 obl=0 oll=0 omem=0 tot-mem=1800 events=r cmd=set user=default redir=-1 resp=2
+id=7 addr=172.18.0.1:36250 laddr=172.18.0.3:6379 fd=11 name= age=2002 idle=1994 flags=N db=0 sub=0 psub=0 ssub=0 multi=-1 qbuf=0 qbuf-free=0 argv-mem=0 multi-mem=0 rbs=1024 rbp=0 obl=0 oll=0 omem=0 tot-mem=1800 events=r cmd=NULL user=default redir=-1 resp=2
+id=9 addr=172.18.0.1:46440 laddr=172.18.0.3:6379 fd=10 name= age=1689 idle=0 flags=N db=0 sub=0 psub=0 ssub=0 multi=-1 qbuf=26 qbuf-free=20448 argv-mem=10 multi-mem=0 rbs=1024 rbp=0 obl=0 oll=0 omem=0 tot-mem=22298 events=r cmd=client|list user=default redir=-1 resp=2
+localhost:6379>
+
