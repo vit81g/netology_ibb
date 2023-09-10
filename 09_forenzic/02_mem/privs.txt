@@ -1,0 +1,70 @@
+Pid      Process          Value  Privilege                            Attributes               Description
+-------- ---------------- ------ ------------------------------------ ------------------------ -----------
+    3008 cmd.exe               2 SeCreateTokenPrivilege                                        Create a token object
+    3008 cmd.exe               3 SeAssignPrimaryTokenPrivilege                                 Replace a process-level token
+    3008 cmd.exe               4 SeLockMemoryPrivilege                                         Lock pages in memory
+    3008 cmd.exe               5 SeIncreaseQuotaPrivilege             Present                  Increase quotas
+    3008 cmd.exe               6 SeMachineAccountPrivilege                                     Add workstations to the domain
+    3008 cmd.exe               7 SeTcbPrivilege                                                Act as part of the operating system
+    3008 cmd.exe               8 SeSecurityPrivilege                  Present                  Manage auditing and security log
+    3008 cmd.exe               9 SeTakeOwnershipPrivilege             Present                  Take ownership of files/objects
+    3008 cmd.exe              10 SeLoadDriverPrivilege                Present                  Load and unload device drivers
+    3008 cmd.exe              11 SeSystemProfilePrivilege             Present                  Profile system performance
+    3008 cmd.exe              12 SeSystemtimePrivilege                Present                  Change the system time
+    3008 cmd.exe              13 SeProfileSingleProcessPrivilege      Present                  Profile a single process
+    3008 cmd.exe              14 SeIncreaseBasePriorityPrivilege      Present                  Increase scheduling priority
+    3008 cmd.exe              15 SeCreatePagefilePrivilege            Present                  Create a pagefile
+    3008 cmd.exe              16 SeCreatePermanentPrivilege                                    Create permanent shared objects
+    3008 cmd.exe              17 SeBackupPrivilege                    Present                  Backup files and directories
+    3008 cmd.exe              18 SeRestorePrivilege                   Present                  Restore files and directories
+    3008 cmd.exe              19 SeShutdownPrivilege                  Present                  Shut down the system
+    3008 cmd.exe              20 SeDebugPrivilege                     Present                  Debug programs
+    3008 cmd.exe              21 SeAuditPrivilege                                              Generate security audits
+    3008 cmd.exe              22 SeSystemEnvironmentPrivilege         Present                  Edit firmware environment values
+    3008 cmd.exe              23 SeChangeNotifyPrivilege              Present,Enabled,Default  Receive notifications of changes to files or directories
+    3008 cmd.exe              24 SeRemoteShutdownPrivilege            Present                  Force shutdown from a remote system
+    3008 cmd.exe              25 SeUndockPrivilege                    Present                  Remove computer from docking station
+    3008 cmd.exe              26 SeSyncAgentPrivilege                                          Synch directory service data
+    3008 cmd.exe              27 SeEnableDelegationPrivilege                                   Enable user accounts to be trusted for delegation
+    3008 cmd.exe              28 SeManageVolumePrivilege              Present                  Manage the files on a volume
+    3008 cmd.exe              29 SeImpersonatePrivilege               Present,Enabled,Default  Impersonate a client after authentication
+    3008 cmd.exe              30 SeCreateGlobalPrivilege              Present,Enabled,Default  Create global objects
+    3008 cmd.exe              31 SeTrustedCredManAccessPrivilege                               Access Credential Manager as a trusted caller
+    3008 cmd.exe              32 SeRelabelPrivilege                                            Modify the mandatory integrity level of an object
+    3008 cmd.exe              33 SeIncreaseWorkingSetPrivilege        Present                  Allocate more memory for user applications
+    3008 cmd.exe              34 SeTimeZonePrivilege                  Present                  Adjust the time zone of the computer's internal clock
+    3008 cmd.exe              35 SeCreateSymbolicLinkPrivilege        Present                  Required to create a symbolic link
+    3672 powershell.exe        2 SeCreateTokenPrivilege                                        Create a token object
+    3672 powershell.exe        3 SeAssignPrimaryTokenPrivilege                                 Replace a process-level token
+    3672 powershell.exe        4 SeLockMemoryPrivilege                                         Lock pages in memory
+    3672 powershell.exe        5 SeIncreaseQuotaPrivilege             Present                  Increase quotas
+    3672 powershell.exe        6 SeMachineAccountPrivilege                                     Add workstations to the domain
+    3672 powershell.exe        7 SeTcbPrivilege                                                Act as part of the operating system
+    3672 powershell.exe        8 SeSecurityPrivilege                  Present                  Manage auditing and security log
+    3672 powershell.exe        9 SeTakeOwnershipPrivilege             Present                  Take ownership of files/objects
+    3672 powershell.exe       10 SeLoadDriverPrivilege                Present                  Load and unload device drivers
+    3672 powershell.exe       11 SeSystemProfilePrivilege             Present                  Profile system performance
+    3672 powershell.exe       12 SeSystemtimePrivilege                Present                  Change the system time
+    3672 powershell.exe       13 SeProfileSingleProcessPrivilege      Present                  Profile a single process
+    3672 powershell.exe       14 SeIncreaseBasePriorityPrivilege      Present                  Increase scheduling priority
+    3672 powershell.exe       15 SeCreatePagefilePrivilege            Present                  Create a pagefile
+    3672 powershell.exe       16 SeCreatePermanentPrivilege                                    Create permanent shared objects
+    3672 powershell.exe       17 SeBackupPrivilege                    Present                  Backup files and directories
+    3672 powershell.exe       18 SeRestorePrivilege                   Present                  Restore files and directories
+    3672 powershell.exe       19 SeShutdownPrivilege                  Present                  Shut down the system
+    3672 powershell.exe       20 SeDebugPrivilege                     Present,Enabled          Debug programs
+    3672 powershell.exe       21 SeAuditPrivilege                                              Generate security audits
+    3672 powershell.exe       22 SeSystemEnvironmentPrivilege         Present                  Edit firmware environment values
+    3672 powershell.exe       23 SeChangeNotifyPrivilege              Present,Enabled,Default  Receive notifications of changes to files or directories
+    3672 powershell.exe       24 SeRemoteShutdownPrivilege            Present                  Force shutdown from a remote system
+    3672 powershell.exe       25 SeUndockPrivilege                    Present                  Remove computer from docking station
+    3672 powershell.exe       26 SeSyncAgentPrivilege                                          Synch directory service data
+    3672 powershell.exe       27 SeEnableDelegationPrivilege                                   Enable user accounts to be trusted for delegation
+    3672 powershell.exe       28 SeManageVolumePrivilege              Present                  Manage the files on a volume
+    3672 powershell.exe       29 SeImpersonatePrivilege               Present,Enabled,Default  Impersonate a client after authentication
+    3672 powershell.exe       30 SeCreateGlobalPrivilege              Present,Enabled,Default  Create global objects
+    3672 powershell.exe       31 SeTrustedCredManAccessPrivilege                               Access Credential Manager as a trusted caller
+    3672 powershell.exe       32 SeRelabelPrivilege                                            Modify the mandatory integrity level of an object
+    3672 powershell.exe       33 SeIncreaseWorkingSetPrivilege        Present                  Allocate more memory for user applications
+    3672 powershell.exe       34 SeTimeZonePrivilege                  Present                  Adjust the time zone of the computer's internal clock
+    3672 powershell.exe       35 SeCreateSymbolicLinkPrivilege        Present                  Required to create a symbolic link

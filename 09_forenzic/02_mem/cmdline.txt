@@ -1,0 +1,134 @@
+System pid:      4
+************************************************************************
+smss.exe pid:    252
+Command line : \SystemRoot\System32\smss.exe
+************************************************************************
+csrss.exe pid:    332
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,12288,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+wininit.exe pid:    368
+Command line : wininit.exe
+************************************************************************
+csrss.exe pid:    376
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,12288,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+winlogon.exe pid:    404
+Command line : winlogon.exe
+************************************************************************
+services.exe pid:    464
+Command line : C:\Windows\system32\services.exe
+************************************************************************
+lsass.exe pid:    472
+Command line : C:\Windows\system32\lsass.exe
+************************************************************************
+lsm.exe pid:    480
+Command line : C:\Windows\system32\lsm.exe
+************************************************************************
+svchost.exe pid:    580
+Command line : C:\Windows\system32\svchost.exe -k DcomLaunch
+************************************************************************
+VBoxService.ex pid:    640
+Command line : C:\Windows\System32\VBoxService.exe
+************************************************************************
+svchost.exe pid:    692
+Command line : C:\Windows\system32\svchost.exe -k RPCSS
+************************************************************************
+svchost.exe pid:    776
+Command line : C:\Windows\System32\svchost.exe -k LocalServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:    840
+Command line : C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted
+************************************************************************
+svchost.exe pid:    876
+Command line : C:\Windows\system32\svchost.exe -k LocalService
+************************************************************************
+svchost.exe pid:    912
+Command line : C:\Windows\system32\svchost.exe -k netsvcs
+************************************************************************
+svchost.exe pid:   1020
+Command line : C:\Windows\system32\svchost.exe -k GPSvcGroup
+************************************************************************
+svchost.exe pid:   1176
+Command line : C:\Windows\system32\svchost.exe -k NetworkService
+************************************************************************
+spoolsv.exe pid:   1280
+Command line : C:\Windows\System32\spoolsv.exe
+************************************************************************
+svchost.exe pid:   1316
+Command line : C:\Windows\system32\svchost.exe -k LocalServiceNoNetwork
+************************************************************************
+svchost.exe pid:   1416
+Command line : C:\Windows\System32\svchost.exe -k utcsvc
+************************************************************************
+svchost.exe pid:   1444
+Command line : C:\Windows\system32\svchost.exe -k LocalServiceAndNoImpersonation
+************************************************************************
+cygrunsrv.exe pid:   1600
+Command line : "C:\Program Files\OpenSSH\bin\cygrunsrv.exe"
+************************************************************************
+wlms.exe pid:   1652
+Command line : C:\Windows\system32\wlms\wlms.exe
+************************************************************************
+cygrunsrv.exe pid:   1700
+************************************************************************
+conhost.exe pid:   1716
+Command line : \??\C:\Windows\system32\conhost.exe "538639267498848267-1306416709-1141630329-115703250-983314866-1518251301-442674640
+************************************************************************
+sshd.exe pid:   1740
+Command line : "C:\Program Files\OpenSSH\usr\sbin\sshd.exe"
+************************************************************************
+sppsvc.exe pid:   1932
+Command line : C:\Windows\system32\sppsvc.exe
+************************************************************************
+svchost.exe pid:   2044
+Command line : C:\Windows\system32\svchost.exe -k NetworkServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:   2604
+Command line : C:\Windows\System32\svchost.exe -k secsvcs
+************************************************************************
+SearchIndexer. pid:   2624
+Command line : C:\Windows\system32\SearchIndexer.exe /Embedding
+************************************************************************
+taskhost.exe pid:    324
+Command line : "taskhost.exe"
+************************************************************************
+dwm.exe pid:   3300
+Command line : "C:\Windows\system32\Dwm.exe"
+************************************************************************
+explorer.exe pid:   3484
+Command line : C:\Windows\Explorer.EXE
+************************************************************************
+cmd.exe pid:   3008
+Command line : C:\Windows\system32\cmd.exe /c C:\Users\Wilfred\AppData\Roaming\Identities\Updater.bat
+************************************************************************
+conhost.exe pid:   1540
+Command line : \??\C:\Windows\system32\conhost.exe "1238788108538425884-910628392408509066-9957047621558862419-5072041261499987778
+************************************************************************
+powershell.exe pid:   3672
+Command line :
+************************************************************************
+VBoxTray.exe pid:   2700
+Command line : "C:\Windows\System32\VBoxTray.exe"
+************************************************************************
+iexplore.exe pid:    992
+Command line : "C:\Program Files\Internet Explorer\iexplore.exe" -restart /WERRESTART
+************************************************************************
+iexplore.exe pid:   1776
+Command line : "C:\Program Files\Internet Explorer\iexplore.exe" SCODEF:992 CREDAT:209921 /prefetch:2
+************************************************************************
+audiodg.exe pid:   1988
+Command line : C:\Windows\system32\AUDIODG.EXE 0x77c
+************************************************************************
+WmiPrvSE.exe pid:   2480
+Command line : C:\Windows\system32\wbem\wmiprvse.exe
+************************************************************************
+WmiPrvSE.exe pid:   3292
+Command line : C:\Windows\system32\wbem\wmiprvse.exe
+************************************************************************
+wuauclt.exe pid:   2412
+Command line : "C:\Windows\system32\wuauclt.exe"
+************************************************************************
+FTK Imager.exe pid:   1812
+Command line : "\\Vboxsvr\d_drive\Imager_Lite_3.1.1\FTK Imager.exe"
+************************************************************************
+MpCmdRun.exe pid:   1984

@@ -1,0 +1,74 @@
+Name                                                  Pid   PPid   Thds   Hnds Time
+-------------------------------------------------- ------ ------ ------ ------ ----
+ 0x8596ad20:spoolsv.exe                              1280    464     13    287 2019-03-10 11:32:19 UTC+0000
+ 0x86088030:VBoxService.ex                            640    464     12    118 2019-03-10 11:32:16 UTC+0000
+ 0x860b7140:svchost.exe                               776    464     18    510 2019-03-10 11:32:16 UTC+0000
+. 0x851d6d20:audiodg.exe                             1988    776      5    161 2019-03-10 12:30:40 UTC+0000
+ 0x86430030:sppsvc.exe                               1932    464      4    149 2019-03-10 11:32:21 UTC+0000
+ 0x86108608:svchost.exe                               912    464     33   1092 2019-03-10 11:32:16 UTC+0000
+. 0x863f7a70:wuauclt.exe                             2412    912      3     87 2019-03-10 12:57:25 UTC+0000
+ 0x85946d20:svchost.exe                              1176    464     22    604 2019-03-10 11:32:19 UTC+0000
+ 0x851f4a38:taskhost.exe                              324    464      9    273 2019-03-10 12:30:35 UTC+0000
+. 0x85ebb030:csrss.exe                                332    324      9    503 2019-03-10 11:32:11 UTC+0000
+.. 0x863e9030:conhost.exe                            1716    332      2     33 2019-03-10 11:32:20 UTC+0000
+. 0x85dbf030:wininit.exe                              368    324      3     78 2019-03-10 11:32:14 UTC+0000
+.. 0x86001200:services.exe                            464    368      8    214 2019-03-10 11:32:15 UTC+0000
+... 0x859783e0:svchost.exe                           1316    464     19    312 2019-03-10 11:32:19 UTC+0000
+... 0x85f67688:svchost.exe                           2604    464     17    390 2019-03-10 11:34:21 UTC+0000
+... 0x859be5b8:svchost.exe                           1416    464     13    372 2019-03-10 11:32:20 UTC+0000
+... 0x86097918:svchost.exe                            692    464      7    268 2019-03-10 11:32:16 UTC+0000
+... 0x85f8e8c0:SearchIndexer.                        2624    464     13    689 2019-03-10 11:34:23 UTC+0000
+... 0x84fad4e0:cygrunsrv.exe                         1600    464      6    101 2019-03-10 11:32:20 UTC+0000
+.... 0x863e5030:cygrunsrv.exe                        1700   1600      0 ------ 2019-03-10 11:32:20 UTC+0000
+..... 0x863ef030:sshd.exe                            1740   1700      4    100 2019-03-10 11:32:20 UTC+0000
+... 0x8606aa20:svchost.exe                            580    464     10    355 2019-03-10 11:32:16 UTC+0000
+.... 0x8614c8e0:WmiPrvSE.exe                         2480    580     11    236 2019-03-10 12:40:31 UTC+0000
+.... 0x850a6870:WmiPrvSE.exe                         3292    580      7    195 2019-03-10 12:40:53 UTC+0000
+... 0x860f6388:svchost.exe                            840    464     17    387 2019-03-10 11:32:16 UTC+0000
+.... 0x851fc180:dwm.exe                              3300    840      3     72 2019-03-10 12:30:35 UTC+0000
+... 0x86446b70:svchost.exe                           2044    464      5     92 2019-03-10 11:32:22 UTC+0000
+... 0x859d7030:svchost.exe                           1444    464     21    355 2019-03-10 11:32:20 UTC+0000
+... 0x860ff888:svchost.exe                            876    464     33    641 2019-03-10 11:32:16 UTC+0000
+... 0x863cc308:wlms.exe                              1652    464      4     46 2019-03-10 11:32:20 UTC+0000
+... 0x86145630:svchost.exe                           1020    464      5    121 2019-03-10 11:32:19 UTC+0000
+.. 0x86007b00:lsass.exe                               472    368      8    855 2019-03-10 11:32:15 UTC+0000
+.. 0x86008030:lsm.exe                                 480    368     11    218 2019-03-10 11:32:15 UTC+0000
+ 0x859783e0:svchost.exe                              1316    464     19    312 2019-03-10 11:32:19 UTC+0000
+WARNING : volatility.debug    : PID 1316 PPID 464 has already been seen
+ 0x85f67688:svchost.exe                              2604    464     17    390 2019-03-10 11:34:21 UTC+0000
+WARNING : volatility.debug    : PID 2604 PPID 464 has already been seen
+ 0x859be5b8:svchost.exe                              1416    464     13    372 2019-03-10 11:32:20 UTC+0000
+WARNING : volatility.debug    : PID 1416 PPID 464 has already been seen
+ 0x86097918:svchost.exe                               692    464      7    268 2019-03-10 11:32:16 UTC+0000
+WARNING : volatility.debug    : PID 692 PPID 464 has already been seen
+ 0x85f8e8c0:SearchIndexer.                           2624    464     13    689 2019-03-10 11:34:23 UTC+0000
+WARNING : volatility.debug    : PID 2624 PPID 464 has already been seen
+ 0x84fad4e0:cygrunsrv.exe                            1600    464      6    101 2019-03-10 11:32:20 UTC+0000
+WARNING : volatility.debug    : PID 1600 PPID 464 has already been seen
+ 0x8606aa20:svchost.exe                               580    464     10    355 2019-03-10 11:32:16 UTC+0000
+WARNING : volatility.debug    : PID 580 PPID 464 has already been seen
+ 0x860f6388:svchost.exe                               840    464     17    387 2019-03-10 11:32:16 UTC+0000
+WARNING : volatility.debug    : PID 840 PPID 464 has already been seen
+ 0x86446b70:svchost.exe                              2044    464      5     92 2019-03-10 11:32:22 UTC+0000
+WARNING : volatility.debug    : PID 2044 PPID 464 has already been seen
+ 0x859d7030:svchost.exe                              1444    464     21    355 2019-03-10 11:32:20 UTC+0000
+WARNING : volatility.debug    : PID 1444 PPID 464 has already been seen
+ 0x860ff888:svchost.exe                               876    464     33    641 2019-03-10 11:32:16 UTC+0000
+WARNING : volatility.debug    : PID 876 PPID 464 has already been seen
+ 0x863cc308:wlms.exe                                 1652    464      4     46 2019-03-10 11:32:20 UTC+0000
+WARNING : volatility.debug    : PID 1652 PPID 464 has already been seen
+ 0x86145630:svchost.exe                              1020    464      5    121 2019-03-10 11:32:19 UTC+0000
+WARNING : volatility.debug    : PID 1020 PPID 464 has already been seen
+ 0x84ed1b90:System                                      4      0     90    566 2019-03-10 11:32:09 UTC+0000
+. 0x85783280:smss.exe                                 252      4      2     29 2019-03-10 11:32:09 UTC+0000
+ 0x851f4440:explorer.exe                             3484   3692     31    946 2019-03-10 12:30:35 UTC+0000
+. 0x85256468:iexplore.exe                             992   3484     10    461 2019-03-10 12:30:40 UTC+0000
+.. 0x85250d20:iexplore.exe                           1776    992     29    706 2019-03-10 12:30:40 UTC+0000
+. 0x85255d20:VBoxTray.exe                            2700   3484     13    142 2019-03-10 12:30:40 UTC+0000
+. 0x853239e0:FTK Imager.exe                          1812   3484     18    446 2019-03-10 13:05:52 UTC+0000
+ 0x851fea60:cmd.exe                                  3008   3692      1     25 2019-03-10 12:30:35 UTC+0000
+. 0x85206030:powershell.exe                          3672   3008     12    382 2019-03-10 12:30:35 UTC+0000
+ 0x85fc9b20:winlogon.exe                              404    360      3    114 2019-03-10 11:32:14 UTC+0000
+ 0x84fbba78:csrss.exe                                 376    360      8    290 2019-03-10 11:32:14 UTC+0000
+. 0x85204320:conhost.exe                             1540    376      2     50 2019-03-10 12:30:35 UTC+0000
+ 0x851b9d20:MpCmdRun.exe                             1984   2936      6    239 2019-03-10 13:06:39 UTC+0000

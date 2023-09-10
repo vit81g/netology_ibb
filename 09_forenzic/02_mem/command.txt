@@ -1,0 +1,60 @@
+вывод информации о дампе
+volatility_2.6_win64_standalone.exe -f nwe.mem imageinfo
+
+INFO    : volatility.debug    : Determining profile based on KDBG search...
+          Suggested Profile(s) : Win7SP1x86_23418, Win7SP0x86, Win7SP1x86
+                     AS Layer1 : IA32PagedMemoryPae (Kernel AS)
+                     AS Layer2 : FileAddressSpace (C:\test\incident.mem)
+                      PAE type : PAE
+                           DTB : 0x185000L
+                          KDBG : 0x82745de8L
+          Number of Processors : 1
+     Image Type (Service Pack) : 1
+                KPCR for CPU 0 : 0x80b96000L
+             KUSER_SHARED_DATA : 0xffdf0000L
+           Image date and time : 2019-03-10 13:06:28 UTC+0000
+     Image local date and time : 2019-03-10 06:06:28 -0700
+
+.\volatility-2.6.standalone.exe -f c:\test\incident.mem --profile=Win7SP1x86_23418 netscan
+
+
+Анализ сетевых соединений
+volatility-2.6.standalone.exe -f nwe.mem netscan
+
+
+
+поиск инъекций кода
+volatility_2.6_win64_standalone.exe -f nwe.mem malfind -p 1744,1664 
+
+Поиск инъекций библиотек
+volatility_2.6_win64_standalone.exe -f nwe.mem dlllist -p 1744
+
+Анализ ресурсов процесса
+volatility_2.6_win64_standalone.exe -f nwe.mem handles -p 1744 -t File --silent
+
+Анализ памяти процессов
+volatility_2.6_win64_standalone.exe -f nwe.mem memdump -p 1744 
+C:\strings64.exe 1744.dmp >
+C:\strings_1744.txt
+
+Поиск по yara правилам
+volatility_2.6_win64_standalone.exe -f nwe.mem yarascan -Y “/(http|https)/” -p 1744
+
+Анализ действий пользователя
+volatility_2.6_win64_standalone.exe -f nwe.mem
+
+Dumpregistry
+volatility_2.6_win64_standalone.exe -f nwe.mem dumpregistry 
+
+Hashdump
+volatility_2.6_win64_standalone.exe -f nwe.mem hivelist
+volatility_2.6_win64_standalone.exe -f nwe.mem hashdump -y <system> -s <sam>
+
+Анализ файловой системы
+volatility_2.6_win64_standalone.exe -f nwe.mem filescan >
+
+Dumpfiles
+volatility_2.6_win64_standalone.exe -f nwe.mem dumpfiles -i -r .evtx$ -D c:\test\
+
+CQEVTXRecovery
+CQEVTXRecovery.exe --in in -- out out
