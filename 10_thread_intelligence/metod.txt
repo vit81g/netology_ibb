@@ -1,0 +1,43 @@
+1. Initial Access:
+Phishing  T1566
+
+
+2. Execution
+Command and Scripting Interpreter T1059
+User Execution  T1204
+
+3. Persistence
+Boot or Logon Autostart Execution T1547
+Scheduled Task/Job  Т1053
+
+
+
+
+4. Discovery
+ Network Share Discovery  Т1035
+ File and Directory Discovery  T1083
+  Account Discovery T1087
+ System Information Discovery T1082
+
+
+
+5. Lateral Movement:
+ Taint Shared Content  T1080
+
+
+6. Command&Control
+ Web Service  T1102
+ Application Layer Protocol  T1071
+
+7. Unused
+Remote Access Software
+Exploitation of Remote Services
+System Network Connections Discovery
+Valid Accounts
+Boot or Logon Initialization Scripts
+Drive-by Compromise
+Software Deployment Tools 
+System Owner/User Discovery
+Remote Services
+
+
