@@ -3,25 +3,26 @@ Phishing  T1566
 
 
 2. Execution
-Command and Scripting Interpreter T1059
 User Execution  T1204
+Command and Scripting Interpreter T1059
+
 
 3. Persistence
 Boot or Logon Autostart Execution T1547
 Scheduled Task/Job  Т1053
 
 
-
-
 4. Discovery
  Network Share Discovery  Т1035
+ System Owner/User Discovery   +
  File and Directory Discovery  T1083
-  Account Discovery T1087
+ System Network Connections Discovery  +
  System Information Discovery T1082
-
+ Account Discovery T1087
 
 
 5. Lateral Movement:
+Remote Services  +
  Taint Shared Content  T1080
 
 
@@ -29,15 +30,17 @@ Scheduled Task/Job  Т1053
  Web Service  T1102
  Application Layer Protocol  T1071
 
+
 7. Unused
+Software Deployment Tools 
+Valid Accounts
+Drive-by Compromise
 Remote Access Software
 Exploitation of Remote Services
-System Network Connections Discovery
-Valid Accounts
 Boot or Logon Initialization Scripts
-Drive-by Compromise
-Software Deployment Tools 
-System Owner/User Discovery
-Remote Services
+
+
+
+
 
 
