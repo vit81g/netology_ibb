@@ -1,0 +1,40 @@
+Построение гипотез на основе MITRE ATT&CK
+
+1. Initial Access (получение доступа) - phishing
+Гипотеза - пользователь открыл вредоносный XLS документ
+Предсказание - Процесс Exel создаст вредоносный процесс
+Проверка - Через поле process.parent.command_line (sysmon используем)
+
+Пример spearphishing link\attachment
+event.code:1 AND process.parent.command_line: "*EXEL.EXE*"
+создание процеса - event.code:1
+
+2. Execution (исполнение) - command and scripting interpreter
+Гипотеза - Злоумышленник использует CMD, PowerShell или VBS, JS и т.д.
+Предсказание - запускается интерпретатор с необычными аргументами
+Проверка - Через поле process.parent.command_line и process.args (sysmon используем)
+
+Пример interpreter - powershell
+event.code:1 AND process.args: "*powershell.exe*"
+или
+event.code:1 AND process.command_line: "*cmd.exe*" OR process.parent.command_line: "*cmd.exe*"
+
+3. Execution (достижение исполнения) - system services - service execution
+Гипотеза - злоумышленник использовал службы для запуска файлов
+Предсказание - Service.exe порождает вредоносный процесс(с неестественным command-line)
+Проверка - Через поле process.parent.command_line
+
+Пример Execution - system services - service execution
+event.code:1 AND process.parent.command_line: "*service.exe*"
+
+
+
+
+
+
+
+
+
+
+
+
