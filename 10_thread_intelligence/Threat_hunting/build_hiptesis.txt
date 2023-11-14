@@ -27,14 +27,60 @@ event.code:1 AND process.command_line: "*cmd.exe*" OR process.parent.command_lin
 Пример Execution - system services - service execution
 event.code:1 AND process.parent.command_line: "*service.exe*"
 
+4. Persistence - scheduled task/job - shceduled task
+Гипотеза - злоумышленник использовал задания для закрепления
+Предсказание - Для создания заданий использовался schtasks
+Проверка - поиск созданных процуссов schtasks
 
+Пример Persistence - scheduled task/job - shceduled task:
+event.code:1 AND process.command_line: "*schtasks*"
 
+Если есть в собитии create это уже подозрительно
 
+5. Persistence - create account - domain account
+Гипотеза - злоумышленник использовал доменные аккаунты для закрепления
+Предсказание - Был создан новый доменный аккаунт
+Проверка - поиск по событию 4720
 
+Пример Persistence - create account - domain account
+event.code:4720
 
+Понятно, что учетка будет скомпрометирована и ее надо проверять
 
+6. Persistence - boot or logon autostart execution - startup folder
+Гипотеза - Злоумышленник закрепился через startup folder
+Предсказание - В директории startup folder был создан ярлык или файл
+Проверка - Поиск по событию 11 Sysmon в startup folder
 
+Пример Persistence - boot or logon autostart execution - startup folder
+event.code:11 AND file.path: "*Startup*"
 
+Необходимо проверить путь, если есть данное событие
 
+7. Persistence - boot or logon autostart execution - Registry Run keys (ключи Run и RunOnce)
+Гипотеза - Злоумышленник закрепился через реестр
+Предсказание - был добавлен ключ в одном из разделов Run или RunOnce
+Проверка - Поиск по событию 13 Sysmon для разделов Run
+
+Пример Persistence - boot or logon autostart execution - Registry Run keys
+event.code:13 AND (registry.path:"*\\Run\\*" OR registry.path:"*\\RunOnce\\*")
+
+8. Persistence - create or modify system process - Windows service
+Гипотеза - Злоумышленник использовал службу для закрепления
+Предсказание - Одна из созданных служб запускает вредоносный файл
+Проверка - Поиск по событию 7045 журнал System
+
+Пример Persistence - create or modify system process - Windows service
+event.code:7045
+
+9. Lateral movement - remote services - RDP
+Гипотеза - Злоумышленник использовал RDP для продвижения в сети
+Предсказание - Следы RDP-подключений ддолжны остаться в журналах событий
+Проверка - поиск события 4624 с дополнительными фильтрами 
+Идея в том, что мы смотрим события 4624 с logontype - наш тип 10 он отраает RDP и тип 3 это сетевой тип удаленного запуска служб
+
+Пример Lateral movement - remote services - RDP
+event.code:4624 AND (event_data.LogonType:3 OR event_data.LogonType:10)
+Смотрим пользователей и имя пк
 
 
