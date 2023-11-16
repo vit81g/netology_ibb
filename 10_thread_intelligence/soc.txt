@@ -1,0 +1,40 @@
+Тренды атак
+Фишинг
+Замена расширения файлов
+Руткиты для никсов
+
+Хактивизм Windows: тактики и техники
+T1202
+
+Command & control
+T1090
+Qemu as tunnel (создание прокси тунеля)
+
+Persistence
+Scheduler Task/Job: Scheduler Task
+В ветке реестра task cash
+T1037.001
+
+Defence evasion
+Linux Windows
+T1202 
+USL
+
+Социальная инжененрия
+Передача паролей 
+кража сертификата подрячика
+
+*NIX
+1. Подмена исполняемых файлов
+Администратор cd вайпил систему
+PAM_ALLOW SO
+
+MAlware
+Custum scripts
+
+Итоги :
+unix системы атакуют
+Фишинг
+уровень сложности атак
+Rootkit
+Социальная инжинирия
