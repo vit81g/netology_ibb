@@ -1,0 +1,9 @@
+docker run -d \
+  -p 80:80 \
+  -e ORIGINS=csm.localhost \
+  -e OAUTH_CLIENT_ID=admin \
+  -e OAUTH_CLIENT_SECRET=admin \
+  -v ./my-local-conf.yml:/app/config.yml:ro \
+  --name decap-cms \
+  --restart=always \
+  itsmejoeeey/docker-decap-cms-standalone:latest
