@@ -1,0 +1,2320 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)file:///home/vit81/2023-12-19-ZAP-Report-localhost.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZAP Scanning Report</title>
+<link href="./ZAP Scanning Report_files/normalize.css" rel="stylesheet">
+<link href="./ZAP Scanning Report_files/main.css" rel="stylesheet">
+<link href="./ZAP Scanning Report_files/colors.css" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<h1>ZAP Scanning Report</h1>
+		<p>
+			<span>Generated with</span> <a href="https://zaproxy.org/"><img src="./ZAP Scanning Report_files/zap32x32.png" alt="The ZAP logo" class="zap-logo">ZAP</a>
+			<span>on Tue 19 Dec 2023, at 16:58:44</span>
+		</p>
+		<p>ZAP Version: 2.14.0</p>
+	</header>
+
+	<main>
+
+		<section id="contents" class="contents">
+			<h2>Contents</h2>
+			<nav>
+				<ol>
+					<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#about-this-report">About this report</a>
+						<ol>
+							<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#report-description">Report description</a></li>
+							<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#report-parameters">Report parameters</a></li>
+						</ol></li>
+					<data-th-block>
+					<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#summaries">Summaries</a>
+						<ol>
+							<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#risk-confidence-counts">Alert counts by risk and confidence</a></li>
+							<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#site-risk-counts">Alert counts by site and risk</a></li>
+							<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-counts">Alert counts by alert type</a></li>
+						</ol></li>
+					<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alerts">Alerts</a>
+						<ol>
+							
+							 
+							
+							
+							
+							
+							<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alerts--risk-2-confidence-3"><span>Risk</span>=<span class="risk-level">Medium</span>, <span>Confidence</span>=<span class="confidence-level">High</span> <span>(3)</span></a></li>
+							
+							<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alerts--risk-2-confidence-2"><span>Risk</span>=<span class="risk-level">Medium</span>, <span>Confidence</span>=<span class="confidence-level">Medium</span> <span>(2)</span></a></li>
+							
+							
+							  
+							
+							
+							
+							
+							
+							
+							<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alerts--risk-1-confidence-2"><span>Risk</span>=<span class="risk-level">Low</span>, <span>Confidence</span>=<span class="confidence-level">Medium</span> <span>(3)</span></a></li>
+							
+							
+							  
+							
+							
+							
+							
+							
+							
+							<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alerts--risk-0-confidence-2"><span>Risk</span>=<span class="risk-level">Informational</span>, <span>Confidence</span>=<span class="confidence-level">Medium</span> <span>(2)</span></a></li>
+							
+							<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alerts--risk-0-confidence-1"><span>Risk</span>=<span class="risk-level">Informational</span>, <span>Confidence</span>=<span class="confidence-level">Low</span> <span>(3)</span></a></li>
+							  
+						</ol></li>
+					<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#appendix">Appendix</a>
+						<ol>
+							<li><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-types">Alert types</a></li>
+						</ol></li>
+					</data-th-block>
+				</ol>
+			</nav>
+		</section>
+
+		<section id="about-this-report" class="about-this-report">
+			<h2>About this report</h2>
+
+			<section id="report-description">
+				<h3>Report description</h3>
+				<div class="report-description--container">
+					
+
+<p>
+	
+	  Attack_with_FirefoxFeadless 
+	  
+</p>
+ 
+				</div>
+			</section>
+
+			<section id="report-parameters">
+				<h3>Report parameters</h3>
+				<div class="report-parameters--container">
+					<h4>Contexts</h4>
+					
+					
+					<p>No contexts were selected, so all contexts were included by default.</p>
+					  
+
+					<h4>Sites</h4>
+					
+					<p>The following sites were included:</p>
+					<ul class="sites-list">
+						<li><span class="site">http://localhost:8080</span></li>
+					</ul>
+					
+					<p>(If no sites were selected, all sites were included by default.)</p>
+					<p>An included site must also be within one of the included contexts for its data to be included in the report.</p>
+
+					<h4>Risk levels</h4>
+					<p>
+						<span>Included</span>:
+						 
+						<span class="included-risk-codes"><span class="risk-level">High</span>, <span class="risk-level">Medium</span>, <span class="risk-level">Low</span>, <span class="risk-level">Informational</span></span>
+					</p>
+					<p>
+						<span>Excluded</span>:
+						 <span>None</span>
+						
+					</p>
+
+					<h4>Confidence levels</h4>
+					<p>
+						<span>Included</span>:
+						
+						
+						<span class="included-confidence-codes"><span class="confidence-level">User Confirmed</span>, <span class="confidence-level">High</span>, <span class="confidence-level">Medium</span>, <span class="confidence-level">Low</span></span>
+					</p>
+					<p>
+						<span>Excluded</span>:
+						
+						
+						<span class="included-confidence-codes"> <span class="confidence-level">User Confirmed</span>, <span class="confidence-level">High</span>, <span class="confidence-level">Medium</span>, <span class="confidence-level">Low</span>, <span class="confidence-level">False Positive</span></span>
+					</p>
+				</div>
+			</section>
+		</section>
+
+		
+		<section>
+			
+		</section>
+		
+		<section id="summaries" class="summaries">
+			<h2>Summaries</h2>
+
+			<section id="risk-confidence-counts">
+				<h3>Alert counts by risk and confidence</h3>
+				<table class="risk-confidence-counts-table">
+					<caption>
+						<p>This table shows the number of alerts for each level of risk and confidence included in the report.</p>
+						<p>(The percentages in brackets represent the count as a percentage of the total number of alerts included in the report, rounded to one decimal place.)</p>
+					</caption>
+					<colgroup>
+						<col>
+						<col>
+					</colgroup>
+					<colgroup>
+						<col style="width: 14.0%"><col style="width: 14.0%"><col style="width: 14.0%"><col style="width: 14.0%">
+						<col style="width: 14.0%">
+					</colgroup>
+					<thead>
+						<tr>
+							<td colspan="2" rowspan="2"></td>
+							<th scope="colgroup" colspan="5">Confidence</th>
+						</tr>
+						<tr>
+							<th scope="col">User Confirmed</th>
+							<th scope="col">High</th>
+							<th scope="col">Medium</th>
+							<th scope="col">Low</th>
+							<th scope="col">Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="rowgroup" rowspan="5">Risk</th>
+							<th scope="row">High</th>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0.0%)</span></td>
+						</tr>
+						<tr>
+							
+							<th scope="row">Medium</th>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>3</span><br> <span class="additional-info-percentages">(23.1%)</span></td>
+							<td><span>2</span><br> <span class="additional-info-percentages">(15.4%)</span></td>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>5</span><br> <span class="additional-info-percentages">(38.5%)</span></td>
+						</tr>
+						<tr>
+							
+							<th scope="row">Low</th>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>3</span><br> <span class="additional-info-percentages">(23.1%)</span></td>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>3</span><br> <span class="additional-info-percentages">(23.1%)</span></td>
+						</tr>
+						<tr>
+							
+							<th scope="row">Informational</th>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>2</span><br> <span class="additional-info-percentages">(15.4%)</span></td>
+							<td><span>3</span><br> <span class="additional-info-percentages">(23.1%)</span></td>
+							<td><span>5</span><br> <span class="additional-info-percentages">(38.5%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row">Total</th>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>3</span><br> <span class="additional-info-percentages">(23.1%)</span></td>
+							<td><span>7</span><br> <span class="additional-info-percentages">(53.8%)</span></td>
+							<td><span>3</span><br> <span class="additional-info-percentages">(23.1%)</span></td>
+							<td><span>13</span><br> <span class="additional-info-percentages">(100%)</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section id="site-risk-counts">
+				<h3>Alert counts by site and risk</h3>
+				<table class="site-risk-counts-table">
+					<caption>
+						<p>This table shows, for each site for which one or more alerts were raised, the number of alerts raised at each risk level.</p>
+						<p>Alerts with a confidence level of "False Positive" have been excluded from these counts.</p>
+						<p>(The numbers in brackets are the number of alerts raised for the site at or above that risk level.)</p>
+					</caption>
+					<colgroup>
+						<col>
+						<col>
+					</colgroup>
+					<colgroup>
+						<col style="width: 16.25%"><col style="width: 16.25%"><col style="width: 16.25%"><col style="width: 16.25%">
+					</colgroup>
+					<thead>
+						<tr>
+							<td colspan="2" rowspan="2"></td>
+							<th scope="colgroup" colspan="4">Risk</th>
+						</tr>
+						<tr>
+							<th scope="col">
+								<span>High</span><br>  <span class="additional-info-percentages">(= High)</span>  
+							</th>
+							<th scope="col">
+								<span>Medium</span><br>   <span class="additional-info-percentages">(&gt;= Medium)</span> 
+							</th>
+							<th scope="col">
+								<span>Low</span><br>   <span class="additional-info-percentages">(&gt;= Low)</span> 
+							</th>
+							<th scope="col">
+								<span>Informational</span><br>   <span class="additional-info-percentages">(&gt;= Informational)</span> 
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="rowgroup" rowspan="1">Site</th>
+							<th scope="row">http://localhost:8080</th>
+							
+							<td><span>0</span><br> <span class="additional-info-percentages">(0)</span></td>
+							<td><span>5</span><br> <span class="additional-info-percentages">(5)</span></td>
+							<td><span>3</span><br> <span class="additional-info-percentages">(8)</span></td>
+							<td><span>5</span><br> <span class="additional-info-percentages">(13)</span></td>
+							
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section id="alert-type-counts">
+				<h3>Alert counts by alert type</h3>
+				<table class="alert-type-counts-table">
+					<caption>
+						<p>This table shows the number of alerts of each alert type, together with the alert type's risk level.</p>
+						<p>(The percentages in brackets represent each count as a percentage, rounded to one decimal place, of the total number of alerts included in this report.)</p>
+					</caption>
+					<thead>
+						<tr>
+							<th scope="col">Alert type</th>
+							<th scope="col">Risk</th>
+							<th scope="col">Count</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row"><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-0">CSP: Wildcard Directive</a></th>
+							<td class="risk-level">Medium</td>
+							<td><span>17</span><br> <span class="additional-info-percentages">(130.8%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-1">Content Security Policy (CSP) Header Not Set</a></th>
+							<td class="risk-level">Medium</td>
+							<td><span>53</span><br> <span class="additional-info-percentages">(407.7%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-2">Cross-Domain Misconfiguration</a></th>
+							<td class="risk-level">Medium</td>
+							<td><span>75</span><br> <span class="additional-info-percentages">(576.9%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-3">Missing Anti-clickjacking Header</a></th>
+							<td class="risk-level">Medium</td>
+							<td><span>53</span><br> <span class="additional-info-percentages">(407.7%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-4">Session ID in URL Rewrite</a></th>
+							<td class="risk-level">Medium</td>
+							<td><span>118</span><br> <span class="additional-info-percentages">(907.7%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-5">Cross-Domain JavaScript Source File Inclusion</a></th>
+							<td class="risk-level">Low</td>
+							<td><span>2</span><br> <span class="additional-info-percentages">(15.4%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-6">Private IP Disclosure</a></th>
+							<td class="risk-level">Low</td>
+							<td><span>23</span><br> <span class="additional-info-percentages">(176.9%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-7">X-Content-Type-Options Header Missing</a></th>
+							<td class="risk-level">Low</td>
+							<td><span>133</span><br> <span class="additional-info-percentages">(1,023.1%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-8">Cookie Poisoning</a></th>
+							<td class="risk-level">Informational</td>
+							<td><span>93</span><br> <span class="additional-info-percentages">(715.4%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-9">Information Disclosure - Suspicious Comments</a></th>
+							<td class="risk-level">Informational</td>
+							<td><span>3</span><br> <span class="additional-info-percentages">(23.1%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-10">Loosely Scoped Cookie</a></th>
+							<td class="risk-level">Informational</td>
+							<td><span>117</span><br> <span class="additional-info-percentages">(900.0%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-11">Session Management Response Identified</a></th>
+							<td class="risk-level">Informational</td>
+							<td><span>144</span><br> <span class="additional-info-percentages">(1,107.7%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-12">User Agent Fuzzer</a></th>
+							<td class="risk-level">Informational</td>
+							<td><span>249</span><br> <span class="additional-info-percentages">(1,915.4%)</span></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th scope="row">Total</th>
+							<td></td>
+							<td>13</td>
+						</tr>
+					</tfoot>
+				</table>
+			</section>
+		</section>
+
+		<section id="alerts" class="alerts">
+			<h2>Alerts</h2>
+			<ol>
+				
+				 
+				 
+				
+				
+				<li id="alerts--risk-2-confidence-3">
+					<h3>
+						<span>Risk</span>=<span class="risk-level">Medium</span>, <span>Confidence</span>=<span class="confidence-level">High</span> <span>(3)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">http://localhost:8080</span> <span>(3)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-0">CSP: Wildcard Directive</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET http://localhost:8080/assets/styles</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tbody><tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/">OWASP_2021_A05</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html">OWASP_2017_A06</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: </p>
+
+<p>frame-ancestors, form-action</p>
+
+<p>The directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (242 bytes)</summary>
+				
+				<pre><code>GET http://localhost:8080/assets/styles HTTP/1.1
+host: localhost:8080
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (284 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 301 Moved Permanently
+Content-Type: text/html; charset=UTF-8
+Content-Length: 193
+Content-Security-Policy: default-src 'self'
+X-Content-Type-Options: nosniff
+Location: /assets/styles/
+Date: Tue, 19 Dec 2023 13:27:22 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (193 bytes)</summary>
+				
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;Redirecting&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;pre&gt;Redirecting to &lt;a href="/assets/styles/"&gt;/assets/styles/&lt;/a&gt;&lt;/pre&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>Content-Security-Policy</code></pre></td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>default-src 'self'</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>
+ </td>
+	</tr>
+</tbody></table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+								<li>
+									<h5>
+										<a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-1">Content Security Policy (CSP) Header Not Set</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET http://localhost:8080/</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tbody><tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/">OWASP_2021_A05</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html">OWASP_2017_A06</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>
+ </td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (229 bytes)</summary>
+				
+				<pre><code>GET http://localhost:8080/ HTTP/1.1
+host: localhost:8080
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (294 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 19 Dec 2023 08:52:33 GMT
+ETag: W/"a81-18c8146dbb4"
+Content-Type: text/html; charset=UTF-8
+Content-Length: 2689
+Date: Tue, 19 Dec 2023 13:18:32 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+</code></pre>
+				
+				
+			</details> <details class="response-body">
+				<summary>Response body (2689 bytes)</summary>
+				
+				<pre><code>&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;meta charset="UTF-8"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;&lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;&lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;&lt;link rel="icon" href="/favicon.ico"&gt;&lt;title&gt;Eleventy Starter Boilerplate&lt;/title&gt;&lt;meta name="description" content="Starter code for your 11ty blog Boilerplate"&gt;&lt;meta name="author" content="Anonymous"&gt;&lt;meta property="og:title" content="Eleventy Starter Boilerplate"&gt;&lt;meta property="og:description" content="Starter code for your 11ty blog Boilerplate"&gt;&lt;meta property="og:locale" content="en"&gt;&lt;meta property="og:site_name" content="Starter"&gt;&lt;link href="/assets/styles/main.css" rel="stylesheet"&gt;&lt;script src="https://identity.netlify.com/v1/netlify-identity-widget.js"&gt;&lt;/script&gt;&lt;script&gt;window.netlifyIdentity&amp;&amp;window.netlifyIdentity.on("init",n=&gt;{n||window.netlifyIdentity.on("login",()=&gt;{document.location.href="/admin/"})})&lt;/script&gt;&lt;/head&gt;&lt;body class="antialiased w-full text-gray-700"&gt;&lt;div class="max-w-screen-md mx-auto"&gt;&lt;div class="border-b border-gray-300"&gt;&lt;div class="pt-16 pb-8"&gt;&lt;h1 class="font-semibold text-3xl text-gray-800"&gt;Eleventy Starter Boilerplate&lt;/h1&gt;&lt;div class="text-xl"&gt;Starter code for your 11ty blog Boilerplate&lt;/div&gt;&lt;/div&gt;&lt;nav&gt;&lt;ul class="flex flex-wrap text-xl"&gt;&lt;li class="mr-6"&gt;&lt;a class="text-gray-700 border-none hover:no-underline hover:text-gray-800" href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li class="mr-6"&gt;&lt;a class="text-gray-700 border-none hover:no-underline hover:text-gray-800" href="https://github.com/ixartz/Eleventy-Starter-Boilerplate"&gt;GitHub&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;/div&gt;&lt;div class="text-xl py-5"&gt;&lt;ul&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/my-fifth-post/"&gt;My fifth post&lt;/a&gt;&lt;div&gt;August 8, 2020&lt;/div&gt;&lt;/li&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/my-forth-post/"&gt;My forth post&lt;/a&gt;&lt;div&gt;July 7, 2020&lt;/div&gt;&lt;/li&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/my-third-post/"&gt;My third post&lt;/a&gt;&lt;div&gt;June 6, 2020&lt;/div&gt;&lt;/li&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/eleventy-starter-boilerplate-presentation/"&gt;Eleventy Starter Boilerplate Presentation&lt;/a&gt;&lt;div&gt;May 5, 2020&lt;/div&gt;&lt;/li&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/my-second-post/"&gt;My second post&lt;/a&gt;&lt;div&gt;March 3, 2020&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div class="text-sm flex justify-between"&gt;&lt;div class="text-right ml-auto"&gt;&lt;a href="/page2/"&gt;Older Posts →&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="border-t border-gray-300 text-center py-8"&gt;Made with &lt;span role="img" aria-label="Love"&gt;♥&lt;/span&gt; by &lt;a href="https://creativedesignsguru.com"&gt;CreativeDesignsGuru&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	
+	
+	
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>
+ </td>
+	</tr>
+</tbody></table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+								<li>
+									<h5>
+										<a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-4">Session ID in URL Rewrite</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=websocket&amp;sid=YzUJwzlv_qUDnh2yAAAS</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tbody><tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">OWASP_2021_A01</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/04-Testing_for_Exposed_Session_Variables">WSTG-v42-SESS-04</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html">OWASP_2017_A03</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>URL rewrite is used to track user session ID. The session ID may be disclosed via cross-site referer header. In addition, the session ID might be stored in browser history or server logs.</p>
+ </td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (503 bytes)</summary>
+				
+				<pre><code>GET http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=websocket&amp;sid=YzUJwzlv_qUDnh2yAAAS HTTP/1.1
+host: localhost:8080
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+Upgrade: websocket
+Origin: http://localhost:8080
+Sec-WebSocket-Version: 13
+Accept-Language: en-US,en;q=0.9
+Cookie: io=YzUJwzlv_qUDnh2yAAAS
+Sec-WebSocket-Key: sz4c5gJdb/eOpKkdXQzy8A==
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (129 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: /HkaISaikBWEy/mlnJ/Eiy58GB0=
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>sid</code></pre></td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>YzUJwzlv_qUDnh2yAAAS</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>For secure content, put session ID in a cookie. To be even more secure consider using a combination of cookie and URL rewrite.</p>
+ </td>
+	</tr>
+</tbody></table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				
+				<li id="alerts--risk-2-confidence-2">
+					<h3>
+						<span>Risk</span>=<span class="risk-level">Medium</span>, <span>Confidence</span>=<span class="confidence-level">Medium</span> <span>(2)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">http://localhost:8080</span> <span>(2)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-2">Cross-Domain Misconfiguration</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=polling&amp;t=Oo2Ee43</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tbody><tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">OWASP_2021_A01</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html">OWASP_2017_A05</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (544 bytes)</summary>
+				
+				<pre><code>GET http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=polling&amp;t=Oo2Ee43 HTTP/1.1
+host: localhost:8080
+Proxy-Connection: keep-alive
+sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"
+Accept: */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Language: en-US,en;q=0.9
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (269 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 102
+Access-Control-Allow-Origin: *
+Set-Cookie: io=YzUJwzlv_qUDnh2yAAAS; Path=/; HttpOnly; SameSite=Strict
+Date: Tue, 19 Dec 2023 13:18:41 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (102 bytes)</summary>
+				
+				<pre><code>95:0{"sid":"YzUJwzlv_qUDnh2yAAAS","upgrades":["websocket"],"pingInterval":5000,"pingTimeout":5000}2:40</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>Access-Control-Allow-Origin: *</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).</p>
+
+<p>Configure the "Access-Control-Allow-Origin" HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</p>
+ </td>
+	</tr>
+</tbody></table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+								<li>
+									<h5>
+										<a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-3">Missing Anti-clickjacking Header</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET http://localhost:8080/my-forth-post/</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tbody><tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/">OWASP_2021_A05</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/09-Testing_for_Clickjacking">WSTG-v42-CLNT-09</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html">OWASP_2017_A06</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>The response does not include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options to protect against 'ClickJacking' attacks.</p>
+ </td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (276 bytes)</summary>
+				
+				<pre><code>GET http://localhost:8080/my-forth-post/ HTTP/1.1
+host: localhost:8080
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+referer: http://localhost:8080/
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (295 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 19 Dec 2023 08:52:33 GMT
+ETag: W/"1927-18c8146dbb4"
+Content-Type: text/html; charset=UTF-8
+Content-Length: 6439
+Date: Tue, 19 Dec 2023 13:18:32 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+</code></pre>
+				
+				
+			</details> <details class="response-body">
+				<summary>Response body (6439 bytes)</summary>
+				
+				<pre><code>&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;meta charset="UTF-8"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;&lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;&lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;&lt;link rel="icon" href="/favicon.ico"&gt;&lt;title&gt;My forth post&lt;/title&gt;&lt;meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit."&gt;&lt;meta name="author" content="Anonymous"&gt;&lt;meta property="og:title" content="My forth post"&gt;&lt;meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit."&gt;&lt;meta property="og:locale" content="en"&gt;&lt;meta property="og:site_name" content="Starter"&gt;&lt;meta property="og:type" content="article"&gt;&lt;meta property="article:published_time" content="2020-07-07T00:00:00.000Z"&gt;&lt;script type="application/ld+json"&gt;{
+"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+"author": { "@type": "Person", "name": "Anonymous" },
+"@type": "BlogPosting",
+"url": "https://example.com/my-forth-post/",
+"publisher": {
+"@type": "Organization",
+"logo": {
+"@type": "ImageObject",
+"url": "https://example.com/assets/images/logo.png"
+},
+"name": "Anonymous"
+},
+"headline": "My forth post",
+"datePublished": "2020-07-07T00:00:00.000Z",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://example.com/my-forth-post/"
+},
+"@context": "http://schema.org"
+}&lt;/script&gt;&lt;link href="/assets/styles/main.css" rel="stylesheet"&gt;&lt;/head&gt;&lt;body class="antialiased w-full text-gray-700"&gt;&lt;div class="max-w-screen-md mx-auto"&gt;&lt;div class="border-b border-gray-300"&gt;&lt;div class="pt-16 pb-8"&gt;&lt;h1 class="font-semibold text-3xl text-gray-800"&gt;Eleventy Starter Boilerplate&lt;/h1&gt;&lt;div class="text-xl"&gt;Starter code for your 11ty blog Boilerplate&lt;/div&gt;&lt;/div&gt;&lt;nav&gt;&lt;ul class="flex flex-wrap text-xl"&gt;&lt;li class="mr-6"&gt;&lt;a class="text-gray-700 border-none hover:no-underline hover:text-gray-800" href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li class="mr-6"&gt;&lt;a class="text-gray-700 border-none hover:no-underline hover:text-gray-800" href="https://github.com/ixartz/Eleventy-Starter-Boilerplate"&gt;GitHub&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;/div&gt;&lt;div class="text-xl py-5"&gt;&lt;article&gt;&lt;header&gt;&lt;h1 class="text-center font-bold text-3xl text-gray-800"&gt;My forth post&lt;/h1&gt;&lt;div class="text-center text-sm mb-8"&gt;July 7, 2020&lt;/div&gt;&lt;/header&gt;&lt;section class="content"&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;&lt;p&gt;Example with image:&lt;/p&gt;&lt;p&gt;&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsSAAALEgHS3X78AAAIK0lEQVRIx1VWCVSURxLuf+YfZmA4lNMBQRAEueWQW0AwiCOoIMglt0c2+9g1SOKBuyvJeiDLiphDXPdFMfEGDdcgIoeCGEARRcCgEBjlGkQx7JqnsWr7Hw7dfq/+6p7p/r6q6u6qJhFkqqF0rVJn6huQmRZMiMoWFaFhulDkuUMgjNvBCtJ3qgh379LQTNuhp78h3Wi+T8o8iWWImlhbnRDBzLozDktmMYJmOq/9ApR6v8kCpZ5HCP8zrTnz/mEg8fvWwDDtX/qSvH8bSM4XmphWXrKxq5a5e5bVBASeublK+nVdsDSrbHng1hNL3QL+Ym5h7EIN4zBGkjfNEpECsVip842nCPzppBwTU4vCRYtjLllaf/2jpXVD2WLbp1WOzv+56en9e0vACri/OvRtZ9j6ye7IqJHOyA3d7eERtbdCQgtK/fw3HbN3cNjA5ytBf/L1f0+UoaOr1NbU5aNW1lbFS1w2X3dxK2508+xv8fR50xHwEfaGrsPB6FgcT0qBV5u24OSWrTi5eStOpG7GoYSkt0+iYwdbQ9dUyfz8tx+3s3daxeeLOMx9EkNClr7n4h0wtzArdfNIaVrmX9YVEDT6JEgKA2vCcDhmI7xIToVXm7dyBECBP5R3r6im5DgQHfuqVRpSV+Ltk5a9yNKSw0REQmqdp2g+1tbRueDkGn7bd/m5J8GrR4bWhMFoRBSMxcXDi8QUfElJXlAvZiUxBcYTk2GM9hWcpqKIi8fH4RHPG1cEXfzB2WV9rLr6nPcuEMLmLbRwq3b3ynkYGNQzFLru3RglUETHwfONCficWjqanIpUQBG7EcfiElAREwdjCUkwlvE5DO/cjYPb0mGQevw0PALaVko7K718srKMTexmSeJU1XTPWNslN3h4X30UEPR6mIZoZP0GGI2KwbHkTfB8z19xdP9BGNqVic/ik3AoPBKHI6Nx7E/b8Pk334KcSu/uTHwSth6G1oZjR1Dwy3of39PHraxXU3hWSbJHR9fxso3d/npnt55H/itwQBoKg2ERMEStGknZhONHjsJ4SRmOXLiIA5/vxP6IKByMT8Tx3MOoKCvHvlOF2EU9eSQNgYHg1dAVGPT7DU/va2ftHFLpkdbgONgcvXnSSxZWhdW2jhMd3n74eEUwyEPXgTxkLT6jIRg7eAgnaurw5b12HKZE8r1f4EhOLiqKL6P88hXs3JsFHevC4ZF/IPQGfATdvsux3tW9ucjWPj1UKNInvoSID+vqJ502WiCrsFj8ttXVA7vo5F9WSqEvaBX0SUNRnpSKirx8nLjZgC9aW3G8rg4VVdfwKUdwMBvvhUdgh9cy6PZcht1ey951unthjYPT/SIrm10xqmpGZD0h2rla2mnHdfQbLxubYaO9E3R4+cLj5Sugxy8Af/bxw5/9ArGX7sEwDc9EQwP+NjqKE3I59p49h+1bPsY7Sz2ww9kNHri44QOnpe/aHV2wysrm/gUzi12xIpER2UgYvWxV9fQjYs2Wc/qGWGNpA+1LPTiroNPdGzl56OqOD6l1v/wxDcdLSvDtq19xcnwc5eXl+CDtz3jHwxvu2jrAXRt7pTRb2mC5qXnLaUPj7aGswIDEEqL7hUC4LVsg+unkHB2sXGAOrQ5O8IBa1r7EFTmr7jk640P/QOzP3INDRcWoaG5BRVsbKhpvYf/p7/E+Pd7N1LDb5pbQvNAS6kwWviuWGNcc09Hf4k6IFgmjnz08duuXDFt7TKwJJZL50GRlA222jnDH2h5aLa2xjXrSQ8PytPA09l28hF15R7DnUA6OlJaioqkJeo4VYAs9jfWUpFFigjIDo8mzOvrnD2pohbFcwvQmRJjB8CP/RnhF+UK110U6BlhPvWmxWAy3zRZhCw1DZ1QsDhQcx/4fS/De/gN4MygYm7yW4SN6T+QXLmDXsQJo2pgA1fNNoVZbH4vm6Paf0JiTS0uE28xdZP5AeF6ZhJd/iBU+O6MxF68aGMEtYzNokBhDs5MrdqdnQG9hIT7IP4o3QtZg9fwFWEeNuU3/a0tIhGaaJOsDg+CqngRLxVpvTqlp3jgkUvsknMc3nL3x0YQx/pTw0rJ4bEOBSP3NFS1drNUzBA7olp0j3ItPhLvb0rEhMgqqzCzwmpYOVKvPxetz9eC6qTlWmZrDVUNjKBOp4xmhWJ4vEH3zKV/gb0SjNEviSYgolTC+26k32aywr1BV4/cKTW28rqkNtXRxvaMT1ixxhmsLF4FMrAVVqppwVaQBlUJ1lKmIQaaiBmUCVTzHiia+4qvIMvmC5HUMo/TihoBm/BOErySiSWZeCmEiMhj2h1xWJP9eKH5boaqBVSJ1qKQiE4qhggMUqCEVqGBVoYIvAhmVUr4Iz/JUJo8ygtt7GHZnIuHZz5RjL+7j8L6e8GlNN00gTMx2HvtdNl/l4Xes6NdigSrIWFWspKAcoIwnhAoqMoZqRgWLGQGcYgQv/0nYpl2EvzeZMJ409apzgNuUSWu69K+aZqFD1ocQk0jChKQx/H1ZDFtxlCd4fJIRTJ5nBHiFgpYotQDPEwGeJOx/vyJs3z7CL6d7ujN2ikCLw/ptOvlOvVIIMxOu2fJiRlMNrc7O1KvEzwgv9++EX5pD+G2HCfskj7ADnD5E+Hfp7+U7CC8vhfASV9KgGHIesEKCzOzDhXuUkGmKqWZL/q+x8wkxoGTuMYSJ+4RamkF4BzlSekAO0PEOank8fed4mRMiIdN7gNN7zDUTKo4fDhKn+xof9Gf2ihqiNZfuFyV1pHNd6dF0oDHhnjdayqLE01ROTPlgkbaScKr9D0AF2YvgvvzwAAAAAElFTkSuQmCC" alt="Error" data-src="/assets/images/posts/error.png" class="lazyload" width="54" height="54"&gt;&lt;/p&gt;&lt;p&gt;Example code block:&lt;/p&gt;&lt;pre class="language-js"&gt;&lt;code class="language-js"&gt;&lt;span class="token keyword"&gt;function&lt;/span&gt; &lt;span class="token function"&gt;myFunction&lt;/span&gt;&lt;span class="token punctuation"&gt;(&lt;/span&gt;&lt;span class="token punctuation"&gt;)&lt;/span&gt; &lt;span class="token punctuation"&gt;{&lt;/span&gt;&lt;br&gt;  &lt;span class="token keyword"&gt;return&lt;/span&gt; &lt;span class="token boolean"&gt;true&lt;/span&gt;&lt;span class="token punctuation"&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class="token punctuation"&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/section&gt;&lt;/article&gt;&lt;/div&gt;&lt;div class="border-t border-gray-300 text-center py-8"&gt;Made with &lt;span role="img" aria-label="Love"&gt;♥&lt;/span&gt; by &lt;a href="https://creativedesignsguru.com"&gt;CreativeDesignsGuru&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;script&gt;!function(){var e=document.querySelectorAll("img"),e=e.length;0&lt;e&amp;&amp;((e=document.createElement("script")).async=!0,e.src="https://cdn.jsdelivr.net/npm/lazysizes@5/lazysizes.min.js",document.body.appendChild(e))}()&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>x-frame-options</code></pre></td>
+	</tr>
+	
+	
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p>
+
+<p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's "frame-ancestors" directive.</p>
+ </td>
+	</tr>
+</tbody></table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				
+				
+				  
+				 
+				
+				
+				
+				
+				<li id="alerts--risk-1-confidence-2">
+					<h3>
+						<span>Risk</span>=<span class="risk-level">Low</span>, <span>Confidence</span>=<span class="confidence-level">Medium</span> <span>(3)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">http://localhost:8080</span> <span>(3)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-5">Cross-Domain JavaScript Source File Inclusion</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET http://localhost:8080/</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tbody><tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/">OWASP_2021_A08</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>The page includes one or more script files from a third-party domain.</p>
+ </td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (229 bytes)</summary>
+				
+				<pre><code>GET http://localhost:8080/ HTTP/1.1
+host: localhost:8080
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (294 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 19 Dec 2023 08:52:33 GMT
+ETag: W/"a81-18c8146dbb4"
+Content-Type: text/html; charset=UTF-8
+Content-Length: 2689
+Date: Tue, 19 Dec 2023 13:18:32 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+</code></pre>
+				
+				
+			</details> <details class="response-body">
+				<summary>Response body (2689 bytes)</summary>
+				
+				<pre><code>&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;meta charset="UTF-8"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;&lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;&lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;&lt;link rel="icon" href="/favicon.ico"&gt;&lt;title&gt;Eleventy Starter Boilerplate&lt;/title&gt;&lt;meta name="description" content="Starter code for your 11ty blog Boilerplate"&gt;&lt;meta name="author" content="Anonymous"&gt;&lt;meta property="og:title" content="Eleventy Starter Boilerplate"&gt;&lt;meta property="og:description" content="Starter code for your 11ty blog Boilerplate"&gt;&lt;meta property="og:locale" content="en"&gt;&lt;meta property="og:site_name" content="Starter"&gt;&lt;link href="/assets/styles/main.css" rel="stylesheet"&gt;&lt;script src="https://identity.netlify.com/v1/netlify-identity-widget.js"&gt;&lt;/script&gt;&lt;script&gt;window.netlifyIdentity&amp;&amp;window.netlifyIdentity.on("init",n=&gt;{n||window.netlifyIdentity.on("login",()=&gt;{document.location.href="/admin/"})})&lt;/script&gt;&lt;/head&gt;&lt;body class="antialiased w-full text-gray-700"&gt;&lt;div class="max-w-screen-md mx-auto"&gt;&lt;div class="border-b border-gray-300"&gt;&lt;div class="pt-16 pb-8"&gt;&lt;h1 class="font-semibold text-3xl text-gray-800"&gt;Eleventy Starter Boilerplate&lt;/h1&gt;&lt;div class="text-xl"&gt;Starter code for your 11ty blog Boilerplate&lt;/div&gt;&lt;/div&gt;&lt;nav&gt;&lt;ul class="flex flex-wrap text-xl"&gt;&lt;li class="mr-6"&gt;&lt;a class="text-gray-700 border-none hover:no-underline hover:text-gray-800" href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li class="mr-6"&gt;&lt;a class="text-gray-700 border-none hover:no-underline hover:text-gray-800" href="https://github.com/ixartz/Eleventy-Starter-Boilerplate"&gt;GitHub&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;/div&gt;&lt;div class="text-xl py-5"&gt;&lt;ul&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/my-fifth-post/"&gt;My fifth post&lt;/a&gt;&lt;div&gt;August 8, 2020&lt;/div&gt;&lt;/li&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/my-forth-post/"&gt;My forth post&lt;/a&gt;&lt;div&gt;July 7, 2020&lt;/div&gt;&lt;/li&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/my-third-post/"&gt;My third post&lt;/a&gt;&lt;div&gt;June 6, 2020&lt;/div&gt;&lt;/li&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/eleventy-starter-boilerplate-presentation/"&gt;Eleventy Starter Boilerplate Presentation&lt;/a&gt;&lt;div&gt;May 5, 2020&lt;/div&gt;&lt;/li&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/my-second-post/"&gt;My second post&lt;/a&gt;&lt;div&gt;March 3, 2020&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div class="text-sm flex justify-between"&gt;&lt;div class="text-right ml-auto"&gt;&lt;a href="/page2/"&gt;Older Posts →&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="border-t border-gray-300 text-center py-8"&gt;Made with &lt;span role="img" aria-label="Love"&gt;♥&lt;/span&gt; by &lt;a href="https://creativedesignsguru.com"&gt;CreativeDesignsGuru&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>https://identity.netlify.com/v1/netlify-identity-widget.js</code></pre></td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>&lt;script src="https://identity.netlify.com/v1/netlify-identity-widget.js"&gt;&lt;/script&gt;</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Ensure JavaScript source files are loaded from only trusted sources, and the sources can't be controlled by end users of the application.</p>
+ </td>
+	</tr>
+</tbody></table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+								<li>
+									<h5>
+										<a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-6">Private IP Disclosure</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=polling&amp;t=Oo2Ee4J&amp;sid=YzUJwzlv_qUDnh2yAAAS</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tbody><tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">OWASP_2021_A01</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html">OWASP_2017_A03</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>A private IP (such as 10.x.x.x, 172.x.x.x, 192.168.x.x) or an Amazon EC2 private hostname (for example, ip-10-0-56-78) has been found in the HTTP response body. This information might be helpful for further attacks targeting internal systems.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>172.18.0.2:8080</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (602 bytes)</summary>
+				
+				<pre><code>GET http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=polling&amp;t=Oo2Ee4J&amp;sid=YzUJwzlv_qUDnh2yAAAS HTTP/1.1
+host: localhost:8080
+Proxy-Connection: keep-alive
+sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"
+Accept: */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Language: en-US,en;q=0.9
+Cookie: io=YzUJwzlv_qUDnh2yAAAS
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (270 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 5103
+Access-Control-Allow-Origin: *
+Set-Cookie: io=YzUJwzlv_qUDnh2yAAAS; Path=/; HttpOnly; SameSite=Strict
+Date: Tue, 19 Dec 2023 13:18:41 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+</code></pre>
+				
+				
+			</details> <details class="response-body">
+				<summary>Response body (5103 bytes)</summary>
+				
+				<pre><code>16:40/browser-sync,2643:42/browser-sync,["connection",{"logLevel":"info","plugins":[],"port":8080,"snippetOptions":{"async":true,"whitelist":[],"blacklist":[],"rule":{"match":{}}},"reloadDebounce":500,"mode":"server","scriptPaths":{"path":"/browser-sync/browser-sync-client.js","versioned":"/browser-sync/browser-sync-client.js?v=2.26.14"},"server":{"baseDir":["_site"],"index":"index.html","serveStaticOptions":{"index":"index.html"}},"logFileChanges":true,"reloadThrottle":0,"clientEvents":["scroll","scroll:element","input:text","input:toggles","form:submit","form:reset","click"],"urls":{"local":"http://localhost:8080","external":"http://172.18.0.2:8080","ui":"http://localhost:3001","ui-external":"http://localhost:3001"},"hostnameSuffix":false,"scrollElements":[],"scheme":"http","startPath":null,"single":false,"host":null,"codeSync":true,"watchEvents":["change"],"browser":"default","notify":false,"open":false,"reloadDelay":0,"minify":true,"rewriteRules":[],"injectFileTypes":["css","png","jpg","jpeg","svg","gif","webp","map"],"cors":false,"proxy":false,"tagNames":{"jpg":"img","css":"link","svg":"img","gif":"img","jpeg":"img","js":"script","png":"img","scss":"link","less":"link"},"scrollRestoreTechnique":"window.name","watch":false,"watchOptions":{"ignoreInitial":true,"cwd":"/my-project-name","ignored":["node_modules"]},"cwd":"/my-project-name","logConnections":false,"index":"index.html","ghostMode":{"clicks":true,"scroll":true,"location":true,"forms":{"submit":true,"inputs":true,"toggles":true}},"middleware":[{"route":"","id":"Browsersync Server ServeStatic Middleware - 0"}],"ignore":["node_modules"],"injectChanges":true,"excludedFileTypes":["js","css","pdf","map","svg","ico","woff","json","eot","ttf","png","jpg","jpeg","webp","gif","mp4","mp3","3gp","ogg","ogv","webm","m4a","flv","wmv","avi","swf","scss"],"online":true,"socket":{"socketIoOptions":{"log":false},"socketIoClientConfig":{"reconnectionAttempts":50},"path":"/browser-sync/socket.io","clientPath":"/browser-sync","namespace":"/browser-sync","clients":{"heartbeatTimeout":5000}},"ui":{"port":3001},"userPlugins":[],"session":1702975954194,"logPrefix":"Browsersync","scrollThrottle":0,"reloadOnRestart":false,"localOnly":false,"files":{"core":{"globs":["./_site/assets/styles/main.css"],"objs":[]}},"version":"2.26.14","logSnippet":true,"injectNotification":false,"snippet":"&lt;script id=\"__bs_script__\"&gt;//&lt;![CDATA[\n    document.write(\"&lt;script async src='/browser-sync/browser-sync-client.js?v=2.26.14'&gt;&lt;\\/script&gt;\".replace(\"HOST\", location.hostname));\n//]]&gt;&lt;/script&gt;\n","timestamps":true,"serveStatic":[],"scrollElementMapping":[],"scrollProportionally":true,"xip":false}]2431:42/browser-sync,["ui:connection",{"port":3001,"bs":{"mode":"server","port":8080},"urls":{"ui":"http://localhost:3001","ui-external":"http://localhost:3001"},"clientFiles":{"pesticide":{"src":"/browser-sync/pesticide.css","active":false,"hidden":"","name":"pesticide","tagline":"Add simple CSS outlines to all elements. (powered by &lt;a href=\"http://pesticide.io\" target=\"_blank\"&gt;Pesticide.io&lt;/a&gt;)","context":"remote-debug","served":false,"title":"CSS Outlining","type":"css","id":"__browser-sync-pesticide__","file":"/my-project-name/node_modules/browser-sync-ui/lib/plugins/remote-debug/css/pesticide.min.css"},"pesticide-depth":{"src":"/browser-sync/pesticide-depth.css","active":false,"hidden":"","name":"pesticide-depth","tagline":"Add CSS box-shadows to all elements. (powered by &lt;a href=\"http://pesticide.io\" target=\"_blank\"&gt;Pesticide.io&lt;/a&gt;)","context":"remote-debug","served":false,"title":"CSS Depth Outlining","type":"css","id":"__browser-sync-pesticidedepth__","file":"/my-project-name/node_modules/browser-sync-ui/lib/plugins/remote-debug/css/pesticide-depth.css"},"overlay-grid-js":{"type":"js","context":"n/a","id":"__browser-sync-gridoverlay__","active":false,"file":"/my-project-name/node_modules/browser-sync-ui/lib/plugins/remote-debug/overlay-grid/js/grid-overlay.js","served":false,"name":"overlay-grid-js","src":"/browser-sync/grid-overlay-js.js"}},"remote-debug":{"overlay-grid":{"size":"16px","innerHTML":"","color":"rgba(0, 0, 0, .2)","horizontal":true,"offsetX":"0","offsetY":"0","active":false,"name":"overlay-grid","tagline":"Add an adjustable CSS overlay grid to your webpage","vertical":true,"title":"Overlay CSS Grid","selector":"body"}},"network-throttle":{"name":"network-throttle","title":"Network Throttle","active":false,"targets":[{"active":false,"title":"DSL (2Mbs, 5ms RTT)","id":"dsl","speed":200,"latency":5,"urls":[],"order":1},{"active":false,"title":"4G (4Mbs, 20ms RTT)","id":"4g","speed":400,"latency":10,"urls":[],"order":2},{"active":false,"title":"3G (750kbs, 100ms RTT)","id":"3g","speed":75,"latency":50,"urls":[],"order":3},{"active":false,"id":"good-2g","title":"Good 2G (450kbs, 150ms RTT)","speed":45,"latency":75,"urls":[],"order":4},{"active":false,"id":"2g","title":"Regular 2G (250kbs, 300ms RTT)","speed":25,"latency":150,"urls":[],"order":5},{"active":false,"id":"gprs","title":"GPRS (50kbs, 500ms RTT)","speed":5,"latency":250,"urls":[],"order":6}],"servers":{}}}]</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>172.18.0.2:8080</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Remove the private IP address from the HTTP response body.  For comments, use JSP/ASP/PHP comment instead of HTML/JavaScript comment which can be seen by client browsers.</p>
+ </td>
+	</tr>
+</tbody></table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+								<li>
+									<h5>
+										<a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-7">X-Content-Type-Options Header Missing</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET http://localhost:8080/robots.txt</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tbody><tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/">OWASP_2021_A05</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html">OWASP_2017_A06</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p>
+
+<p>At "High" threshold this scan rule will not alert on client or server error responses.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (239 bytes)</summary>
+				
+				<pre><code>GET http://localhost:8080/robots.txt HTTP/1.1
+host: localhost:8080
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (292 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 19 Dec 2023 08:52:33 GMT
+ETag: W/"28-18c8146dbb4"
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 40
+Date: Tue, 19 Dec 2023 13:18:32 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (40 bytes)</summary>
+				
+				<pre><code>Sitemap: https://example.com/sitemap.xml</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>x-content-type-options</code></pre></td>
+	</tr>
+	
+	
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p>
+
+<p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>
+ </td>
+	</tr>
+</tbody></table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				
+				
+				  
+				 
+				
+				
+				
+				
+				<li id="alerts--risk-0-confidence-2">
+					<h3>
+						<span>Risk</span>=<span class="risk-level">Informational</span>, <span>Confidence</span>=<span class="confidence-level">Medium</span> <span>(2)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">http://localhost:8080</span> <span>(2)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-11">Session Management Response Identified</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">POST http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=polling&amp;t=Oo2Ee4D&amp;sid=YzUJwzlv_qUDnh2yAAAS</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tbody><tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to "Auto-Detect" then this rule will change the session management to use the tokens identified.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>cookie:io</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (694 bytes)</summary>
+				
+				<pre><code>POST http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=polling&amp;t=Oo2Ee4D&amp;sid=YzUJwzlv_qUDnh2yAAAS HTTP/1.1
+host: localhost:8080
+Proxy-Connection: keep-alive
+Content-Length: 19
+sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"
+Accept: */*
+Content-type: text/plain;charset=UTF-8
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:8080
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Language: en-US,en;q=0.9
+Cookie: io=YzUJwzlv_qUDnh2yAAAS
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (19 bytes)</summary>
+				
+				<pre><code>16:40/browser-sync,</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (311 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 2
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:8080
+Set-Cookie: io=YzUJwzlv_qUDnh2yAAAS; Path=/; HttpOnly; SameSite=Strict
+Date: Tue, 19 Dec 2023 13:18:41 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (2 bytes)</summary>
+				
+				<pre><code>ok</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>io</code></pre></td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>YzUJwzlv_qUDnh2yAAAS</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>
+ </td>
+	</tr>
+</tbody></table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+								<li>
+									<h5>
+										<a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-12">User Agent Fuzzer</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">POST http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=polling&amp;t=Oo2ElVK&amp;sid=y2_fnI5ws2enrpGiAAAo</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tbody><tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.</p>
+ </td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (643 bytes)</summary>
+				
+				<pre><code>POST http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=polling&amp;t=Oo2ElVK&amp;sid=y2_fnI5ws2enrpGiAAAo HTTP/1.1
+host: localhost:8080
+Proxy-Connection: keep-alive
+Content-Length: 77
+sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"
+Accept: */*
+Content-type: text/plain;charset=UTF-8
+sec-ch-ua-mobile: ?0
+user-agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:8080
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Language: en-US,en;q=0.9
+Cookie: io=y2_fnI5ws2enrpGiAAAo
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (77 bytes)</summary>
+				
+				<pre><code>74:42/browser-sync,["ui:history:connected",{"href":"http://localhost:8080/"}]</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (256 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 400 Bad Request
+Content-Type: application/json
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:8080
+Date: Tue, 19 Dec 2023 13:29:51 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+content-length: 41
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (41 bytes)</summary>
+				
+				<pre><code>{"code":1,"message":"Session ID unknown"}</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>Header User-Agent</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Attack</th>
+		<td><pre><code>Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)</code></pre></td>
+	</tr>
+	
+	
+</tbody></table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				
+				<li id="alerts--risk-0-confidence-1">
+					<h3>
+						<span>Risk</span>=<span class="risk-level">Informational</span>, <span>Confidence</span>=<span class="confidence-level">Low</span> <span>(3)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">http://localhost:8080</span> <span>(3)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-8">Cookie Poisoning</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">POST http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=polling&amp;t=Oo2Ee4D&amp;sid=YzUJwzlv_qUDnh2yAAAS</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tbody><tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A03_2021-Injection/">OWASP_2021_A03</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A1_2017-Injection.html">OWASP_2017_A01</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>This check looks at user-supplied input in query string parameters and POST data to identify where cookie parameters might be controlled. This is called a cookie poisoning attack, and becomes exploitable when an attacker can manipulate the cookie in various ways. In some cases this will not be exploitable, however, allowing URL parameters to set cookie values is generally considered a bug.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>An attacker may be able to poison cookie values through POST parameters. To test if this is a more serious issue, you should try resending that request as a GET, with the POST parameter included as a query string parameter. For example:  http://nottrusted.com/page?value=maliciousInput.
+</p>
+
+<p>
+</p>
+
+<p>This was identified at:
+</p>
+
+<p>
+</p>
+
+<p>http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=polling&amp;t=Oo2Ee4D&amp;sid=YzUJwzlv_qUDnh2yAAAS
+</p>
+
+<p>
+</p>
+
+<p>User-input was found in the following cookie:
+</p>
+
+<p>io=YzUJwzlv_qUDnh2yAAAS; Path=/; HttpOnly; SameSite=Strict
+</p>
+
+<p>
+</p>
+
+<p>The user input was:
+</p>
+
+<p>sid=YzUJwzlv_qUDnh2yAAAS</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (694 bytes)</summary>
+				
+				<pre><code>POST http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=polling&amp;t=Oo2Ee4D&amp;sid=YzUJwzlv_qUDnh2yAAAS HTTP/1.1
+host: localhost:8080
+Proxy-Connection: keep-alive
+Content-Length: 19
+sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"
+Accept: */*
+Content-type: text/plain;charset=UTF-8
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:8080
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Language: en-US,en;q=0.9
+Cookie: io=YzUJwzlv_qUDnh2yAAAS
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (19 bytes)</summary>
+				
+				<pre><code>16:40/browser-sync,</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (311 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 2
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:8080
+Set-Cookie: io=YzUJwzlv_qUDnh2yAAAS; Path=/; HttpOnly; SameSite=Strict
+Date: Tue, 19 Dec 2023 13:18:41 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (2 bytes)</summary>
+				
+				<pre><code>ok</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>sid</code></pre></td>
+	</tr>
+	
+	
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Do not allow user input to control cookie names and values. If some query string parameters must be set in cookie values, be sure to filter out semicolon's that can serve as name/value pair delimiters.</p>
+ </td>
+	</tr>
+</tbody></table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+								<li>
+									<h5>
+										<a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-9">Information Disclosure - Suspicious Comments</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET http://localhost:8080/</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tbody><tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">OWASP_2021_A01</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/05-Review_Webpage_Content_for_Information_Leakage">WSTG-v42-INFO-05</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html">OWASP_2017_A03</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>The following pattern was used: \bADMIN\b and was detected in the element starting with: "&lt;script&gt;window.netlifyIdentity&amp;&amp;window.netlifyIdentity.on("init",n=&gt;{n||window.netlifyIdentity.on("login",()=&gt;{document.location", see evidence field for the suspicious comment/snippet.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (229 bytes)</summary>
+				
+				<pre><code>GET http://localhost:8080/ HTTP/1.1
+host: localhost:8080
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (294 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 19 Dec 2023 08:52:33 GMT
+ETag: W/"a81-18c8146dbb4"
+Content-Type: text/html; charset=UTF-8
+Content-Length: 2689
+Date: Tue, 19 Dec 2023 13:18:32 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+</code></pre>
+				
+				
+			</details> <details class="response-body">
+				<summary>Response body (2689 bytes)</summary>
+				
+				<pre><code>&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;meta charset="UTF-8"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;&lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;&lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;&lt;link rel="icon" href="/favicon.ico"&gt;&lt;title&gt;Eleventy Starter Boilerplate&lt;/title&gt;&lt;meta name="description" content="Starter code for your 11ty blog Boilerplate"&gt;&lt;meta name="author" content="Anonymous"&gt;&lt;meta property="og:title" content="Eleventy Starter Boilerplate"&gt;&lt;meta property="og:description" content="Starter code for your 11ty blog Boilerplate"&gt;&lt;meta property="og:locale" content="en"&gt;&lt;meta property="og:site_name" content="Starter"&gt;&lt;link href="/assets/styles/main.css" rel="stylesheet"&gt;&lt;script src="https://identity.netlify.com/v1/netlify-identity-widget.js"&gt;&lt;/script&gt;&lt;script&gt;window.netlifyIdentity&amp;&amp;window.netlifyIdentity.on("init",n=&gt;{n||window.netlifyIdentity.on("login",()=&gt;{document.location.href="/admin/"})})&lt;/script&gt;&lt;/head&gt;&lt;body class="antialiased w-full text-gray-700"&gt;&lt;div class="max-w-screen-md mx-auto"&gt;&lt;div class="border-b border-gray-300"&gt;&lt;div class="pt-16 pb-8"&gt;&lt;h1 class="font-semibold text-3xl text-gray-800"&gt;Eleventy Starter Boilerplate&lt;/h1&gt;&lt;div class="text-xl"&gt;Starter code for your 11ty blog Boilerplate&lt;/div&gt;&lt;/div&gt;&lt;nav&gt;&lt;ul class="flex flex-wrap text-xl"&gt;&lt;li class="mr-6"&gt;&lt;a class="text-gray-700 border-none hover:no-underline hover:text-gray-800" href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li class="mr-6"&gt;&lt;a class="text-gray-700 border-none hover:no-underline hover:text-gray-800" href="https://github.com/ixartz/Eleventy-Starter-Boilerplate"&gt;GitHub&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;/div&gt;&lt;div class="text-xl py-5"&gt;&lt;ul&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/my-fifth-post/"&gt;My fifth post&lt;/a&gt;&lt;div&gt;August 8, 2020&lt;/div&gt;&lt;/li&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/my-forth-post/"&gt;My forth post&lt;/a&gt;&lt;div&gt;July 7, 2020&lt;/div&gt;&lt;/li&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/my-third-post/"&gt;My third post&lt;/a&gt;&lt;div&gt;June 6, 2020&lt;/div&gt;&lt;/li&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/eleventy-starter-boilerplate-presentation/"&gt;Eleventy Starter Boilerplate Presentation&lt;/a&gt;&lt;div&gt;May 5, 2020&lt;/div&gt;&lt;/li&gt;&lt;li class="mb-3 flex justify-between"&gt;&lt;a href="/my-second-post/"&gt;My second post&lt;/a&gt;&lt;div&gt;March 3, 2020&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div class="text-sm flex justify-between"&gt;&lt;div class="text-right ml-auto"&gt;&lt;a href="/page2/"&gt;Older Posts →&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="border-t border-gray-300 text-center py-8"&gt;Made with &lt;span role="img" aria-label="Love"&gt;♥&lt;/span&gt; by &lt;a href="https://creativedesignsguru.com"&gt;CreativeDesignsGuru&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>admin</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>
+ </td>
+	</tr>
+</tbody></table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+								<li>
+									<h5>
+										<a href="file:///home/vit81/2023-12-19-ZAP-Report-localhost.html#alert-type-10">Loosely Scoped Cookie</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=polling&amp;t=Oo2Ee43</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tbody><tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes">WSTG-v42-SESS-02</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/">OWASP_2021_A08</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html">OWASP_2017_A06</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>Cookies can be scoped by domain or path. This check is only concerned with domain scope.The domain scope applied to a cookie determines which domains can access it. For example, a cookie can be scoped strictly to a subdomain e.g. www.nottrusted.com, or loosely scoped to a parent domain e.g. nottrusted.com. In the latter case, any subdomain of nottrusted.com can access the cookie. Loosely scoped cookies are common in mega-applications like google.com and live.com. Cookies set from a subdomain like app.foo.bar are transmitted only to that domain by the browser. However, cookies scoped to a parent-level domain may be transmitted to the parent, or any subdomain of the parent.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>The origin domain used for comparison was: 
+</p>
+
+<p>localhost
+</p>
+
+<p>io=YzUJwzlv_qUDnh2yAAAS
+</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (544 bytes)</summary>
+				
+				<pre><code>GET http://localhost:8080/browser-sync/socket.io/?EIO=3&amp;transport=polling&amp;t=Oo2Ee43 HTTP/1.1
+host: localhost:8080
+Proxy-Connection: keep-alive
+sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"
+Accept: */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Language: en-US,en;q=0.9
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (269 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 102
+Access-Control-Allow-Origin: *
+Set-Cookie: io=YzUJwzlv_qUDnh2yAAAS; Path=/; HttpOnly; SameSite=Strict
+Date: Tue, 19 Dec 2023 13:18:41 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (102 bytes)</summary>
+				
+				<pre><code>95:0{"sid":"YzUJwzlv_qUDnh2yAAAS","upgrades":["websocket"],"pingInterval":5000,"pingTimeout":5000}2:40</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	
+	
+	
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>
+ </td>
+	</tr>
+</tbody></table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				  
+			</ol>
+		</section>
+
+		<section id="appendix" class="appendix">
+			<h2>Appendix</h2>
+
+			<section id="alert-types" class="alert-types">
+				<h3>Alert types</h3>
+				<p class="alert-types-intro">This section contains additional information on the types of alerts in the report.</p>
+				<ol>
+					<li id="alert-type-0">
+						<h4>CSP: Wildcard Directive</h4>
+						<table class="alert-types-table">
+							<tbody><tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a href="https://www.zaproxy.org/docs/alerts/10055/">CSP</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a href="https://cwe.mitre.org/data/definitions/693.html">693</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>15</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a href="http://www.w3.org/TR/CSP2/">http://www.w3.org/TR/CSP2/</a></li>
+										<li><a href="http://www.w3.org/TR/CSP/">http://www.w3.org/TR/CSP/</a></li>
+										<li><a href="http://caniuse.com/#search=content+security+policy">http://caniuse.com/#search=content+security+policy</a></li>
+										<li><a href="http://content-security-policy.com/">http://content-security-policy.com/</a></li>
+										<li><a href="https://github.com/shapesecurity/salvation">https://github.com/shapesecurity/salvation</a></li>
+										<li><a href="https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources">https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</a></li>
+									</ol>
+								</td>
+							</tr>
+						</tbody></table>
+					</li>
+					<li id="alert-type-1">
+						<h4>Content Security Policy (CSP) Header Not Set</h4>
+						<table class="alert-types-table">
+							<tbody><tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a href="https://www.zaproxy.org/docs/alerts/10038/">Content Security Policy (CSP) Header Not Set</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a href="https://cwe.mitre.org/data/definitions/693.html">693</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>15</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a href="https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy">https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</a></li>
+										<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</a></li>
+										<li><a href="http://www.w3.org/TR/CSP/">http://www.w3.org/TR/CSP/</a></li>
+										<li><a href="http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html">http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</a></li>
+										<li><a href="http://www.html5rocks.com/en/tutorials/security/content-security-policy/">http://www.html5rocks.com/en/tutorials/security/content-security-policy/</a></li>
+										<li><a href="http://caniuse.com/#feat=contentsecuritypolicy">http://caniuse.com/#feat=contentsecuritypolicy</a></li>
+										<li><a href="http://content-security-policy.com/">http://content-security-policy.com/</a></li>
+									</ol>
+								</td>
+							</tr>
+						</tbody></table>
+					</li>
+					<li id="alert-type-2">
+						<h4>Cross-Domain Misconfiguration</h4>
+						<table class="alert-types-table">
+							<tbody><tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a href="https://www.zaproxy.org/docs/alerts/10098/">Cross-Domain Misconfiguration</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a href="https://cwe.mitre.org/data/definitions/264.html">264</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>14</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a href="https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy">https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</a></li>
+									</ol>
+								</td>
+							</tr>
+						</tbody></table>
+					</li>
+					<li id="alert-type-3">
+						<h4>Missing Anti-clickjacking Header</h4>
+						<table class="alert-types-table">
+							<tbody><tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a href="https://www.zaproxy.org/docs/alerts/10020/">Anti-clickjacking Header</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a href="https://cwe.mitre.org/data/definitions/1021.html">1021</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>15</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</a></li>
+									</ol>
+								</td>
+							</tr>
+						</tbody></table>
+					</li>
+					<li id="alert-type-4">
+						<h4>Session ID in URL Rewrite</h4>
+						<table class="alert-types-table">
+							<tbody><tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a href="https://www.zaproxy.org/docs/alerts/3/">Session ID in URL Rewrite</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a href="https://cwe.mitre.org/data/definitions/200.html">200</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>13</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a href="http://seclists.org/lists/webappsec/2002/Oct-Dec/0111.html">http://seclists.org/lists/webappsec/2002/Oct-Dec/0111.html</a></li>
+									</ol>
+								</td>
+							</tr>
+						</tbody></table>
+					</li>
+					<li id="alert-type-5">
+						<h4>Cross-Domain JavaScript Source File Inclusion</h4>
+						<table class="alert-types-table">
+							<tbody><tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a href="https://www.zaproxy.org/docs/alerts/10017/">Cross-Domain JavaScript Source File Inclusion</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a href="https://cwe.mitre.org/data/definitions/829.html">829</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>15</td>
+							</tr>
+							
+						</tbody></table>
+					</li>
+					<li id="alert-type-6">
+						<h4>Private IP Disclosure</h4>
+						<table class="alert-types-table">
+							<tbody><tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a href="https://www.zaproxy.org/docs/alerts/2/">Private IP Disclosure</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a href="https://cwe.mitre.org/data/definitions/200.html">200</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>13</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a href="https://tools.ietf.org/html/rfc1918">https://tools.ietf.org/html/rfc1918</a></li>
+									</ol>
+								</td>
+							</tr>
+						</tbody></table>
+					</li>
+					<li id="alert-type-7">
+						<h4>X-Content-Type-Options Header Missing</h4>
+						<table class="alert-types-table">
+							<tbody><tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a href="https://www.zaproxy.org/docs/alerts/10021/">X-Content-Type-Options Header Missing</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a href="https://cwe.mitre.org/data/definitions/693.html">693</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>15</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a href="http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx">http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</a></li>
+										<li><a href="https://owasp.org/www-community/Security_Headers">https://owasp.org/www-community/Security_Headers</a></li>
+									</ol>
+								</td>
+							</tr>
+						</tbody></table>
+					</li>
+					<li id="alert-type-8">
+						<h4>Cookie Poisoning</h4>
+						<table class="alert-types-table">
+							<tbody><tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a href="https://www.zaproxy.org/docs/alerts/10029/">Cookie Poisoning</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a href="https://cwe.mitre.org/data/definitions/20.html">20</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>20</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a href="http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-cookie">http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-cookie</a></li>
+									</ol>
+								</td>
+							</tr>
+						</tbody></table>
+					</li>
+					<li id="alert-type-9">
+						<h4>Information Disclosure - Suspicious Comments</h4>
+						<table class="alert-types-table">
+							<tbody><tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a href="https://www.zaproxy.org/docs/alerts/10027/">Information Disclosure - Suspicious Comments</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a href="https://cwe.mitre.org/data/definitions/200.html">200</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>13</td>
+							</tr>
+							
+						</tbody></table>
+					</li>
+					<li id="alert-type-10">
+						<h4>Loosely Scoped Cookie</h4>
+						<table class="alert-types-table">
+							<tbody><tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a href="https://www.zaproxy.org/docs/alerts/90033/">Loosely Scoped Cookie</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a href="https://cwe.mitre.org/data/definitions/565.html">565</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>15</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a href="https://tools.ietf.org/html/rfc6265#section-4.1">https://tools.ietf.org/html/rfc6265#section-4.1</a></li>
+										<li><a href="https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html">https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</a></li>
+										<li><a href="http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies">http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</a></li>
+									</ol>
+								</td>
+							</tr>
+						</tbody></table>
+					</li>
+					<li id="alert-type-11">
+						<h4>Session Management Response Identified</h4>
+						<table class="alert-types-table">
+							<tbody><tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a href="https://www.zaproxy.org/docs/alerts/10112/">Session Management Response Identified</a>)
+									</span>   
+								</td>
+							</tr>
+							
+							
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a href="https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id">https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</a></li>
+									</ol>
+								</td>
+							</tr>
+						</tbody></table>
+					</li>
+					<li id="alert-type-12">
+						<h4>User Agent Fuzzer</h4>
+						<table class="alert-types-table">
+							<tbody><tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by an active scanner</span> <span>(<a href="https://www.zaproxy.org/docs/alerts/10104/">User Agent Fuzzer</a>)
+									</span>   
+								</td>
+							</tr>
+							
+							
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a href="https://owasp.org/wstg">https://owasp.org/wstg</a></li>
+									</ol>
+								</td>
+							</tr>
+						</tbody></table>
+					</li>
+				</ol>
+			</section>
+		</section>
+		 
+	</main>
+
+
+
+
+
+</body></html>
