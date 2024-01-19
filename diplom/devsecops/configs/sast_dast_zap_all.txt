@@ -1,0 +1,79 @@
+Для сохранения результатов каждого теста в отдельные HTML-файлы, вам нужно обновить каждую задачу, чтобы генерировать HTML-отчеты, и сохранить их как артефакты. Вот пример того, как это можно сделать:
+
+stages:
+  - build
+  - test
+  - analyze
+  - dast
+  - deploy
+
+build:
+  stage: build
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG .
+  only:
+    - master
+
+snyk:
+  stage: test
+  image: snyk/snyk:latest
+  script:
+    - snyk test --all-projects --json > snyk-report.json
+    - snyk-to-html -i snyk-report.json -o snyk-report.html
+  artifacts:
+    paths:
+      - snyk-report.html
+  allow_failure: true
+
+trivy_scan:
+  stage: analyze
+  image: aquasec/trivy:latest
+  script:
+    - trivy image --severity HIGH,CRITICAL --format template --template "@contrib/html.tpl" -o trivy-report.html $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+  artifacts:
+    paths:
+      - trivy-report.html
+  allow_failure: true
+
+secret_detection:
+  stage: analyze
+  image: python:3.9
+  script:
+    - pip install detect-secrets
+    - detect-secrets scan > secrets.baseline
+  artifacts:
+    paths:
+      - secrets.baseline
+  allow_failure: true
+
+semgrep:
+  stage: analyze
+  image: returntocorp/semgrep:latest
+  script:
+    - semgrep --config p/security-audit . --json > semgrep-report.json
+    - json2html < semgrep-report.json > semgrep-report.html
+  artifacts:
+    paths:
+      - semgrep-report.html
+  allow_failure: true
+
+zap:
+  stage: dast
+  image: owasp/zap2docker-stable:latest
+  script:
+    - zap-baseline.py -t $CI_PROJECT_URL -m 5 -z "-config spider.maxDepth=1 -config spider.postForm=true" -r zap-report.html
+  artifacts:
+    paths:
+      - zap-report.html
+  allow_failure: true
+
+deploy:
+  stage: deploy
+  script:
+    - echo $DEPLOY_PASSWORD | docker login mysite.ru --username $DEPLOY_USER --password-stdin
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+  only:
+    - master
+
+
+Обратите внимание, что не все инструменты поддерживают прямое создание HTML-отчетов. В таких случаях вы можете использовать дополнительные инструменты, такие как snyk-to-html или json2html, чтобы преобразовать JSON-отчеты в HTML.

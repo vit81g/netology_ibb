@@ -1,0 +1,45 @@
+Установка Docker и GitLab Runner на Linux включает в себя несколько шагов. Вот базовый набор действий, которые вы должны выполнить:
+
+1. Установка Docker:
+   
+   - Обновите существующий список пакетов:
+          sudo apt-get update
+     
+   - Установите необходимые пакеты, которые позволяют apt использовать пакеты по HTTPS:
+          sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+     
+   - Добавьте в систему ключ GPG официального репозитория Docker:
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+     
+   - Добавьте репозиторий Docker в источники APT:
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+     
+   - Обновите список пакетов и установите Docker:
+          sudo apt-get update
+     sudo apt-get install docker-ce
+     
+   - Проверьте статус Docker:
+          sudo systemctl status docker
+     
+
+2. Установка GitLab Runner:
+
+   - Добавьте репозиторий GitLab Runner:
+          curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | sudo bash
+     
+   - Установите GitLab Runner:
+          sudo apt-get install gitlab-runner
+     
+   
+3. Регистрация GitLab Runner:
+
+   - Запустите команду регистрации GitLab Runner:
+          sudo gitlab-runner register
+     
+   - Вам потребуется URL вашего GitLab сервера, токен регистрации (который вы можете найти в настройках вашего проекта на GitLab), описание для Runner, теги (если они нужны) и тип исполнителя (в вашем случае, это будет docker).
+
+   - После регистрации GitLab Runner запустится автоматически. Вы можете проверить его статус с помощью следующей команды:
+          sudo gitlab-runner status
+     
+
+Пожалуйста, обратите внимание, что эти команды предназначены для систем на базе Debian, таких как Ubuntu. Если вы используете другой дистрибутив Linux, команды могут немного отличаться.
