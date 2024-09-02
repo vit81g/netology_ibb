@@ -1,0 +1,3079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZAP Scanning Report</title>
+<link
+	href="2024-04-21-ZAP-Report-t-friday-8lbtha15.spbctf.net/normalize/normalize.css" rel="stylesheet">
+<link
+	href="2024-04-21-ZAP-Report-t-friday-8lbtha15.spbctf.net/themes/original/main.css" rel="stylesheet">
+<link
+	href="2024-04-21-ZAP-Report-t-friday-8lbtha15.spbctf.net/themes/original/colors.css" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<h1>ZAP Scanning Report</h1>
+		<p>
+			<span>Generated with</span> <a href="https://zaproxy.org"><img
+				src="2024-04-21-ZAP-Report-t-friday-8lbtha15.spbctf.net/zap32x32.png" alt="The ZAP logo" class="zap-logo">ZAP</a>
+			<span>on Sun 21 Apr 2024, at 16:42:39</span>
+		</p>
+		<p>ZAP Version: 2.14.0</p>
+		<p>
+			ZAP is supported by the <a href="https://crashoverride.com/?zap=rep">Crash Override Open Source Fellowship</a>
+		</p>
+	</header>
+
+	<main>
+
+		<section id="contents" class="contents">
+			<h2>Contents</h2>
+			<nav>
+				<ol>
+					<li><a
+						href="#about-this-report">About this report</a>
+						<ol>
+							<li><a
+								href="#report-description">Report description</a></li>
+							<li><a
+								href="#report-parameters">Report parameters</a></li>
+						</ol></li>
+					<data-th-block>
+					<li><a
+						href="#summaries">Summaries</a>
+						<ol>
+							<li><a
+								href="#risk-confidence-counts">Alert counts by risk and confidence</a></li>
+							<li><a
+								href="#site-risk-counts">Alert counts by site and risk</a></li>
+							<li><a
+								href="#alert-type-counts">Alert counts by alert type</a></li>
+						</ol></li>
+					<li><a
+						href="#alerts">Alerts</a>
+						<ol>
+							
+							 
+							
+							
+							
+							
+							<li><a
+								href="#alerts--risk-2-confidence-3"><span>Risk</span>=<span
+									class="risk-level">Medium</span>, <span>Confidence</span>=<span
+									class="confidence-level">High</span> <span>(1)</span></a></li>
+							
+							<li><a
+								href="#alerts--risk-2-confidence-2"><span>Risk</span>=<span
+									class="risk-level">Medium</span>, <span>Confidence</span>=<span
+									class="confidence-level">Medium</span> <span>(1)</span></a></li>
+							
+							<li><a
+								href="#alerts--risk-2-confidence-1"><span>Risk</span>=<span
+									class="risk-level">Medium</span>, <span>Confidence</span>=<span
+									class="confidence-level">Low</span> <span>(1)</span></a></li>
+							  
+							
+							
+							
+							
+							<li><a
+								href="#alerts--risk-1-confidence-3"><span>Risk</span>=<span
+									class="risk-level">Low</span>, <span>Confidence</span>=<span
+									class="confidence-level">High</span> <span>(1)</span></a></li>
+							
+							<li><a
+								href="#alerts--risk-1-confidence-2"><span>Risk</span>=<span
+									class="risk-level">Low</span>, <span>Confidence</span>=<span
+									class="confidence-level">Medium</span> <span>(5)</span></a></li>
+							
+							
+							  
+							
+							
+							
+							
+							<li><a
+								href="#alerts--risk-0-confidence-3"><span>Risk</span>=<span
+									class="risk-level">Informational</span>, <span>Confidence</span>=<span
+									class="confidence-level">High</span> <span>(1)</span></a></li>
+							
+							<li><a
+								href="#alerts--risk-0-confidence-2"><span>Risk</span>=<span
+									class="risk-level">Informational</span>, <span>Confidence</span>=<span
+									class="confidence-level">Medium</span> <span>(1)</span></a></li>
+							
+							<li><a
+								href="#alerts--risk-0-confidence-1"><span>Risk</span>=<span
+									class="risk-level">Informational</span>, <span>Confidence</span>=<span
+									class="confidence-level">Low</span> <span>(2)</span></a></li>
+							  
+						</ol></li>
+					<li><a
+						href="#appendix">Appendix</a>
+						<ol>
+							<li><a
+								href="#alert-types">Alert types</a></li>
+						</ol></li>
+					</data-th-block>
+				</ol>
+			</nav>
+		</section>
+
+		<section
+			id="about-this-report" class="about-this-report">
+			<h2>About this report</h2>
+
+			<section
+				id="report-description">
+				<h3>Report description</h3>
+				<div class="report-description--container">
+					
+
+<p>
+	
+	  Attack_with_FirefoxFeadless 
+	  
+</p>
+ 
+				</div>
+			</section>
+
+			<section
+				id="report-parameters">
+				<h3>Report parameters</h3>
+				<div class="report-parameters--container">
+					<h4>Contexts</h4>
+					
+					
+					<p>No contexts were selected, so all contexts were included by default.</p>
+					  
+
+					<h4>Sites</h4>
+					
+					<p>The following sites were included:</p>
+					<ul class="sites-list">
+						<li><span class="site">https://t-friday-8lbtha15.spbctf.net</span></li>
+					</ul>
+					
+					<p>(If no sites were selected, all sites were included by default.)</p>
+					<p>An included site must also be within one of the included contexts for its data to be included in the report.</p>
+
+					<h4>Risk levels</h4>
+					<p>
+						<span>Included</span>:
+						 
+						<span class="included-risk-codes"><span class="risk-level">High</span>, <span class="risk-level">Medium</span>, <span class="risk-level">Low</span>, <span class="risk-level">Informational</span></span>
+					</p>
+					<p>
+						<span>Excluded</span>:
+						 <span>None</span>
+						
+					</p>
+
+					<h4>Confidence levels</h4>
+					<p>
+						<span>Included</span>:
+						
+						
+						<span class="included-confidence-codes"><span class="confidence-level">User Confirmed</span>, <span class="confidence-level">High</span>, <span class="confidence-level">Medium</span>, <span class="confidence-level">Low</span></span>
+					</p>
+					<p>
+						<span>Excluded</span>:
+						
+						
+						<span class="included-confidence-codes"> <span class="confidence-level">User Confirmed</span>, <span class="confidence-level">High</span>, <span class="confidence-level">Medium</span>, <span class="confidence-level">Low</span>, <span class="confidence-level">False Positive</span></span>
+					</p>
+				</div>
+			</section>
+		</section>
+
+		
+		<section>
+			
+		</section>
+		
+		<section id="summaries" class="summaries">
+			<h2>Summaries</h2>
+
+			<section
+				id="risk-confidence-counts">
+				<h3>Alert counts by risk and confidence</h3>
+				<table class="risk-confidence-counts-table">
+					<caption>
+						<p>This table shows the number of alerts for each level of risk and confidence included in the report.</p>
+						<p>(The percentages in brackets represent the count as a percentage of the total number of alerts included in the report, rounded to one decimal place.)</p>
+					</caption>
+					<colgroup>
+						<col>
+						<col>
+					</colgroup>
+					<colgroup>
+						<col
+							style="width: 14.0%"><col
+							style="width: 14.0%"><col
+							style="width: 14.0%"><col
+							style="width: 14.0%">
+						<col style="width: 14.0%">
+					</colgroup>
+					<thead>
+						<tr>
+							<td colspan="2" rowspan="2"></td>
+							<th scope="colgroup"
+								colspan="5">Confidence</th>
+						</tr>
+						<tr>
+							<th scope="col">User Confirmed</th>
+							<th scope="col">High</th>
+							<th scope="col">Medium</th>
+							<th scope="col">Low</th>
+							<th scope="col">Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="rowgroup"
+								rowspan="5">Risk</th>
+							<th scope="row">High</th>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>0</span><br> <span class="additional-info-percentages">(0.0%)</span></td>
+						</tr>
+						<tr>
+							
+							<th scope="row">Medium</th>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>1</span><br> <span
+								class="additional-info-percentages">(7.7%)</span></td>
+							<td><span>1</span><br> <span
+								class="additional-info-percentages">(7.7%)</span></td>
+							<td><span>1</span><br> <span
+								class="additional-info-percentages">(7.7%)</span></td>
+							<td><span>3</span><br> <span class="additional-info-percentages">(23.1%)</span></td>
+						</tr>
+						<tr>
+							
+							<th scope="row">Low</th>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>1</span><br> <span
+								class="additional-info-percentages">(7.7%)</span></td>
+							<td><span>5</span><br> <span
+								class="additional-info-percentages">(38.5%)</span></td>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>6</span><br> <span class="additional-info-percentages">(46.2%)</span></td>
+						</tr>
+						<tr>
+							
+							<th scope="row">Informational</th>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>1</span><br> <span
+								class="additional-info-percentages">(7.7%)</span></td>
+							<td><span>1</span><br> <span
+								class="additional-info-percentages">(7.7%)</span></td>
+							<td><span>2</span><br> <span
+								class="additional-info-percentages">(15.4%)</span></td>
+							<td><span>4</span><br> <span class="additional-info-percentages">(30.8%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row">Total</th>
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0.0%)</span></td>
+							<td><span>3</span><br> <span
+								class="additional-info-percentages">(23.1%)</span></td>
+							<td><span>7</span><br> <span
+								class="additional-info-percentages">(53.8%)</span></td>
+							<td><span>3</span><br> <span
+								class="additional-info-percentages">(23.1%)</span></td>
+							<td><span>13</span><br> <span
+								class="additional-info-percentages">(100%)</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section
+				id="site-risk-counts">
+				<h3>Alert counts by site and risk</h3>
+				<table class="site-risk-counts-table">
+					<caption>
+						<p>This table shows, for each site for which one or more alerts were raised, the number of alerts raised at each risk level.</p>
+						<p>Alerts with a confidence level of &quot;False Positive&quot; have been excluded from these counts.</p>
+						<p>(The numbers in brackets are the number of alerts raised for the site at or above that risk level.)</p>
+					</caption>
+					<colgroup>
+						<col>
+						<col>
+					</colgroup>
+					<colgroup>
+						<col
+							style="width: 16.25%"><col
+							style="width: 16.25%"><col
+							style="width: 16.25%"><col
+							style="width: 16.25%">
+					</colgroup>
+					<thead>
+						<tr>
+							<td colspan="2" rowspan="2"></td>
+							<th scope="colgroup" colspan="4">Risk</th>
+						</tr>
+						<tr>
+							<th scope="col">
+								<span>High</span><br>  <span
+									class="additional-info-percentages">(= High)</span>  
+							</th>
+							<th scope="col">
+								<span>Medium</span><br>   <span
+									class="additional-info-percentages">(&gt;= Medium)</span> 
+							</th>
+							<th scope="col">
+								<span>Low</span><br>   <span
+									class="additional-info-percentages">(&gt;= Low)</span> 
+							</th>
+							<th scope="col">
+								<span>Informational</span><br>   <span
+									class="additional-info-percentages">(&gt;= Informational)</span> 
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="rowgroup"
+								rowspan="1">Site</th>
+							<th scope="row">https://t-friday-8lbtha15.spbctf.net</th>
+							
+							<td><span>0</span><br> <span
+								class="additional-info-percentages">(0)</span></td>
+							<td><span>3</span><br> <span
+								class="additional-info-percentages">(3)</span></td>
+							<td><span>6</span><br> <span
+								class="additional-info-percentages">(9)</span></td>
+							<td><span>4</span><br> <span
+								class="additional-info-percentages">(13)</span></td>
+							
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section
+				id="alert-type-counts">
+				<h3>Alert counts by alert type</h3>
+				<table class="alert-type-counts-table">
+					<caption>
+						<p>This table shows the number of alerts of each alert type, together with the alert type&#39;s risk level.</p>
+						<p>(The percentages in brackets represent each count as a percentage, rounded to one decimal place, of the total number of alerts included in this report.)</p>
+					</caption>
+					<thead>
+						<tr>
+							<th scope="col">Alert type</th>
+							<th scope="col">Risk</th>
+							<th scope="col">Count</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-0">Absence of Anti-CSRF Tokens</a></th>
+							<td class="risk-level">Medium</td>
+							<td><span>3</span><br> <span
+								class="additional-info-percentages">(23.1%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-1">Content Security Policy (CSP) Header Not Set</a></th>
+							<td class="risk-level">Medium</td>
+							<td><span>10</span><br> <span
+								class="additional-info-percentages">(76.9%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-2">Missing Anti-clickjacking Header</a></th>
+							<td class="risk-level">Medium</td>
+							<td><span>4</span><br> <span
+								class="additional-info-percentages">(30.8%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-3">Cookie No HttpOnly Flag</a></th>
+							<td class="risk-level">Low</td>
+							<td><span>6</span><br> <span
+								class="additional-info-percentages">(46.2%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-4">Cookie Without Secure Flag</a></th>
+							<td class="risk-level">Low</td>
+							<td><span>2</span><br> <span
+								class="additional-info-percentages">(15.4%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-5">Cookie with SameSite Attribute None</a></th>
+							<td class="risk-level">Low</td>
+							<td><span>6</span><br> <span
+								class="additional-info-percentages">(46.2%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-6">Cookie without SameSite Attribute</a></th>
+							<td class="risk-level">Low</td>
+							<td><span>2</span><br> <span
+								class="additional-info-percentages">(15.4%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-7">Strict-Transport-Security Header Not Set</a></th>
+							<td class="risk-level">Low</td>
+							<td><span>11</span><br> <span
+								class="additional-info-percentages">(84.6%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-8">X-Content-Type-Options Header Missing</a></th>
+							<td class="risk-level">Low</td>
+							<td><span>7</span><br> <span
+								class="additional-info-percentages">(53.8%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-9">Authentication Request Identified</a></th>
+							<td class="risk-level">Informational</td>
+							<td><span>1</span><br> <span
+								class="additional-info-percentages">(7.7%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-10">Loosely Scoped Cookie</a></th>
+							<td class="risk-level">Informational</td>
+							<td><span>28</span><br> <span
+								class="additional-info-percentages">(215.4%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-11">Re-examine Cache-control Directives</a></th>
+							<td class="risk-level">Informational</td>
+							<td><span>4</span><br> <span
+								class="additional-info-percentages">(30.8%)</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><a
+								href="#alert-type-12">Session Management Response Identified</a></th>
+							<td class="risk-level">Informational</td>
+							<td><span>57</span><br> <span
+								class="additional-info-percentages">(438.5%)</span></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th scope="row">Total</th>
+							<td></td>
+							<td>13</td>
+						</tr>
+					</tfoot>
+				</table>
+			</section>
+		</section>
+
+		<section id="alerts" class="alerts">
+			<h2>Alerts</h2>
+			<ol>
+				
+				 
+				 
+				
+				
+				<li id="alerts--risk-2-confidence-3">
+					<h3>
+						<span>Risk</span>=<span
+							class="risk-level">Medium</span>, <span>Confidence</span>=<span
+							class="confidence-level">High</span> <span>(1)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">https://t-friday-8lbtha15.spbctf.net</span> <span>(1)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-1">Content Security Policy (CSP) Header Not Set</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET https://t-friday-8lbtha15.spbctf.net/</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/">OWASP_2021_A05</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html">OWASP_2017_A06</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>
+ </td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (258 bytes)</summary>
+				
+				<pre><code>GET https://t-friday-8lbtha15.spbctf.net/ HTTP/1.1
+host: t-friday-8lbtha15.spbctf.net
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (818 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Date: Sun, 21 Apr 2024 13:39:54 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Vary: Cookie
+Set-Cookie: session=eyJjdXJyZW5jeSI6IlJVQiJ9.ZiUXKQ.yTZel1u-3_HnVavTDGQLUvmmIZs; HttpOnly; Path=/
+Accept-CH: Sec-CH-Cloudflare, Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform-Version
+CF-Cache-Status: DYNAMIC
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v4?s=kL0Hgw5yVuZvc2HnzMK4CBwjsyDJE85dI56WoNxbKwvpYUgftIjgZufI28GxvZSK8F9plUfx64B5CIpr%2BPs6K%2FRPRwoRhje5nNZl0XKj%2BbtGuEC%2FwbJPChatneKKMUgfWhABabuJPL9Q4OzGXFiy&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 877dc8651fb45b09-VIE
+alt-svc: h3=&quot;:443&quot;; ma=86400
+content-length: 1607
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (1607 bytes)</summary>
+				
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Friday-mobil - Home&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/static/css/styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;&lt;a href=&quot;/&quot;&gt;Friday-mobil&lt;/a&gt;&lt;/h1&gt;
+		
+		&lt;div id=&quot;auth&quot;&gt;
+			&lt;a href=&quot;/login&quot; id=&quot;signInBtn&quot; class=&quot;auth-button&quot;&gt;Login&lt;/a&gt;
+			&lt;a href=&quot;/register&quot; id=&quot;signUpBtn&quot; class=&quot;auth-button&quot;&gt;Register&lt;/a&gt;
+		&lt;/div&gt;
+		
+    &lt;/header&gt;
+
+	
+
+    &lt;section class=&quot;products&quot;&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/demo.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				Demo Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Will drive you only in designated areas (out favorite bar &amp;#39;Drunk Hedgehog&amp;#39; at the moment)&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				4999.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=1&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/unlocked.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				FSD Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Full-fledged autopilot ready to take you to the desired destination&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				399990.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=2&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+    &lt;/section&gt;
+
+    &lt;!--&lt;footer&gt;
+        &lt;form&gt;
+            &lt;label for=&quot;email&quot;&gt;Subscribe to our newsletter:&lt;/label&gt;
+            &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot;&gt;
+            &lt;button type=&quot;submit&quot;&gt;Subscribe&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/footer&gt;--&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	
+	
+	
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				
+				<li id="alerts--risk-2-confidence-2">
+					<h3>
+						<span>Risk</span>=<span
+							class="risk-level">Medium</span>, <span>Confidence</span>=<span
+							class="confidence-level">Medium</span> <span>(1)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">https://t-friday-8lbtha15.spbctf.net</span> <span>(1)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-2">Missing Anti-clickjacking Header</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET https://t-friday-8lbtha15.spbctf.net/</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/">OWASP_2021_A05</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/09-Testing_for_Clickjacking">WSTG-v42-CLNT-09</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html">OWASP_2017_A06</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>The response does not include either Content-Security-Policy with &#39;frame-ancestors&#39; directive or X-Frame-Options to protect against &#39;ClickJacking&#39; attacks.</p>
+ </td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (258 bytes)</summary>
+				
+				<pre><code>GET https://t-friday-8lbtha15.spbctf.net/ HTTP/1.1
+host: t-friday-8lbtha15.spbctf.net
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (818 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Date: Sun, 21 Apr 2024 13:39:54 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Vary: Cookie
+Set-Cookie: session=eyJjdXJyZW5jeSI6IlJVQiJ9.ZiUXKQ.yTZel1u-3_HnVavTDGQLUvmmIZs; HttpOnly; Path=/
+Accept-CH: Sec-CH-Cloudflare, Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform-Version
+CF-Cache-Status: DYNAMIC
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v4?s=kL0Hgw5yVuZvc2HnzMK4CBwjsyDJE85dI56WoNxbKwvpYUgftIjgZufI28GxvZSK8F9plUfx64B5CIpr%2BPs6K%2FRPRwoRhje5nNZl0XKj%2BbtGuEC%2FwbJPChatneKKMUgfWhABabuJPL9Q4OzGXFiy&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 877dc8651fb45b09-VIE
+alt-svc: h3=&quot;:443&quot;; ma=86400
+content-length: 1607
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (1607 bytes)</summary>
+				
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Friday-mobil - Home&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/static/css/styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;&lt;a href=&quot;/&quot;&gt;Friday-mobil&lt;/a&gt;&lt;/h1&gt;
+		
+		&lt;div id=&quot;auth&quot;&gt;
+			&lt;a href=&quot;/login&quot; id=&quot;signInBtn&quot; class=&quot;auth-button&quot;&gt;Login&lt;/a&gt;
+			&lt;a href=&quot;/register&quot; id=&quot;signUpBtn&quot; class=&quot;auth-button&quot;&gt;Register&lt;/a&gt;
+		&lt;/div&gt;
+		
+    &lt;/header&gt;
+
+	
+
+    &lt;section class=&quot;products&quot;&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/demo.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				Demo Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Will drive you only in designated areas (out favorite bar &amp;#39;Drunk Hedgehog&amp;#39; at the moment)&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				4999.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=1&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/unlocked.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				FSD Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Full-fledged autopilot ready to take you to the desired destination&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				399990.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=2&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+    &lt;/section&gt;
+
+    &lt;!--&lt;footer&gt;
+        &lt;form&gt;
+            &lt;label for=&quot;email&quot;&gt;Subscribe to our newsletter:&lt;/label&gt;
+            &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot;&gt;
+            &lt;button type=&quot;submit&quot;&gt;Subscribe&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/footer&gt;--&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>x-frame-options</code></pre></td>
+	</tr>
+	
+	
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p>
+
+<p>If you expect the page to be framed only by pages on your server (e.g. it&#39;s part of a FRAMESET) then you&#39;ll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy&#39;s &quot;frame-ancestors&quot; directive.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				
+				<li id="alerts--risk-2-confidence-1">
+					<h3>
+						<span>Risk</span>=<span
+							class="risk-level">Medium</span>, <span>Confidence</span>=<span
+							class="confidence-level">Low</span> <span>(1)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">https://t-friday-8lbtha15.spbctf.net</span> <span>(1)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-0">Absence of Anti-CSRF Tokens</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET https://t-friday-8lbtha15.spbctf.net/register</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">OWASP_2021_A01</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery">WSTG-v42-SESS-05</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html">OWASP_2017_A05</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>No Anti-CSRF tokens were found in a HTML submission form.</p>
+
+<p>A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.</p>
+
+<p>CSRF attacks are effective in a number of situations, including:</p>
+
+<p>    * The victim has an active session on the target site.</p>
+
+<p>    * The victim is authenticated via HTTP auth on the target site.</p>
+
+<p>    * The victim is on the same local network as the target site.</p>
+
+<p>CSRF has primarily been used to perform an action against a target site using the victim&#39;s privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: &quot;password&quot; &quot;username&quot; ].</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (434 bytes)</summary>
+				
+				<pre><code>GET https://t-friday-8lbtha15.spbctf.net/register HTTP/1.1
+host: t-friday-8lbtha15.spbctf.net
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+referer: https://t-friday-8lbtha15.spbctf.net/
+Cookie: session=eyJjdXJyZW5jeSI6IlJVQiJ9.ZiUXKg.Jb7vshI_xsQ1qdoDW2E9xaNepgI; __cfduid=19e71ca5014ab7a01c7e2746d04bb8c1
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (707 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Date: Sun, 21 Apr 2024 13:39:55 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Accept-CH: Sec-CH-Cloudflare, Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform-Version
+CF-Cache-Status: DYNAMIC
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v4?s=WErS7Tgt4fq1qyAMB4ij%2FO1LvRzZPiQDGVh5r3NpK5f7JmgejkJmX9hauP%2Bs8q%2FpZNnRSISY8qBwcf13MbI7nEqnBE8900FvNYDsK7rL3e8p3bcz%2FPAgzGBQ3J9%2F3OeEfXYcQmbm06u0E7JdKXNd&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 877dc86c993b5a3b-VIE
+alt-svc: h3=&quot;:443&quot;; ma=86400
+content-length: 1132
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (1132 bytes)</summary>
+				
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Login - Friday-Mobil&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/static/css/styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+	&lt;header&gt;
+        &lt;h1&gt;&lt;a href=&quot;/&quot;&gt;Friday-mobil&lt;/a&gt;&lt;/h1&gt;
+		&lt;div id=&quot;auth&quot;&gt;
+			&lt;a href=&quot;/login&quot; id=&quot;signInBtn&quot; class=&quot;auth-button&quot;&gt;Login&lt;/a&gt;
+			&lt;a href=&quot;/register&quot; id=&quot;signUpBtn&quot; class=&quot;auth-button&quot;&gt;Register&lt;/a&gt;
+		&lt;/div&gt;
+    &lt;/header&gt;
+	&lt;section class=&quot;products&quot;&gt;
+    &lt;div class=&quot;login-container&quot;&gt;
+        &lt;h2&gt;Register an account&lt;/h2&gt;
+        &lt;form action=&quot;/register&quot; method=&quot;POST&quot;&gt; 
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;username&quot;&gt;Email:&lt;/label&gt;
+                &lt;input type=&quot;text&quot; id=&quot;username&quot; name=&quot;email&quot; required&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;password&quot;&gt;Password:&lt;/label&gt;
+                &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; required&gt;
+            &lt;/div&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;auth-button&quot;&gt;Login&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+	&lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>&lt;form action=&quot;/register&quot; method=&quot;POST&quot;&gt;</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Phase: Architecture and Design</p>
+
+<p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p>
+
+<p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p>
+
+<p>Phase: Implementation</p>
+
+<p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p>
+
+<p>Phase: Architecture and Design</p>
+
+<p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p>
+
+<p>Note that this can be bypassed using XSS.</p>
+
+<p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p>
+
+<p>Note that this can be bypassed using XSS.</p>
+
+<p>Use the ESAPI Session Management control.</p>
+
+<p>This control includes a component for CSRF.</p>
+
+<p>Do not use the GET method for any request that triggers a state change.</p>
+
+<p>Phase: Implementation</p>
+
+<p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				  
+				 
+				
+				
+				<li id="alerts--risk-1-confidence-3">
+					<h3>
+						<span>Risk</span>=<span
+							class="risk-level">Low</span>, <span>Confidence</span>=<span
+							class="confidence-level">High</span> <span>(1)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">https://t-friday-8lbtha15.spbctf.net</span> <span>(1)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-7">Strict-Transport-Security Header Not Set</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET https://t-friday-8lbtha15.spbctf.net/</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/">OWASP_2021_A05</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html">OWASP_2017_A06</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>HTTP Strict Transport Security (HSTS) is a web security policy mechanism whereby a web server declares that complying user agents (such as a web browser) are to interact with it using only secure HTTPS connections (i.e. HTTP layered over TLS/SSL). HSTS is an IETF standards track protocol and is specified in RFC 6797.</p>
+ </td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (258 bytes)</summary>
+				
+				<pre><code>GET https://t-friday-8lbtha15.spbctf.net/ HTTP/1.1
+host: t-friday-8lbtha15.spbctf.net
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (818 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Date: Sun, 21 Apr 2024 13:39:54 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Vary: Cookie
+Set-Cookie: session=eyJjdXJyZW5jeSI6IlJVQiJ9.ZiUXKQ.yTZel1u-3_HnVavTDGQLUvmmIZs; HttpOnly; Path=/
+Accept-CH: Sec-CH-Cloudflare, Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform-Version
+CF-Cache-Status: DYNAMIC
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v4?s=kL0Hgw5yVuZvc2HnzMK4CBwjsyDJE85dI56WoNxbKwvpYUgftIjgZufI28GxvZSK8F9plUfx64B5CIpr%2BPs6K%2FRPRwoRhje5nNZl0XKj%2BbtGuEC%2FwbJPChatneKKMUgfWhABabuJPL9Q4OzGXFiy&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 877dc8651fb45b09-VIE
+alt-svc: h3=&quot;:443&quot;; ma=86400
+content-length: 1607
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (1607 bytes)</summary>
+				
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Friday-mobil - Home&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/static/css/styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;&lt;a href=&quot;/&quot;&gt;Friday-mobil&lt;/a&gt;&lt;/h1&gt;
+		
+		&lt;div id=&quot;auth&quot;&gt;
+			&lt;a href=&quot;/login&quot; id=&quot;signInBtn&quot; class=&quot;auth-button&quot;&gt;Login&lt;/a&gt;
+			&lt;a href=&quot;/register&quot; id=&quot;signUpBtn&quot; class=&quot;auth-button&quot;&gt;Register&lt;/a&gt;
+		&lt;/div&gt;
+		
+    &lt;/header&gt;
+
+	
+
+    &lt;section class=&quot;products&quot;&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/demo.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				Demo Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Will drive you only in designated areas (out favorite bar &amp;#39;Drunk Hedgehog&amp;#39; at the moment)&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				4999.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=1&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/unlocked.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				FSD Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Full-fledged autopilot ready to take you to the desired destination&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				399990.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=2&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+    &lt;/section&gt;
+
+    &lt;!--&lt;footer&gt;
+        &lt;form&gt;
+            &lt;label for=&quot;email&quot;&gt;Subscribe to our newsletter:&lt;/label&gt;
+            &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot;&gt;
+            &lt;button type=&quot;submit&quot;&gt;Subscribe&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/footer&gt;--&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	
+	
+	
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				
+				<li id="alerts--risk-1-confidence-2">
+					<h3>
+						<span>Risk</span>=<span
+							class="risk-level">Low</span>, <span>Confidence</span>=<span
+							class="confidence-level">Medium</span> <span>(5)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">https://t-friday-8lbtha15.spbctf.net</span> <span>(5)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-3">Cookie No HttpOnly Flag</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET https://t-friday-8lbtha15.spbctf.net/robots.txt</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/">OWASP_2021_A05</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes">WSTG-v42-SESS-02</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html">OWASP_2017_A06</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>A cookie has been set without the HttpOnly flag, which means that the cookie can be accessed by JavaScript. If a malicious script can be run on this page then the cookie will be accessible and can be transmitted to another site. If this is a session cookie then session hijacking may be possible.</p>
+ </td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (268 bytes)</summary>
+				
+				<pre><code>GET https://t-friday-8lbtha15.spbctf.net/robots.txt HTTP/1.1
+host: t-friday-8lbtha15.spbctf.net
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (830 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 404 Not Found
+Date: Sun, 21 Apr 2024 13:39:54 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Set-Cookie: __cfduid=19e71ca5014ab7a01c7e2746d04bb8c1; Domain=.spbctf.net; Path=/; Max-Age=315360000; SameSite=None; Secure
+Accept-CH: Sec-CH-Cloudflare, Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform-Version
+CF-Cache-Status: DYNAMIC
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v4?s=K7UDfVl49bEretSBkBqbXMR9rC7W%2BRQcxZADfkKPhjqHuLHaLdQcYGZSG1geinHF2SviMi4zldpxdS27E9rbakk5m2C4v78wpbahXraqv5hsU0eM1OoKKxq7ktX37tRinAWYZy2WI2DuuxjiXgjG&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 877dc868caefc21e-VIE
+alt-svc: h3=&quot;:443&quot;; ma=86400
+content-length: 207
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (207 bytes)</summary>
+				
+				<pre><code>&lt;!doctype html&gt;
+&lt;html lang=en&gt;
+&lt;title&gt;404 Not Found&lt;/title&gt;
+&lt;h1&gt;Not Found&lt;/h1&gt;
+&lt;p&gt;The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.&lt;/p&gt;
+</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>__cfduid</code></pre></td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>Set-Cookie: __cfduid</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Ensure that the HttpOnly flag is set for all cookies.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-4">Cookie Without Secure Flag</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET https://t-friday-8lbtha15.spbctf.net/</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/">OWASP_2021_A05</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes">WSTG-v42-SESS-02</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html">OWASP_2017_A06</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>A cookie has been set without the secure flag, which means that the cookie can be accessed via unencrypted connections.</p>
+ </td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (258 bytes)</summary>
+				
+				<pre><code>GET https://t-friday-8lbtha15.spbctf.net/ HTTP/1.1
+host: t-friday-8lbtha15.spbctf.net
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (818 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Date: Sun, 21 Apr 2024 13:39:54 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Vary: Cookie
+Set-Cookie: session=eyJjdXJyZW5jeSI6IlJVQiJ9.ZiUXKQ.yTZel1u-3_HnVavTDGQLUvmmIZs; HttpOnly; Path=/
+Accept-CH: Sec-CH-Cloudflare, Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform-Version
+CF-Cache-Status: DYNAMIC
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v4?s=kL0Hgw5yVuZvc2HnzMK4CBwjsyDJE85dI56WoNxbKwvpYUgftIjgZufI28GxvZSK8F9plUfx64B5CIpr%2BPs6K%2FRPRwoRhje5nNZl0XKj%2BbtGuEC%2FwbJPChatneKKMUgfWhABabuJPL9Q4OzGXFiy&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 877dc8651fb45b09-VIE
+alt-svc: h3=&quot;:443&quot;; ma=86400
+content-length: 1607
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (1607 bytes)</summary>
+				
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Friday-mobil - Home&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/static/css/styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;&lt;a href=&quot;/&quot;&gt;Friday-mobil&lt;/a&gt;&lt;/h1&gt;
+		
+		&lt;div id=&quot;auth&quot;&gt;
+			&lt;a href=&quot;/login&quot; id=&quot;signInBtn&quot; class=&quot;auth-button&quot;&gt;Login&lt;/a&gt;
+			&lt;a href=&quot;/register&quot; id=&quot;signUpBtn&quot; class=&quot;auth-button&quot;&gt;Register&lt;/a&gt;
+		&lt;/div&gt;
+		
+    &lt;/header&gt;
+
+	
+
+    &lt;section class=&quot;products&quot;&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/demo.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				Demo Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Will drive you only in designated areas (out favorite bar &amp;#39;Drunk Hedgehog&amp;#39; at the moment)&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				4999.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=1&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/unlocked.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				FSD Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Full-fledged autopilot ready to take you to the desired destination&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				399990.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=2&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+    &lt;/section&gt;
+
+    &lt;!--&lt;footer&gt;
+        &lt;form&gt;
+            &lt;label for=&quot;email&quot;&gt;Subscribe to our newsletter:&lt;/label&gt;
+            &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot;&gt;
+            &lt;button type=&quot;submit&quot;&gt;Subscribe&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/footer&gt;--&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>session</code></pre></td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>Set-Cookie: session</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Whenever a cookie contains sensitive information or is a session token, then it should always be passed using an encrypted channel. Ensure that the secure flag is set for cookies containing such sensitive information.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-5">Cookie with SameSite Attribute None</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET https://t-friday-8lbtha15.spbctf.net/robots.txt</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">OWASP_2021_A01</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes">WSTG-v42-SESS-02</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html">OWASP_2017_A05</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>A cookie has been set with its SameSite attribute set to &quot;none&quot;, which means that the cookie can be sent as a result of a &#39;cross-site&#39; request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>
+ </td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (268 bytes)</summary>
+				
+				<pre><code>GET https://t-friday-8lbtha15.spbctf.net/robots.txt HTTP/1.1
+host: t-friday-8lbtha15.spbctf.net
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (830 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 404 Not Found
+Date: Sun, 21 Apr 2024 13:39:54 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Set-Cookie: __cfduid=19e71ca5014ab7a01c7e2746d04bb8c1; Domain=.spbctf.net; Path=/; Max-Age=315360000; SameSite=None; Secure
+Accept-CH: Sec-CH-Cloudflare, Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform-Version
+CF-Cache-Status: DYNAMIC
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v4?s=K7UDfVl49bEretSBkBqbXMR9rC7W%2BRQcxZADfkKPhjqHuLHaLdQcYGZSG1geinHF2SviMi4zldpxdS27E9rbakk5m2C4v78wpbahXraqv5hsU0eM1OoKKxq7ktX37tRinAWYZy2WI2DuuxjiXgjG&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 877dc868caefc21e-VIE
+alt-svc: h3=&quot;:443&quot;; ma=86400
+content-length: 207
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (207 bytes)</summary>
+				
+				<pre><code>&lt;!doctype html&gt;
+&lt;html lang=en&gt;
+&lt;title&gt;404 Not Found&lt;/title&gt;
+&lt;h1&gt;Not Found&lt;/h1&gt;
+&lt;p&gt;The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.&lt;/p&gt;
+</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>__cfduid</code></pre></td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>Set-Cookie: __cfduid</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Ensure that the SameSite attribute is set to either &#39;lax&#39; or ideally &#39;strict&#39; for all cookies.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-6">Cookie without SameSite Attribute</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET https://t-friday-8lbtha15.spbctf.net/</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">OWASP_2021_A01</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes">WSTG-v42-SESS-02</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html">OWASP_2017_A05</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a &#39;cross-site&#39; request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>
+ </td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (258 bytes)</summary>
+				
+				<pre><code>GET https://t-friday-8lbtha15.spbctf.net/ HTTP/1.1
+host: t-friday-8lbtha15.spbctf.net
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (818 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Date: Sun, 21 Apr 2024 13:39:54 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Vary: Cookie
+Set-Cookie: session=eyJjdXJyZW5jeSI6IlJVQiJ9.ZiUXKQ.yTZel1u-3_HnVavTDGQLUvmmIZs; HttpOnly; Path=/
+Accept-CH: Sec-CH-Cloudflare, Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform-Version
+CF-Cache-Status: DYNAMIC
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v4?s=kL0Hgw5yVuZvc2HnzMK4CBwjsyDJE85dI56WoNxbKwvpYUgftIjgZufI28GxvZSK8F9plUfx64B5CIpr%2BPs6K%2FRPRwoRhje5nNZl0XKj%2BbtGuEC%2FwbJPChatneKKMUgfWhABabuJPL9Q4OzGXFiy&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 877dc8651fb45b09-VIE
+alt-svc: h3=&quot;:443&quot;; ma=86400
+content-length: 1607
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (1607 bytes)</summary>
+				
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Friday-mobil - Home&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/static/css/styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;&lt;a href=&quot;/&quot;&gt;Friday-mobil&lt;/a&gt;&lt;/h1&gt;
+		
+		&lt;div id=&quot;auth&quot;&gt;
+			&lt;a href=&quot;/login&quot; id=&quot;signInBtn&quot; class=&quot;auth-button&quot;&gt;Login&lt;/a&gt;
+			&lt;a href=&quot;/register&quot; id=&quot;signUpBtn&quot; class=&quot;auth-button&quot;&gt;Register&lt;/a&gt;
+		&lt;/div&gt;
+		
+    &lt;/header&gt;
+
+	
+
+    &lt;section class=&quot;products&quot;&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/demo.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				Demo Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Will drive you only in designated areas (out favorite bar &amp;#39;Drunk Hedgehog&amp;#39; at the moment)&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				4999.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=1&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/unlocked.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				FSD Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Full-fledged autopilot ready to take you to the desired destination&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				399990.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=2&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+    &lt;/section&gt;
+
+    &lt;!--&lt;footer&gt;
+        &lt;form&gt;
+            &lt;label for=&quot;email&quot;&gt;Subscribe to our newsletter:&lt;/label&gt;
+            &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot;&gt;
+            &lt;button type=&quot;submit&quot;&gt;Subscribe&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/footer&gt;--&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>session</code></pre></td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>Set-Cookie: session</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Ensure that the SameSite attribute is set to either &#39;lax&#39; or ideally &#39;strict&#39; for all cookies.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-8">X-Content-Type-Options Header Missing</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET https://t-friday-8lbtha15.spbctf.net/</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/">OWASP_2021_A05</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html">OWASP_2017_A06</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to &#39;nosniff&#39;. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p>
+
+<p>At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (258 bytes)</summary>
+				
+				<pre><code>GET https://t-friday-8lbtha15.spbctf.net/ HTTP/1.1
+host: t-friday-8lbtha15.spbctf.net
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (818 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Date: Sun, 21 Apr 2024 13:39:54 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Vary: Cookie
+Set-Cookie: session=eyJjdXJyZW5jeSI6IlJVQiJ9.ZiUXKQ.yTZel1u-3_HnVavTDGQLUvmmIZs; HttpOnly; Path=/
+Accept-CH: Sec-CH-Cloudflare, Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform-Version
+CF-Cache-Status: DYNAMIC
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v4?s=kL0Hgw5yVuZvc2HnzMK4CBwjsyDJE85dI56WoNxbKwvpYUgftIjgZufI28GxvZSK8F9plUfx64B5CIpr%2BPs6K%2FRPRwoRhje5nNZl0XKj%2BbtGuEC%2FwbJPChatneKKMUgfWhABabuJPL9Q4OzGXFiy&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 877dc8651fb45b09-VIE
+alt-svc: h3=&quot;:443&quot;; ma=86400
+content-length: 1607
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (1607 bytes)</summary>
+				
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Friday-mobil - Home&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/static/css/styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;&lt;a href=&quot;/&quot;&gt;Friday-mobil&lt;/a&gt;&lt;/h1&gt;
+		
+		&lt;div id=&quot;auth&quot;&gt;
+			&lt;a href=&quot;/login&quot; id=&quot;signInBtn&quot; class=&quot;auth-button&quot;&gt;Login&lt;/a&gt;
+			&lt;a href=&quot;/register&quot; id=&quot;signUpBtn&quot; class=&quot;auth-button&quot;&gt;Register&lt;/a&gt;
+		&lt;/div&gt;
+		
+    &lt;/header&gt;
+
+	
+
+    &lt;section class=&quot;products&quot;&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/demo.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				Demo Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Will drive you only in designated areas (out favorite bar &amp;#39;Drunk Hedgehog&amp;#39; at the moment)&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				4999.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=1&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/unlocked.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				FSD Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Full-fledged autopilot ready to take you to the desired destination&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				399990.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=2&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+    &lt;/section&gt;
+
+    &lt;!--&lt;footer&gt;
+        &lt;form&gt;
+            &lt;label for=&quot;email&quot;&gt;Subscribe to our newsletter:&lt;/label&gt;
+            &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot;&gt;
+            &lt;button type=&quot;submit&quot;&gt;Subscribe&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/footer&gt;--&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>x-content-type-options</code></pre></td>
+	</tr>
+	
+	
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to &#39;nosniff&#39; for all web pages.</p>
+
+<p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				
+				
+				  
+				 
+				
+				
+				<li id="alerts--risk-0-confidence-3">
+					<h3>
+						<span>Risk</span>=<span
+							class="risk-level">Informational</span>, <span>Confidence</span>=<span
+							class="confidence-level">High</span> <span>(1)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">https://t-friday-8lbtha15.spbctf.net</span> <span>(1)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-9">Authentication Request Identified</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">POST https://t-friday-8lbtha15.spbctf.net/login</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>The given request has been identified as an authentication request. The &#39;Other Info&#39; field contains a set of key=value lines which identify any relevant fields. If the request is in a context which has an Authentication Method set to &quot;Auto-Detect&quot; then this rule will change the authentication to match the request identified.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>userParam=email</p>
+
+<p>userValue=zaproxy@example.com</p>
+
+<p>passwordParam=password</p>
+
+<p>referer=https://t-friday-8lbtha15.spbctf.net/login</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (506 bytes)</summary>
+				
+				<pre><code>POST https://t-friday-8lbtha15.spbctf.net/login HTTP/1.1
+host: t-friday-8lbtha15.spbctf.net
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+content-type: application/x-www-form-urlencoded
+referer: https://t-friday-8lbtha15.spbctf.net/login
+content-length: 40
+Cookie: session=eyJjdXJyZW5jeSI6IlJVQiJ9.ZiUXKg.Jb7vshI_xsQ1qdoDW2E9xaNepgI; __cfduid=19e71ca5014ab7a01c7e2746d04bb8c1
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (40 bytes)</summary>
+				
+				<pre><code>email=zaproxy%40example.com&amp;password=ZAP</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (869 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 302 Found
+Date: Sun, 21 Apr 2024 13:39:55 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 189
+Connection: keep-alive
+Location: /
+Vary: Cookie
+Set-Cookie: session=eyJjdXJyZW5jeSI6IlJVQiIsImVtYWlsIjoiemFwcm94eUBleGFtcGxlLmNvbSJ9.ZiUXKw.Iz1gZ--j6U19RGlFIcwWBVE0UMg; HttpOnly; Path=/
+Accept-CH: Sec-CH-Cloudflare, Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform-Version
+CF-Cache-Status: DYNAMIC
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v4?s=91Jc3eIw3MY6kfcCvvkZ3HFxvo3qaf9WLnnvz1GrErRMTfpuJI1OJRXpU4KSCnlbZnjcUTO4Lmz4lV%2BQqxQp5L3MK8xW1ox9%2Fb09aui7RmDIHN6jF6giN6aJHsqtSzUWLKiAz33FHD29vA6zOwlj&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 877dc86e1b685a48-VIE
+alt-svc: h3=&quot;:443&quot;; ma=86400
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (189 bytes)</summary>
+				
+				<pre><code>&lt;!doctype html&gt;
+&lt;html lang=en&gt;
+&lt;title&gt;Redirecting...&lt;/title&gt;
+&lt;h1&gt;Redirecting...&lt;/h1&gt;
+&lt;p&gt;You should be redirected automatically to the target URL: &lt;a href=&quot;/&quot;&gt;/&lt;/a&gt;. If not, click the link.
+</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>email</code></pre></td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>password</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				
+				<li id="alerts--risk-0-confidence-2">
+					<h3>
+						<span>Risk</span>=<span
+							class="risk-level">Informational</span>, <span>Confidence</span>=<span
+							class="confidence-level">Medium</span> <span>(1)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">https://t-friday-8lbtha15.spbctf.net</span> <span>(1)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-12">Session Management Response Identified</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET https://t-friday-8lbtha15.spbctf.net/</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>The given response has been identified as containing a session management token. The &#39;Other Info&#39; field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to &quot;Auto-Detect&quot; then this rule will change the session management to use the tokens identified.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>cookie:session</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (258 bytes)</summary>
+				
+				<pre><code>GET https://t-friday-8lbtha15.spbctf.net/ HTTP/1.1
+host: t-friday-8lbtha15.spbctf.net
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (818 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Date: Sun, 21 Apr 2024 13:39:54 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Vary: Cookie
+Set-Cookie: session=eyJjdXJyZW5jeSI6IlJVQiJ9.ZiUXKQ.yTZel1u-3_HnVavTDGQLUvmmIZs; HttpOnly; Path=/
+Accept-CH: Sec-CH-Cloudflare, Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform-Version
+CF-Cache-Status: DYNAMIC
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v4?s=kL0Hgw5yVuZvc2HnzMK4CBwjsyDJE85dI56WoNxbKwvpYUgftIjgZufI28GxvZSK8F9plUfx64B5CIpr%2BPs6K%2FRPRwoRhje5nNZl0XKj%2BbtGuEC%2FwbJPChatneKKMUgfWhABabuJPL9Q4OzGXFiy&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 877dc8651fb45b09-VIE
+alt-svc: h3=&quot;:443&quot;; ma=86400
+content-length: 1607
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (1607 bytes)</summary>
+				
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Friday-mobil - Home&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/static/css/styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;&lt;a href=&quot;/&quot;&gt;Friday-mobil&lt;/a&gt;&lt;/h1&gt;
+		
+		&lt;div id=&quot;auth&quot;&gt;
+			&lt;a href=&quot;/login&quot; id=&quot;signInBtn&quot; class=&quot;auth-button&quot;&gt;Login&lt;/a&gt;
+			&lt;a href=&quot;/register&quot; id=&quot;signUpBtn&quot; class=&quot;auth-button&quot;&gt;Register&lt;/a&gt;
+		&lt;/div&gt;
+		
+    &lt;/header&gt;
+
+	
+
+    &lt;section class=&quot;products&quot;&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/demo.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				Demo Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Will drive you only in designated areas (out favorite bar &amp;#39;Drunk Hedgehog&amp;#39; at the moment)&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				4999.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=1&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/unlocked.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				FSD Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Full-fledged autopilot ready to take you to the desired destination&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				399990.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=2&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+    &lt;/section&gt;
+
+    &lt;!--&lt;footer&gt;
+        &lt;form&gt;
+            &lt;label for=&quot;email&quot;&gt;Subscribe to our newsletter:&lt;/label&gt;
+            &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot;&gt;
+            &lt;button type=&quot;submit&quot;&gt;Subscribe&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/footer&gt;--&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>session</code></pre></td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Evidence</th>
+		<td><pre><code>eyJjdXJyZW5jeSI6IlJVQiJ9.ZiUXKQ.yTZel1u-3_HnVavTDGQLUvmmIZs</code></pre></td>
+	</tr>
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				
+				<li id="alerts--risk-0-confidence-1">
+					<h3>
+						<span>Risk</span>=<span
+							class="risk-level">Informational</span>, <span>Confidence</span>=<span
+							class="confidence-level">Low</span> <span>(2)</span>
+					</h3>
+					<ol>
+						
+						<li class="alerts--site-li">
+							<h4>
+								<span class="site">https://t-friday-8lbtha15.spbctf.net</span> <span>(2)</span>
+							</h4>
+							<ol>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-10">Loosely Scoped Cookie</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET https://t-friday-8lbtha15.spbctf.net/robots.txt</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes">WSTG-v42-SESS-02</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/">OWASP_2021_A08</a></span> 
+				</li>
+				<li>
+					<span><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html">OWASP_2017_A06</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>Cookies can be scoped by domain or path. This check is only concerned with domain scope.The domain scope applied to a cookie determines which domains can access it. For example, a cookie can be scoped strictly to a subdomain e.g. www.nottrusted.com, or loosely scoped to a parent domain e.g. nottrusted.com. In the latter case, any subdomain of nottrusted.com can access the cookie. Loosely scoped cookies are common in mega-applications like google.com and live.com. Cookies set from a subdomain like app.foo.bar are transmitted only to that domain by the browser. However, cookies scoped to a parent-level domain may be transmitted to the parent, or any subdomain of the parent.</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Other info</th>
+		<td> 
+<p>The origin domain used for comparison was: </p>
+
+<p>t-friday-8lbtha15.spbctf.net</p>
+
+<p>__cfduid=&quot;19e71ca5014ab7a01c7e2746d04bb8c1&quot;;$Path=&quot;/&quot;;$Domain=&quot;.spbctf.net&quot;</p>
+ </td>
+	</tr>
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (268 bytes)</summary>
+				
+				<pre><code>GET https://t-friday-8lbtha15.spbctf.net/robots.txt HTTP/1.1
+host: t-friday-8lbtha15.spbctf.net
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (830 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 404 Not Found
+Date: Sun, 21 Apr 2024 13:39:54 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Set-Cookie: __cfduid=19e71ca5014ab7a01c7e2746d04bb8c1; Domain=.spbctf.net; Path=/; Max-Age=315360000; SameSite=None; Secure
+Accept-CH: Sec-CH-Cloudflare, Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform-Version
+CF-Cache-Status: DYNAMIC
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v4?s=K7UDfVl49bEretSBkBqbXMR9rC7W%2BRQcxZADfkKPhjqHuLHaLdQcYGZSG1geinHF2SviMi4zldpxdS27E9rbakk5m2C4v78wpbahXraqv5hsU0eM1OoKKxq7ktX37tRinAWYZy2WI2DuuxjiXgjG&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 877dc868caefc21e-VIE
+alt-svc: h3=&quot;:443&quot;; ma=86400
+content-length: 207
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (207 bytes)</summary>
+				
+				<pre><code>&lt;!doctype html&gt;
+&lt;html lang=en&gt;
+&lt;title&gt;404 Not Found&lt;/title&gt;
+&lt;h1&gt;Not Found&lt;/h1&gt;
+&lt;p&gt;The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.&lt;/p&gt;
+</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	
+	
+	
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+								<li>
+									<h5>
+										<a
+											href="#alert-type-11">Re-examine Cache-control Directives</a> <span>(1)</span>
+									</h5>
+									<ol>
+										<li><details>
+												<summary>
+													<span class="request-method-n-url">GET https://t-friday-8lbtha15.spbctf.net/</span>
+												</summary>
+												
+<table class="alerts-table">
+	<tr>
+		<th scope="row">Alert tags</th>
+		<td>
+			<ul class="alert-tags-list">
+				<li>
+					<span><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/04-Authentication_Testing/06-Testing_for_Browser_Cache_Weaknesses">WSTG-v42-ATHN-06</a></span> 
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Alert description</th>
+		<td> 
+<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>
+ </td>
+	</tr>
+	
+	<tr>
+		<th scope="row">Request</th>
+		<td><details open="open">
+				<summary>Request line and header section (258 bytes)</summary>
+				
+				<pre><code>GET https://t-friday-8lbtha15.spbctf.net/ HTTP/1.1
+host: t-friday-8lbtha15.spbctf.net
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+pragma: no-cache
+cache-control: no-cache
+
+</code></pre>
+				
+				
+			</details> <details class="request-body" open="open">
+				<summary>Request body (0 bytes)</summary>
+				
+				<pre><code></code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Response</th>
+		<td><details open="open">
+				<summary>Status line and header section (818 bytes)</summary>
+				
+				<pre><code>HTTP/1.1 200 OK
+Date: Sun, 21 Apr 2024 13:39:54 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Vary: Cookie
+Set-Cookie: session=eyJjdXJyZW5jeSI6IlJVQiJ9.ZiUXKQ.yTZel1u-3_HnVavTDGQLUvmmIZs; HttpOnly; Path=/
+Accept-CH: Sec-CH-Cloudflare, Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform-Version
+CF-Cache-Status: DYNAMIC
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v4?s=kL0Hgw5yVuZvc2HnzMK4CBwjsyDJE85dI56WoNxbKwvpYUgftIjgZufI28GxvZSK8F9plUfx64B5CIpr%2BPs6K%2FRPRwoRhje5nNZl0XKj%2BbtGuEC%2FwbJPChatneKKMUgfWhABabuJPL9Q4OzGXFiy&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 877dc8651fb45b09-VIE
+alt-svc: h3=&quot;:443&quot;; ma=86400
+content-length: 1607
+
+</code></pre>
+				
+				
+			</details> <details class="response-body" open="open">
+				<summary>Response body (1607 bytes)</summary>
+				
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Friday-mobil - Home&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/static/css/styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;&lt;a href=&quot;/&quot;&gt;Friday-mobil&lt;/a&gt;&lt;/h1&gt;
+		
+		&lt;div id=&quot;auth&quot;&gt;
+			&lt;a href=&quot;/login&quot; id=&quot;signInBtn&quot; class=&quot;auth-button&quot;&gt;Login&lt;/a&gt;
+			&lt;a href=&quot;/register&quot; id=&quot;signUpBtn&quot; class=&quot;auth-button&quot;&gt;Register&lt;/a&gt;
+		&lt;/div&gt;
+		
+    &lt;/header&gt;
+
+	
+
+    &lt;section class=&quot;products&quot;&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/demo.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				Demo Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Will drive you only in designated areas (out favorite bar &amp;#39;Drunk Hedgehog&amp;#39; at the moment)&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				4999.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=1&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+        &lt;div class=&quot;card&quot;&gt;
+			&lt;img src=/static/images/unlocked.jpeg alt=&quot;Product Image&quot;&gt;
+            &lt;h3&gt;
+				FSD Autopilot
+			&lt;/h3&gt;
+            &lt;p&gt;Full-fledged autopilot ready to take you to the desired destination&lt;/p&gt; &lt;!-- desc --&gt;
+            &lt;p&gt;	
+				399990.0
+			 RUB&lt;/p&gt; &lt;!-- price --&gt;
+            &lt;a href=&quot;/addToCart?productId=2&quot;&gt;&lt;button&gt;Add to Cart&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+		
+    &lt;/section&gt;
+
+    &lt;!--&lt;footer&gt;
+        &lt;form&gt;
+            &lt;label for=&quot;email&quot;&gt;Subscribe to our newsletter:&lt;/label&gt;
+            &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot;&gt;
+            &lt;button type=&quot;submit&quot;&gt;Subscribe&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/footer&gt;--&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				
+				
+			</details></td>
+	</tr>
+	<tr>
+		<th scope="row">Parameter</th>
+		<td><pre><code>cache-control</code></pre></td>
+	</tr>
+	
+	
+	<tr>
+		<th scope="row">Solution</th>
+		<td> 
+<p>For secure content, ensure the cache-control HTTP header is set with &quot;no-cache, no-store, must-revalidate&quot;. If an asset should be cached consider setting the directives &quot;public, max-age, immutable&quot;.</p>
+ </td>
+	</tr>
+</table>
+
+											</details></li>
+									</ol>
+								</li>
+								
+							</ol>
+						</li>
+						
+					</ol>
+				</li>
+				  
+			</ol>
+		</section>
+
+		<section id="appendix" class="appendix">
+			<h2>Appendix</h2>
+
+			<section id="alert-types" class="alert-types">
+				<h3>Alert types</h3>
+				<p class="alert-types-intro">This section contains additional information on the types of alerts in the report.</p>
+				<ol>
+					<li
+						id="alert-type-0">
+						<h4>Absence of Anti-CSRF Tokens</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10202/">Absence of Anti-CSRF Tokens</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a
+									href="https://cwe.mitre.org/data/definitions/352.html">352</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>9</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</a></li>
+										<li><a
+											href="https://cwe.mitre.org/data/definitions/352.html">https://cwe.mitre.org/data/definitions/352.html</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li
+						id="alert-type-1">
+						<h4>Content Security Policy (CSP) Header Not Set</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10038/">Content Security Policy (CSP) Header Not Set</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a
+									href="https://cwe.mitre.org/data/definitions/693.html">693</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>15</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy">https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</a></li>
+										<li><a
+											href="https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</a></li>
+										<li><a
+											href="https://www.w3.org/TR/CSP/">https://www.w3.org/TR/CSP/</a></li>
+										<li><a
+											href="https://w3c.github.io/webappsec-csp/">https://w3c.github.io/webappsec-csp/</a></li>
+										<li><a
+											href="https://web.dev/articles/csp">https://web.dev/articles/csp</a></li>
+										<li><a
+											href="https://caniuse.com/#feat=contentsecuritypolicy">https://caniuse.com/#feat=contentsecuritypolicy</a></li>
+										<li><a
+											href="https://content-security-policy.com/">https://content-security-policy.com/</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li
+						id="alert-type-2">
+						<h4>Missing Anti-clickjacking Header</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10020/">Anti-clickjacking Header</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a
+									href="https://cwe.mitre.org/data/definitions/1021.html">1021</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>15</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li
+						id="alert-type-3">
+						<h4>Cookie No HttpOnly Flag</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10010/">Cookie No HttpOnly Flag</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a
+									href="https://cwe.mitre.org/data/definitions/1004.html">1004</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>13</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://owasp.org/www-community/HttpOnly">https://owasp.org/www-community/HttpOnly</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li
+						id="alert-type-4">
+						<h4>Cookie Without Secure Flag</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10011/">Cookie Without Secure Flag</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a
+									href="https://cwe.mitre.org/data/definitions/614.html">614</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>13</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html">https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li
+						id="alert-type-5">
+						<h4>Cookie with SameSite Attribute None</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10054/">Cookie without SameSite Attribute</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a
+									href="https://cwe.mitre.org/data/definitions/1275.html">1275</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>13</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site">https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li
+						id="alert-type-6">
+						<h4>Cookie without SameSite Attribute</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10054/">Cookie without SameSite Attribute</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a
+									href="https://cwe.mitre.org/data/definitions/1275.html">1275</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>13</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site">https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li
+						id="alert-type-7">
+						<h4>Strict-Transport-Security Header Not Set</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10035/">Strict-Transport-Security Header</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a
+									href="https://cwe.mitre.org/data/definitions/319.html">319</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>15</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</a></li>
+										<li><a
+											href="https://owasp.org/www-community/Security_Headers">https://owasp.org/www-community/Security_Headers</a></li>
+										<li><a
+											href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security">https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</a></li>
+										<li><a
+											href="https://caniuse.com/stricttransportsecurity">https://caniuse.com/stricttransportsecurity</a></li>
+										<li><a
+											href="https://datatracker.ietf.org/doc/html/rfc6797">https://datatracker.ietf.org/doc/html/rfc6797</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li
+						id="alert-type-8">
+						<h4>X-Content-Type-Options Header Missing</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10021/">X-Content-Type-Options Header Missing</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a
+									href="https://cwe.mitre.org/data/definitions/693.html">693</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>15</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)">https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</a></li>
+										<li><a
+											href="https://owasp.org/www-community/Security_Headers">https://owasp.org/www-community/Security_Headers</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li
+						id="alert-type-9">
+						<h4>Authentication Request Identified</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10111/">Authentication Request Identified</a>)
+									</span>   
+								</td>
+							</tr>
+							
+							
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/">https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li
+						id="alert-type-10">
+						<h4>Loosely Scoped Cookie</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/90033/">Loosely Scoped Cookie</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a
+									href="https://cwe.mitre.org/data/definitions/565.html">565</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>15</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://tools.ietf.org/html/rfc6265#section-4.1">https://tools.ietf.org/html/rfc6265#section-4.1</a></li>
+										<li><a
+											href="https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html">https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</a></li>
+										<li><a
+											href="https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies">https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li
+						id="alert-type-11">
+						<h4>Re-examine Cache-control Directives</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10015/">Re-examine Cache-control Directives</a>)
+									</span>   
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">CWE ID</th>
+								<td><a
+									href="https://cwe.mitre.org/data/definitions/525.html">525</a></td>
+							</tr>
+							<tr>
+								<th scope="row">WASC ID</th>
+								<td>13</td>
+							</tr>
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching">https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</a></li>
+										<li><a
+											href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</a></li>
+										<li><a
+											href="https://grayduck.mn/2021/09/13/cache-control-recommendations/">https://grayduck.mn/2021/09/13/cache-control-recommendations/</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li
+						id="alert-type-12">
+						<h4>Session Management Response Identified</h4>
+						<table class="alert-types-table">
+							<tr>
+								<th scope="row">Source</th>
+								<td>
+									
+									   <span>raised by a passive scanner</span> <span>(<a
+										href="https://www.zaproxy.org/docs/alerts/10112/">Session Management Response Identified</a>)
+									</span>   
+								</td>
+							</tr>
+							
+							
+							<tr>
+								<th scope="row">Reference</th>
+								<td>
+									<ol>
+										<li><a
+											href="https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id">https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</a></li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</li>
+				</ol>
+			</section>
+		</section>
+		 
+	</main>
+</body>
+</html>
+
+
+
